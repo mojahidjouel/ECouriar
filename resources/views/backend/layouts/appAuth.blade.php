@@ -49,7 +49,7 @@
     <script src="{{asset('public/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
     <script src="{{asset('public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
-    <!-- Template Javascript -->
+         <!-- Template Javascript -->
     <script src="{{asset('public/js/main.js')}}"></script>
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>

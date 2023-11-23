@@ -62,21 +62,36 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="#" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{route('dashboard')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Users</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i>Users</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{url('user')}}" class="dropdown-item">User_List</a>
+                            <a href="{{route('user.index')}}" class="dropdown-item">User_List</a>
                             <a href="{{route('user.create')}}" class="dropdown-item">User_Create</a>
-                            
-                            <a href="{{url('asset')}}" class="dropdown-item">Asset_List</a>
-                            <a href="{{route('asset.create')}}" class="dropdown-item">Asset_Create</a>
 
-                            <a href="{{url('shipment')}}" class="dropdown-item">Shipment_List</a>
-                            <a href="{{route('shipment.create')}}" class="dropdown-item">Shipment_Create</a>
-                            <a href="" class="dropdown-item">Other Documents</a>
+                            <a href="{{route('role.index')}}" class="dropdown-item">Role_List</a>
+                            <a href="{{route('role.create')}}" class="dropdown-item">Role_Create</a>
+                            <a href="" class="dropdown-item">Other Users</a>
                         </div>
                     </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i>Assets</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('asset.index')}}" class="dropdown-item">Asset_List</a>
+                            <a href="{{route('asset.create')}}" class="dropdown-item">Asset_Create</a>
+                            <a href="" class="dropdown-item">Other Assets</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Shipment</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('shipment.index')}}" class="dropdown-item">Shipment_List</a>
+                            <a href="{{route('shipment.create')}}" class="dropdown-item">Shipment_Create</a>
+                            <a href="" class="dropdown-item">Other Shipment</a>
+                        </div>
+                    </div>
+
                     <a href="" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>

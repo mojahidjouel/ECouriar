@@ -7,6 +7,8 @@ use App\Http\Controllers\Backend\AuthenticationController as auth;
 use App\Http\Controllers\Backend\UserController as user;
 use App\Http\Controllers\Backend\AssetController as assets;
 use App\Http\Controllers\Backend\ShipmentController as shipments;
+use App\Http\Controllers\Backend\PermissionController as permission;
+use App\Http\Controllers\Backend\RoleController as role;
 
 
 
@@ -27,10 +29,17 @@ Route::get('/login', [auth::class,'signInForm'])->name('login');
 Route::post('/login', [auth::class,'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class,'singOut'])->name('logOut');
 
+Route::middleware(['checkauth'])->group(function(){
+    Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
+});
 
-Route::middleware(['checkrole'])->group(function(){
-    Route::get('/dashboard', [dashboard::class,'index'])->name('dashboard');
-    Route::resource('/user', user::class);
+Route::middleware(['checkrole'])->prefix('admin')->group(function(){
+    Route::resource('user', user::class);
+    Route::resource('role', role::class);
+    Route::get('permission/{role}', [permission::class,'index'])->name('permission.list');
+    Route::post('permission/{role}', [permission::class,'save'])->name('permission.save');
+    
+    
     Route::resource('/asset', assets::class);
     Route::resource('/shipment', shipments::class);
 });
