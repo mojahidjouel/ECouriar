@@ -10,19 +10,19 @@
   <thead>
     <tr>
     <th scope="col">{{__('#SL')}}</th>
-    <th scope="col">{{__('From_City')}}</th>
-    <th scope="col">{{__('Sender_Address')}}</th>
-    <th scope="col">{{__('To_City')}}</th>
-    <th scope="col">{{__('Receiver_Address')}}</th>
-    <th scope="col">{{__('Contact_Name')}}</th>
-    <th scope="col">{{__('Contact_number')}}</th>
-    <th scope="col">{{__('Product_Name')}}</th>
-    <th scope="col">{{__('Product_Description')}}</th>
-    <th scope="col">{{__('Product_Weight')}}</th>
-    <th scope="col">{{__('Base_Price')}}</th>
-    <th scope="col">{{__('Unit_Price')}}</th>
-    <th scope="col">{{__('Cargo_Cost')}}</th>
-    <th scope="col">{{__('Total_Cost')}}</th>
+    <th scope="col">{{__('From City')}}</th>
+    <th scope="col">{{__('Sender Address')}}</th>
+    <th scope="col">{{__('To City')}}</th>
+    <th scope="col">{{__('Receiver Address')}}</th>
+    <th scope="col">{{__('Contact Name')}}</th>
+    <th scope="col">{{__('Contact Number')}}</th>
+    <th scope="col">{{__('Product Name')}}</th>
+    <th scope="col">{{__('Product Description')}}</th>
+    <th scope="col">{{__('Product Weight')}}</th>
+    <th scope="col">{{__('Base Price')}}</th>
+    <th scope="col">{{__('Unit Price')}}</th>
+    <th scope="col">{{__('Cargo Cost')}}</th>
+    <th scope="col">{{__('Total Cost')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
     </tr>
   </thead>

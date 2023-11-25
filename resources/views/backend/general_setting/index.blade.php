@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-end" href="{{route('couriar_information.create')}}"><i class="fa fa-plus"></i></a>
+  <a class="fs-5 d-flex justify-content-start" href="{{route('general_setting.create')}}"><i class="fa fa-plus"></i></a>
 </div>
 <table class="table">
   <thead>
@@ -83,9 +83,11 @@
         <td>{{$p->base_currency_symbol}}</td>
 
         <td class="white-space-nowrap">
-        <a href="{{route('couriar_information.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit"></i></a>
+        <a href="{{route('general_setting.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit"></i></a>
+        
+        <a href="{{route('general_setting.show', $p->id)}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
-        <form id="form{{$p->id}}" action="{{route('couriar_information.destroy',encryptor('encrypt',$p->id))}}" method="post">
+        <form id="form{{$p->id}}" action="{{route('general_setting.destroy',encryptor('encrypt',$p->id))}}" method="post">
         @csrf
         @method('delete')
         </form>

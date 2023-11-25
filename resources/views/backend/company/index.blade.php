@@ -4,16 +4,20 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-end" href="{{route('company.create')}}"><i class="fa fa-plus"></i></a>
+  <a class="fs-5 d-flex justify-content-start" href="{{route('company.create')}}"><i class="fa fa-plus"></i></a>
 </div>
 <table class="table">
   <thead>
     <tr>
     <th scope="col">{{__('#SL')}}</th>
-    <th scope="col">{{__('Name')}}</th>
-    <th scope="col">{{__('Contact Person')}}</th>
+    <th scope="col">{{__('Company Name')}}</th>
     <th scope="col">{{__('Contact Number')}}</th>
-    <th scope="col">{{__('Address')}}</th>
+    <th scope="col">{{__('Contact Email')}}</th>
+    <th scope="col">{{__('Company Address')}}</th>
+    <th scope="col">{{__('Company City')}}</th>
+    <th scope="col">{{__('Company Division')}}</th>
+    <th scope="col">{{__('Company Code')}}</th>
+    <th scope="col">{{__('Company Country')}}</th>
     <th scope="col">{{__('Logo Image')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
     </tr>
@@ -21,10 +25,14 @@
   <tbody>
   @forelse($data as $p)
   <th scope="row">{{ ++$loop->index }}</th>
-        <td>{{$p->name}}</td>
-        <td>{{$p->contact_person}}</td>
+        <td>{{$p->company_name}}</td>
         <td>{{$p->contact_number}}</td>
-        <td>{{$p->address}}</td>
+        <td>{{$p->company_email}}</td>
+        <td>{{$p->company_address}}</td>
+        <td>{{$p->company_city}}</td>
+        <td>{{$p->company_state}}</td>
+        <td>{{$p->company_pin}}</td>
+        <td>{{$p->company_country}}</td>
         <td><img width="50px" src="{{asset('public/uploads/company/'.$p->logo_image)}}" alt=""></td>
 
         <td class="white-space-nowrap">

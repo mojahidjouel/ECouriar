@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Models\Company;
 
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +21,6 @@ class CompanyController extends Controller
         $data=Company::paginate(10);
         return view('backend.company.index',compact('data'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -31,7 +29,6 @@ class CompanyController extends Controller
         $company=Company::get();
         return view('backend.company.create',compact('company'));
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -39,18 +36,19 @@ class CompanyController extends Controller
     {
         try{
             $data=new Company();
-            $data->name=$request->name;
-            $data->contact_person=$request->contact_person;
+            $data->company_name=$request->company_name;
             $data->contact_number=$request->contact_number;
-            $data->address=$request->address;
-
+            $data->company_email=$request->company_email;
+            $data->company_address=$request->company_address;
+            $data->company_city=$request->company_city;
+            $data->company_state=$request->company_state;
+            $data->company_pin=$request->company_pin;
+            $data->company_country=$request->company_country;
             if($request->hasFile('logo_image')){
                 $imageName = rand(111,999).time().'.'.$request->logo_image->extension();
                 $request->logo_image->move(public_path('uploads/company'), $imageName);
                 $data->logo_image=$imageName;
-            }
-            
-
+            }           
             if($data->save())
                 return redirect()->route('company.index')->with('success','Successfully saved');
             else
@@ -70,17 +68,15 @@ class CompanyController extends Controller
         return view('backend.company.show', compact('company'));
         
     }
-
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         $company=Company::get();
         $company=Company::findOrFail(encryptor('decrypt',$id));
         return view('backend.company.edit',compact('company'));
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -88,18 +84,19 @@ class CompanyController extends Controller
     {
         try{
             $data=Company::findOrFail(encryptor('decrypt',$id));
-            $data->name=$request->name;
-            $data->contact_person=$request->contact_person;
+            $data->company_name=$request->company_name;
             $data->contact_number=$request->contact_number;
-            $data->address=$request->address;
-
+            $data->company_email=$request->company_email;
+            $data->company_address=$request->company_address;
+            $data->company_city=$request->company_city;
+            $data->company_state=$request->company_state;
+            $data->company_pin=$request->company_pin;
+            $data->company_country=$request->company_country;
             if($request->hasFile('logo_image')){
                 $imageName = rand(111,999).time().'.'.$request->logo_image->extension();
                 $request->logo_image->move(public_path('uploads/company'), $imageName);
                 $data->logo_image=$imageName;
             }
-            
-
             if($data->save())
                 return redirect()->route('company.index')->with('success','Successfully saved');
             else
@@ -121,8 +118,7 @@ class CompanyController extends Controller
         
         if($data->delete()){
             if(File::exists($image_path)) 
-                File::delete($image_path);
-            
+                File::delete($image_path);            
             Toastr::warning('Deleted Permanently!');
             return redirect()->back();
         }

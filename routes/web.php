@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\UserController as user;
 use App\Http\Controllers\Backend\AssetController as assets;
 use App\Http\Controllers\Backend\CompanyController as companies;
 use App\Http\Controllers\Backend\BranchController as branches;
+use App\Http\Controllers\Backend\GeneralsettingController as general_settings;
 
 
 
@@ -46,6 +47,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('/shipment', shipments::class);
     Route::resource('/company', companies::class);
     Route::resource('/branch', branches::class);
+    Route::resource('/general_setting', general_settings::class);
 });
 
 Route::get('/', function () {
