@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController as dashboard;
 use App\Http\Controllers\Backend\AuthenticationController as auth;
-
-use App\Http\Controllers\Backend\UserController as user;
-use App\Http\Controllers\Backend\AssetController as assets;
-use App\Http\Controllers\Backend\ShipmentController as shipments;
 use App\Http\Controllers\Backend\PermissionController as permission;
 use App\Http\Controllers\Backend\RoleController as role;
+
+use App\Http\Controllers\Backend\ShipmentController as shipments;
+use App\Http\Controllers\Backend\UserController as user;
+use App\Http\Controllers\Backend\AssetController as assets;
+use App\Http\Controllers\Backend\CompanyController as companies;
+use App\Http\Controllers\Backend\BranchController as branches;
 
 
 
@@ -42,6 +44,8 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     
     Route::resource('/asset', assets::class);
     Route::resource('/shipment', shipments::class);
+    Route::resource('/company', companies::class);
+    Route::resource('/branch', branches::class);
 });
 
 Route::get('/', function () {

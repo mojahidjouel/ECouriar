@@ -92,6 +92,24 @@
                         </div>
                     </div>
 
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Company</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('company.index')}}" class="dropdown-item">Company_List</a>
+                            <a href="{{route('company.create')}}" class="dropdown-item">Company_Create</a>
+                            <a href="" class="dropdown-item">Other Company</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Branch</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('branch.index')}}" class="dropdown-item">Branch_List</a>
+                            <a href="{{route('branch.create')}}" class="dropdown-item">Branch_Create</a>
+                            <a href="" class="dropdown-item">Other Branch</a>
+                        </div>
+                    </div>
+
                     <a href="" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>

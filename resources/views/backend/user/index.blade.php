@@ -27,7 +27,9 @@
         <td>{{$p->contact_no_en}}</td>
         <td>{{$p->role?->type}}</td>
         <td><img width="50px" src="{{asset('public/uploads/users/'.$p->image)}}" alt=""></td>
+        
         <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>
+        
         <td class="white-space-nowrap">
         <a href="{{route('user.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit btn btn-info btn-sm"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>

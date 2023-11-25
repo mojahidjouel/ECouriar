@@ -33,6 +33,7 @@
         
         <td class="white-space-nowrap">
         <a href="{{route('asset.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit btn btn-info btn-sm"></i></a>
+        <a href="{{route('asset.show', $p->id)}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
         <form id="form{{$p->id}}" action="{{route('asset.destroy',encryptor('encrypt',$p->id))}}" method="post">
         @csrf

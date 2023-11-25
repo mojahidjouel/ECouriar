@@ -70,9 +70,10 @@ class ShipmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(shipment $shipment)
     {
-        //
+        return view('backend.shipment.show', compact('shipment'));
+        
     }
 
     /**

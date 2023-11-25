@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('registration_number');
-            $table->integer('driver_id');
+            $table->string('name')->nullable();
+            $table->string('registration_number')->nullable();
+            $table->integer('driver_id')->nullable();
             $table->string('registration_card')->nullable();
             $table->decimal('gml')->default();
             $table->decimal('cml')->default();

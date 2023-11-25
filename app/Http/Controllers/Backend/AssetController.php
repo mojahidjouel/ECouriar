@@ -61,9 +61,10 @@ class AssetController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(asset $asset)
     {
-        //
+        return view('backend.asset.show', compact('asset'));
+        
     }
 
     /**
@@ -97,7 +98,7 @@ class AssetController extends Controller
             }
         }catch(Exception $e){
             Toastr::error('Please try again');
-            //dd($e);
+           // dd($e);
             return redirect()->back()->withInput();
         }
     }

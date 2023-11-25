@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
-            $table->integer('company_id');
-            $table->string('name')->nullable();
-            $table->string('contact_person')->nullable();
-            $table->string('contact_number')->nullable();
-            $table->text('address')->nullable();
-            $table->string('logo')->nullable();
-            $table->string('status')->boolean();
+            $table->integer('company_id')->nullable();
+            $table->string('branch_name')->nullable();
+            $table->string('branch_email')->unique();
+            $table->string('branch_phone')->unique();
+            $table->text('branch_address')->nullable();
+            $table->text('branch_city')->nullable();
+            $table->text('branch_state')->nullable();
+            $table->text('branch_pin')->nullable();
+            $table->text('branch_country')->nullable();
+            $table->string('logo_image')->nullable();
             
             $table->timestamps();
         });
