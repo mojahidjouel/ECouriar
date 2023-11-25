@@ -14,16 +14,28 @@ return new class extends Migration
         Schema::create('couriar_information', function (Blueprint $table) {
             $table->id();
             $table->integer('sender_branch_id')->nullable();
+            $table->string('tracking_no')->nullable();
             $table->string('sender_name')->nullable();
             $table->string('sender_email')->unique();
             $table->string('sender_phone')->nullable();
             $table->text('sender_address')->nullable();
+            $table->string('sender_city')->nullable();
+            $table->string('sender_state')->nullable();
+            $table->string('sender_pin')->nullable();
+            $table->string('sender_country')->nullable();
             $table->string('sender_branch_staff_id')->nullable();
+
             $table->string('receiver_name')->nullable();
             $table->string('receiver_email')->nullable();
             $table->string('receiver_phone')->nullable();
-            $table->string('receiver_address')->nullable();
+            $table->text('receiver_address')->nullable();
+            $table->string('receiver_city')->nullable();
+            $table->string('receiver_state')->nullable();
+            $table->string('receiver_pin')->nullable();
+            $table->string('receiver_country')->nullable();
             $table->string('receiver_branch_staff_id')->nullable();
+            $table->text('couriar_description')->nullable();
+
             $table->string('payment_receiver_id')->nullable();
             $table->string('payment_branch_id')->nullable();
             $table->string('payment_status')->nullable();
@@ -36,8 +48,15 @@ return new class extends Migration
             $table->string('code')->nullable();
             $table->integer('invoice_id')->nullable();
             $table->string('status')->nullable();
-           
-            
+
+            $table->integer('weight')->nullable();
+            $table->integer('height')->nullable();
+            $table->integer('price')->nullable();
+
+            $table->string('from_location')->nullable();
+            $table->string('to_location')->nullable();
+            $table->string('package_id')->nullable();
+         
             $table->timestamps();
         });
     }
