@@ -25,7 +25,7 @@
         <td>{{$p->contact_person}}</td>
         <td>{{$p->contact_number}}</td>
         <td>{{$p->address}}</td>
-        <td><img width="50px" src="{{asset('public/uploads/logo_image/'.$p->logo_image)}}" alt=""></td>
+        <td><img width="50px" src="{{asset('public/uploads/company/'.$p->logo_image)}}" alt=""></td>
 
         <td class="white-space-nowrap">
         <a href="{{route('company.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit btn btn-info btn-sm"></i></a>
