@@ -12,6 +12,8 @@ use App\Http\Controllers\Backend\AssetController as assets;
 use App\Http\Controllers\Backend\CompanyController as companies;
 use App\Http\Controllers\Backend\BranchController as branches;
 use App\Http\Controllers\Backend\GeneralsettingController as general_settings;
+use App\Http\Controllers\Backend\PriceController as prices;
+use App\Http\Controllers\Backend\CityController as cities;
 
 /* user panel */
 use App\Http\Controllers\User\AuthController as userauth;
@@ -63,6 +65,8 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('/company', companies::class);
     Route::resource('/branch', branches::class);
     Route::resource('/general_setting', general_settings::class);
+    Route::resource('/price', prices::class);
+    Route::resource('/city', cities::class);
 });
 
 Route::get('/', function () {

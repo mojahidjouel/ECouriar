@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('couriertypes', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->integer('unit_id')->nullable();
-            $table->decimal('shipment_id')->nullable();
             $table->string('name')->nullable();
-            $table->string('price')->nullable();
-            $table->integer('status')->nullable();
-           
+            $table->string('code')->nullable();        
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('couriertypes');
+        Schema::dropIfExists('cities');
     }
 };
