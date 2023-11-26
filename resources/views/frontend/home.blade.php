@@ -47,7 +47,15 @@
                   <input class="form-control border-200" type="search" placeholder="Search" aria-label="Search" style="background:#FDF1DF;" />
                 </form>
               </div>
-            </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="#!">Contact Us</a>
+            </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us
+            </a>
+              <a class="btn btn-primary mx-2" href="{{route('login')}}">
+              Sign in
+              </a>
+              <!-- <a class="btn btn-danger mx-2" href="{{route('register')}}">
+              Register
+              </a> -->
+          
             <form class="d-flex my-3 d-block d-lg-none">
               <input class="form-control me-2 border-200 bg-light" type="search" placeholder="Search" aria-label="Search" />
               <button class="btn btn-outline-primary" type="submit">Search</button>

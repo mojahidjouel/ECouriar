@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Company;
+use App\Models\Backend\Company;
 
-use Illuminate\Support\Facades\Hash;
 use Exception;
 use File;
 use Toastr;

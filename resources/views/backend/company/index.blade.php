@@ -3,9 +3,10 @@
 
 @section('content')
 
-<div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-start" href="{{route('company.create')}}"><i class="fa fa-plus"></i></a>
-</div>
+<div class="table-responsive">
+  <div>
+    <a class="fs-5 d-flex justify-content-start" href="{{route('company.create')}}"><i class="fa fa-plus"></i></a>
+  </div>
 <table class="table">
   <thead>
     <tr>

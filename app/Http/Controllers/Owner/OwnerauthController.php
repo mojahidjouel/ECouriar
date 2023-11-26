@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Models\Backend\Role;
-use App\Models\Backend\AdminUser;
-use App\Http\Requests\Backend\Authentication\SignupRequest;
-use App\Http\Requests\Backend\Authentication\SigninRequest;
+use App\Models\Role;
+use App\Models\User;
+use App\Http\Requests\Authentication\SignupRequest;
+use App\Http\Requests\Authentication\SigninRequest;
 use Illuminate\Support\Facades\Hash;
 use Toastr;
 use Exception;
@@ -21,12 +21,12 @@ class AuthenticationController extends Controller
 
     public function signUpStore(SignupRequest $request){
         try{
-            $user=new AdminUser;
-            $user->name=$request->FullName;
-            $user->contact_no=$request->contact_no;
+            $user=new User;
+            $user->name_en=$request->FullName;
+            $user->contact_no_en=$request->contact_no_en;
             $user->email=$request->EmailAddress;
             $user->password=Hash::make($request->password);
-            $user->role_id=1;
+            $user->role_id=4;
             if($user->save())
                 return redirect('login')->with('success','Successfully Registred');
             else
@@ -44,7 +44,7 @@ class AuthenticationController extends Controller
 
     public function signInCheck(SigninRequest $request){
         try{
-            $user=AdminUser::where('contact_no',$request->username)
+            $user=User::where('contact_no_en',$request->username)
                         ->orWhere('email',$request->username)->first();
             if($user){
                 if($user->status==1){
@@ -58,7 +58,7 @@ class AuthenticationController extends Controller
         }else
                 return redirect()->route('login')->with('error','Your phone number or password is wrong!');
         }catch(Exception $e){
-            dd($e);
+            //dd($e);
             return redirect()->route('login')->with('error','Your phone number or password is wrong!');
         }
     }
@@ -69,7 +69,7 @@ class AuthenticationController extends Controller
                 'userName'=>encryptor('encrypt',$user->name),
                 'role_id'=>encryptor('encrypt',$user->role_id),
                 'accessType'=>encryptor('encrypt',$user->full_access),
-                'role'=>encryptor('encrypt',$user->role->name),
+                'role'=>encryptor('encrypt',$user->role->type),
                 'roleIdentity'=>encryptor('encrypt',$user->role->identity),
                 'language'=>encryptor('encrypt',$user->language),
                 'image'=>$user->image ?? 'no-image.png'

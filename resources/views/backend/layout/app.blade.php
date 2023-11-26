@@ -36,13 +36,13 @@
 <body>
 
     <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
+        <!-- Spinner Start 
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <!-- Spinner End -->
+         Spinner End -->
 
 
         <!-- Sidebar Start -->
@@ -66,12 +66,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i>Users</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('user.index')}}" class="dropdown-item">User_List</a>
-                            <a href="{{route('user.create')}}" class="dropdown-item">User_Create</a>
+                            <a href="{{route('adminuser.index')}}" class="dropdown-item">User List</a>
+                            <a href="{{route('adminuser.create')}}" class="dropdown-item">User Create</a>
 
-                            <a href="{{route('role.index')}}" class="dropdown-item">Role_List</a>
-                            <a href="{{route('role.create')}}" class="dropdown-item">Role_Create</a>
-                            <a href="" class="dropdown-item">Other Users</a>
+                            <a href="{{route('role.index')}}" class="dropdown-item">Role List</a>
+                            <a href="{{route('role.create')}}" class="dropdown-item">Role Create</a>
                         </div>
                     </div>
 
@@ -80,15 +79,6 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('asset.index')}}" class="dropdown-item">Asset_List</a>
                             <a href="{{route('asset.create')}}" class="dropdown-item">Asset_Create</a>
-                            <a href="" class="dropdown-item">Other Assets</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Shipment</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('shipment.index')}}" class="dropdown-item">Shipment_List</a>
-                            <a href="{{route('shipment.create')}}" class="dropdown-item">Shipment_Create</a>
-                            <a href="" class="dropdown-item">Other Shipment</a>
                         </div>
                     </div>
 
@@ -235,13 +225,13 @@
         </div>
 
             <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
+            <div class="container-fluid pt-2">
+                <div class="bg-secondary rounded-top p-2">
                     <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                        <div class="col-12 col-sm-6 text-center text-sm-start text-white">
                             &copy; <a href="#">Couriar_Service</a>, All Right Reserved. 
                         </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                        <div class="col-12 col-sm-6 text-center text-sm-end text-white">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                             Designed By <a href="">Muhammad Mojahedul Islam</a>
                             <br>Distributed By: <a href="" target="_blank">WDPF_Round_54</a>

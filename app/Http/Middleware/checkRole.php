@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\User; // custome
-use App\Models\Permission; // custome
+use App\Models\Backend\AdminUser; // custome
+use App\Models\Backend\Permission; // custome
 use Illuminate\Http\Request;
 use Session; // custome
 
@@ -22,7 +22,7 @@ class checkRole
         if(!Session::has('userId') || Session::has('userId')==null){
             return redirect()->route('logOut');
         }else{
-            $user=User::where('status',1)->where('id',currentUserId())->first();
+            $user=AdminUser::where('status',1)->where('id',currentUserId())->first();
             if(!$user){
                 return redirect()->route('logOut');
             }else if($user->full_access=="1"){

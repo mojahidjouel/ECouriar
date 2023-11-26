@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Asset;
+use App\Models\Backend\Asset;
+use App\Models\Backend\AdminUser;
 
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -27,8 +28,8 @@ class AssetController extends Controller
      */
     public function create()
     {
-        $asset=asset::get();
-        return view('backend.asset.create',compact('asset'));
+        $user=AdminUser::get();
+        return view('backend.asset.create',compact('user'));
     }
 
     /**
@@ -41,16 +42,19 @@ class AssetController extends Controller
             $data->name=$request->name;
             $data->registration_number=$request->registration_number;
             $data->driver_id=$request->driver_id;
-            $data->registration_card=$request->registration_card;
+            if($request->hasFile('registration_card')){
+                $imageName = rand(111,999).time().'.'.$request->registration_card->extension();
+                $request->registration_card->move(public_path('uploads/asset'), $imageName);
+                $data->registration_card=$imageName;
+            }
             $data->gml=$request->gml;
             $data->cml=$request->cml;
             $data->hml=$request->hml;
 
-            if($data->save())
+            if($data->save()){
+                Toastr::success('Successfully updated');
                 return redirect()->route('asset.index')->with('success','Successfully saved');
-            else
-                return redirect()->back()->withInput()->with('error','Please try again');
-            
+            }
         }catch(Exception $e){
             //dd($e);
             return redirect()->back()->withInput()->with('error','Please try again');
@@ -61,20 +65,17 @@ class AssetController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(asset $asset)
-    {
+    public function show(asset $asset){
         return view('backend.asset.show', compact('asset'));
-        
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
-    {
-        $asset=Asset::get();
+    public function edit($id){
+        $user=AdminUser::get();
         $asset=Asset::findOrFail(encryptor('decrypt',$id));
-        return view('backend.asset.edit',compact('asset'));
+        return view('backend.asset.edit',compact('asset','user'));
     }
 
     /**
@@ -87,7 +88,11 @@ class AssetController extends Controller
             $data->name=$request->name;
             $data->registration_number=$request->registration_number;
             $data->driver_id=$request->driver_id;
-            $data->registration_card=$request->registration_card;
+            if($request->hasFile('registration_card')){
+                $imageName = rand(111,999).time().'.'.$request->registration_card->extension();
+                $request->registration_card->move(public_path('uploads/asset'), $imageName);
+                $data->registration_card=$imageName;
+            }
             $data->gml=$request->gml;
             $data->cml=$request->cml;
             $data->hml=$request->hml;
@@ -109,13 +114,16 @@ class AssetController extends Controller
     public function destroy($id)
     {
         $data= Asset::findOrFail(encryptor('decrypt',$id));
-        $image_path=public_path('uploads/asset/').$data->image;
+        $image_path=public_path('uploads/asset/').$data->registration_card;
         
         if($data->delete()){
             if(File::exists($image_path)) 
                 File::delete($image_path);
             
             Toastr::warning('Deleted Permanently!');
+            return redirect()->back();
+        }else{
+            Toastr::error('Please try again');
             return redirect()->back();
         }
         

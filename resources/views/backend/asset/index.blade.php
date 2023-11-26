@@ -25,8 +25,8 @@
   <th scope="row">{{ ++$loop->index }}</th>
         <td>{{$p->name}}</td>
         <td>{{$p->registration_number}}</td>
-        <td>{{$p->driver_id}}</td>
-        <td>{{$p->registration_card}}</td>
+        <td>{{$p->driver?->name}}</td>
+        <td><img width="50px" src="{{asset('public/uploads/asset/'.$p->registration_card)}}" alt=""></td>
         <td>{{$p->gml}}</td>
         <td>{{$p->cml}}</td>
         <td>{{$p->hml}}</td>
