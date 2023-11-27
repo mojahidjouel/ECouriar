@@ -6,7 +6,7 @@ use App\Http\Controllers\Backend\AuthenticationController as auth;
 use App\Http\Controllers\Backend\PermissionController as permission;
 use App\Http\Controllers\Backend\RoleController as role;
 
-// use App\Http\Controllers\Backend\ShipmentController as shipments;
+
 use App\Http\Controllers\Backend\AdminUserController as adminuser;
 use App\Http\Controllers\Backend\AssetController as assets;
 use App\Http\Controllers\Backend\CompanyController as companies;
@@ -64,7 +64,6 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     
     
     Route::resource('/asset', assets::class);
-    Route::resource('/shipment', shipments::class);
     Route::resource('/company', companies::class);
     Route::resource('/branch', branches::class);
     Route::resource('/general_setting', general_settings::class);
