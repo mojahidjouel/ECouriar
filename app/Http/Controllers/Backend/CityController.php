@@ -20,8 +20,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        $city=City::paginate(10);
-        return view('backend.city.index',compact('city'));
+        $data=City::paginate(10);
+        return view('backend.city.index',compact('data'));
     }
 
     /**

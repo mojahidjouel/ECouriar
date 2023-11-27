@@ -6,7 +6,7 @@ use App\Http\Controllers\Backend\AuthenticationController as auth;
 use App\Http\Controllers\Backend\PermissionController as permission;
 use App\Http\Controllers\Backend\RoleController as role;
 
-use App\Http\Controllers\Backend\ShipmentController as shipments;
+// use App\Http\Controllers\Backend\ShipmentController as shipments;
 use App\Http\Controllers\Backend\AdminUserController as adminuser;
 use App\Http\Controllers\Backend\AssetController as assets;
 use App\Http\Controllers\Backend\CompanyController as companies;
@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\CityController as cities;
 /* user panel */
 use App\Http\Controllers\User\AuthController as userauth;
 use App\Http\Controllers\User\DashboardController as userdashboard;
+use App\Http\Controllers\User\ShipmentController as shipments;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +52,8 @@ Route::middleware(['checkuserauth'])->prefix('user')->group(function(){
 
 Route::middleware(['checkauth'])->group(function(){
     Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
+
+    Route::resource('/shipment', shipments::class);
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){

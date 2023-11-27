@@ -11,15 +11,15 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name" value="{{ old('name')}}" name="name">
+    <input type="text" class="form-control" id="name" value="{{old('name')}}" name="name">
     @if($errors->has('name'))
-      <span class="text-danger"> {{ $errors->first('name') }}</span>
+      <span class="text-danger"> {{$errors->first('name') }}</span>
   @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="code" class="form-label">Code</label>
-    <input type="text" class="form-control" id="code" value="{{ old('code')}}" name="code">
+    <input type="text" class="form-control" id="code" value="{{old('code')}}" name="code">
   </div>
   
 </div>

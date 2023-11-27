@@ -38,6 +38,7 @@
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#home">Home</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="#services">Our Services</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{route('shipment.create')}}">Couriar Order</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="#findUs">Find Us</a></li>
             </ul>
             <div class="dropdown d-none d-lg-block">

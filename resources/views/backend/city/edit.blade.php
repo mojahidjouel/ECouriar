@@ -15,7 +15,7 @@
     <label for="name" class="form-label">Name</label>
     <input type="text" class="form-control" id="name" value="{{ old('name',$city->name)}}" name="name">
     @if($errors->has('name'))
-      <span class="text-danger"> {{ $errors->first('name') }}</span>
+      <span class="text-danger"> {{$errors->first('name') }}</span>
     @endif
   </div>
 

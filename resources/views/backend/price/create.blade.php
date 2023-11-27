@@ -1,4 +1,4 @@
-@extenmethodds('backend.layout.app')
+@extends('backend.layout.app')
 
 @section('title',trans('Create Price'))
 

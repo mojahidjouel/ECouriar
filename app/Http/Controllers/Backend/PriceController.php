@@ -29,7 +29,7 @@ class PriceController extends Controller
      */
     public function create()
     {
-        $branch=Branch::get();
+        $price=Price::get();
         return view('backend.price.create',compact('price'));
     }
 

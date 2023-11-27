@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,7 +12,6 @@ use Exception;
 use File;
 use Toastr;
 
-
 class ShipmentController extends Controller
 {
     /**
@@ -21,7 +20,7 @@ class ShipmentController extends Controller
     public function index()
     {
         $data=Shipment::paginate(5);
-        return view('shipment.index',compact('data'));
+        return view('user.shipment.index',compact('data'));
     }
 
     /**
@@ -30,7 +29,7 @@ class ShipmentController extends Controller
     public function create()
     {
         $shipment=Shipment::get();
-        return view('shipment.create',compact('shipment'));
+        return view('user.shipment.create',compact('shipment'));
     }
 
     /**
@@ -72,7 +71,7 @@ class ShipmentController extends Controller
      */
     public function show(shipment $shipment)
     {
-        return view('shipment.show', compact('shipment'));
+        return view('user.shipment.show', compact('shipment'));
         
     }
 
@@ -83,7 +82,7 @@ class ShipmentController extends Controller
     {
         $shipment=Shipment::get();
         $shipment=Shipment::findOrFail(encryptor('decrypt',$id));
-        return view('shipment.edit',compact('shipment'));
+        return view('user.shipment.edit',compact('shipment'));
     }
 
     /**
