@@ -32,7 +32,7 @@
 
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href=""><img src="{{asset('public/assets/img/gallery/logo.png')}}" height="45" alt="logo" /></a>
+        <div class="container"><a class="navbar-brand" href=""><img src="{{asset('public/assets/img/gallery/logo2.jpg')}}" height="45" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
@@ -49,7 +49,7 @@
               </div>
             </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us
             </a>
-              <a class="btn btn-primary mx-2" href="{{route('login')}}">
+              <a class="btn btn-primary mx-2" href="{{route('user.login')}}">
               Sign in
               </a>
               <!-- <a class="btn btn-danger mx-2" href="{{route('register')}}">
@@ -71,7 +71,7 @@
 
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="{{asset('public/assets/img/illustrations/hero.png')}}" alt="hero-header" /></div>
+            <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="{{asset('public/assets/img/illustrations/hero2.jpg')}}" alt="hero-header" /></div>
             <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-8">
               <h1 class="fw-normal fs-6 fs-xxl-7">A trusted provider of </h1>
               <h1 class="fw-bolder fs-6 fs-xxl-7 mb-2">courier services.</h1>

@@ -21,7 +21,7 @@
                    
                    
                     <div class="form-group">
-                        <label for="username">Contact Number/ Email:</label>
+                        <label for="username">Contact Number/Email:</label>
                         <input type="text" class="form-control" required="" id="username" name="username" value="{{old('username')}}">
                         @if($errors->has('username'))
                         <small class="d-block text-danger">

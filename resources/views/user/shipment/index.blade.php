@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-start" href="{{route('shipment.create')}}"><i class="fa fa-plus"></i></a>
+  <a class="fs-5 d-flex justify-content-start btn btn-primary" href="{{route('shipment.create')}}"><i class="fa fa-plus"></i></a>
 </div>
 <table class="table table-hover table-striped">
   <thead>
