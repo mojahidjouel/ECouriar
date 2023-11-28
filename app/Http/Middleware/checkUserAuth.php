@@ -21,14 +21,14 @@ class checkUserAuth
        //echo $request->route()->getName();
             //die();
         if(!Session::has('userId') || Session::has('userId')==null){
-            return redirect()->route('logOut');
+            return redirect()->route('user.LogOut');
         }else{
             $user=User::where('status',1)->where('id',currentUserId())->first();
             if(!$user)
-                return redirect()->route('logOut');
+                return redirect()->route('user.LogOut');
             else
                 return $next($request);
         }
-        return redirect()->route('logOut');
+        return redirect()->route('user.LogOut');
     }
 }

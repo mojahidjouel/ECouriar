@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <div class="row">
 <form class="row g-3 needs-validation" method="post" enctype="multipart/form-data" action="{{route('shipment.store')}}" novalidate>
   @csrf
