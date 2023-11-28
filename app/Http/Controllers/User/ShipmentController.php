@@ -128,16 +128,14 @@ class ShipmentController extends Controller
      */
     public function destroy($id)
     {
-        $data= Shipment::findOrFail(encryptor('decrypt',$id));
-        $image_path=public_path('uploads/shipment/').$data->image;
+        $data=Shipment::findOrFail(encryptor('decrypt',$id));
+        $image_path=public_path('uploads/shipment/').$data->logo_image;
         
         if($data->delete()){
             if(File::exists($image_path)) 
-                File::delete($image_path);
-            
+                File::delete($image_path);            
             Toastr::warning('Deleted Permanently!');
             return redirect()->back();
         }
-        
     }
 }

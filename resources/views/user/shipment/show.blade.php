@@ -10,10 +10,10 @@
         <div class="card w-75 mx-auto text-center ">
           <div class="card-body">
           <h4>From City:</h4>
-            <h4 class="card-title card text-white bg-secondary mb-2">{{$shipment->from_city}}</h4>
+            <h4 class="card-title card text-white bg-secondary mb-2">{{$shipment->f_city?->name}}</h4>
 
             <h4>To City:</h4>
-            <p class="card-subtitle card text-white bg-secondary mb-2" >{{$shipment->to_city}}</p>
+            <p class="card-subtitle card text-white bg-secondary mb-2" >{{$shipment->t_city?->name}}</p>
 
             <h4>Product Name: </h4>
             <p class="card-subtitle card text-white bg-secondary mb-2">{{$shipment->product_name}}</p>

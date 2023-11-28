@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-start btn btn-primary" href="{{route('shipment.create')}}"><i class="fa fa-plus"></i></a>
+  <a class="fs-1 d-flex justify-content-start btn btn-primary" href="{{route('shipment.create')}}"><i class="fa fa-plus"></i></a>
 </div>
 <table class="table table-hover table-striped">
   <thead>
@@ -45,7 +45,7 @@
 
         <td class="white-space-nowrap">
         <a href="{{route('shipment.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit"></i></a>
-        <a href="{{route('shipment.show', $p->id)}}"><i class="bi bi-eye btn btn-info"></i></a>
+        <a href="{{route('shipment.show', $p->id)}}"><i class="bi bi-eye btn btn-primary"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
         <form id="form{{$p->id}}" action="{{route('shipment.destroy',encryptor('encrypt',$p->id))}}" method="post">
         @csrf
