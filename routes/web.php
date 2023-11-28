@@ -54,7 +54,7 @@ Route::middleware(['checkuserauth'])->prefix('user')->group(function(){
 Route::middleware(['checkauth'])->group(function(){
     Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
 
-    
+    Route::resource('/shipment', shipments::class);
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
