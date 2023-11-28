@@ -47,13 +47,14 @@ Route::get('user/logout', [userauth::class,'singOut'])->name('user.LogOut');
 
 Route::middleware(['checkuserauth'])->prefix('user')->group(function(){
     Route::get('dashboard', [userdashboard::class,'index'])->name('userdashboard');
+
+    Route::resource('/shipment', shipments::class);
 });
 
 
 Route::middleware(['checkauth'])->group(function(){
     Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
 
-    Route::resource('/shipment', shipments::class);
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
