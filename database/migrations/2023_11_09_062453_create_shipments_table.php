@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
-            $table->string('from_city')->nullable();
-            $table->string('to_city')->nullable();
+            $table->unsignedBigInteger('from_city')->index();
+            $table->foreign('from_city')->references('id')->on('cities')->onDelete('cascade');
+            $table->unsignedBigInteger('to_city')->index();
+            $table->foreign('to_city')->references('id')->on('cities')->onDelete('cascade');
             $table->string('product_name')->nullable();
             $table->text('product_description')->nullable();
             $table->decimal('product_weight')->nullable();

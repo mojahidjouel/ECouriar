@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Shipment;
+use App\Models\City;
 
 
 use Illuminate\Support\Facades\Hash;
@@ -29,7 +30,8 @@ class ShipmentController extends Controller
     public function create()
     {
         $shipment=Shipment::get();
-        return view('user.shipment.create',compact('shipment'));
+        $city=City::get();
+        return view('user.shipment.create',compact('shipment','city'));
     }
 
     /**
@@ -41,8 +43,8 @@ class ShipmentController extends Controller
             try{
                 $data=new Shipment();
                 $data->from_city=$request->from_city;
-                $data->to_city=$request->to_city;
                 $data->product_name=$request->product_name;
+                $data->to_city=$request->to_city;
                 $data->product_description=$request->product_description;
                 $data->product_weight=$request->product_weight;
                 $data->receiver_address=$request->receiver_address;
@@ -60,7 +62,7 @@ class ShipmentController extends Controller
                     return redirect()->back()->withInput()->with('error','Please try again');
                 
             }catch(Exception $e){
-                // dd($e);
+                dd($e);
                 return redirect()->back()->withInput()->with('error','Please try again');
             }
         }
@@ -81,8 +83,9 @@ class ShipmentController extends Controller
     public function edit($id)
     {
         $shipment=Shipment::get();
+        $city=City::get();
         $shipment=Shipment::findOrFail(encryptor('decrypt',$id));
-        return view('user.shipment.edit',compact('shipment'));
+        return view('user.shipment.edit',compact('shipment','city'));
     }
 
     /**
@@ -92,6 +95,7 @@ class ShipmentController extends Controller
     {
         {
             try{
+                
                 $data=Shipment::findOrFail(encryptor('decrypt',$id));
                 $data->from_city=$request->from_city;
                 $data->to_city=$request->to_city;

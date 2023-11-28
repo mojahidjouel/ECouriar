@@ -14,5 +14,7 @@ class city extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-   
+    public function shipment(){
+        return $this->hasMany(Shipment::class);
+    }
 }
