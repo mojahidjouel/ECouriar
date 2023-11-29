@@ -53,13 +53,13 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="{{asset('public/img/Mojahid.jpg')}}" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="{{asset('public/uploads/adminuser/'.request()->session()->get('image'))}}" alt="" style="width: 50px; height: 50px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
-                    <div class="ms-3">
+                    <!-- <div class="ms-3">
                         <h6 class="mb-0">Mojahid</h6>
                         <span>Admin</span>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="{{route('dashboard')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -227,7 +227,7 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="{{asset('public/img/Mojahid.jpg')}}" alt="" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src="{{asset('public/uploads/adminuser/'.request()->session()->get('image'))}}" alt="" style="width: 50px; height: 50px;">
                             <span class="d-none d-lg-inline-flex">Mojahid</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
