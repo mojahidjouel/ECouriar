@@ -52,7 +52,7 @@ class PriceController extends Controller
                 return redirect()->back()->withInput()->with('error','Please try again');
             
             }catch(Exception $e){
-            // dd($e);
+             //dd($e);
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }
@@ -95,7 +95,7 @@ class PriceController extends Controller
                 return redirect()->back()->withInput()->with('error','Please try again');
             
             }catch(Exception $e){
-            // dd($e);
+             // dd($e);
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }

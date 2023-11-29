@@ -38,14 +38,13 @@
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="{{url('/')}}">Home</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="{{route('userdashboard')}}">Dashboard</a></li>
-              <li class="nav-item px-2"><a class="nav-link" href="{{route('shipment.create')}}">Couriar Order</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{route('order.index')}}">Couriar Order List</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="{{route('order.create')}}">Couriar Order</a></li>
             </ul>
             <div class="dropdown d-none d-lg-block">
-            </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us
-            </a>
-              <a class="btn btn-primary mx-2" href="{{route('user.LogOut')}}">
-                Log Out
-              </a>
+            </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us </a>
+            <a href="{{route('user.login')}}" class="btn btn-primary mx-2">User Login</a>
+            <a class="btn btn-primary mx-2" href="{{route('user.LogOut')}}">Log Out </a>
           </div>
         </div>
       </nav>

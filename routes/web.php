@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\BranchController as branches;
 use App\Http\Controllers\Backend\GeneralsettingController as general_settings;
 use App\Http\Controllers\Backend\PriceController as prices;
 use App\Http\Controllers\Backend\CityController as cities;
+use App\Http\Controllers\Backend\ShipmentController as shipment;
 
 /* user panel */
 use App\Http\Controllers\User\AuthController as userauth;
@@ -47,14 +48,12 @@ Route::get('user/logout', [userauth::class,'singOut'])->name('user.LogOut');
 
 Route::middleware(['checkuserauth'])->prefix('user')->group(function(){
     Route::get('dashboard', [userdashboard::class,'index'])->name('userdashboard');
-    Route::resource('shipment', shipments::class);
+    Route::resource('order', shipments::class);
 });
 
 
 Route::middleware(['checkauth'])->group(function(){
     Route::get('dashboard', [dashboard::class,'index'])->name('dashboard');
-
-    Route::resource('/shipment', shipments::class);
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function(){
@@ -70,6 +69,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('/general_setting', general_settings::class);
     Route::resource('/price', prices::class);
     Route::resource('/city', cities::class);
+    Route::resource('shipment', shipment::class);
 });
 
 Route::get('/', function () {

@@ -1,24 +1,28 @@
 @extends('backend.layout.app')
 
-@section('pageTitle',trans('Update Asset'))
-@section('pageSubTitle',trans('Update'))
+@section('title',trans('Create Shipment'))
 
 @section('content')
-<div class="col-12">
-<form class="row g-3 needs-validation" method="post" enctype="multipart/form-data" action="{{route('shipment.update',encryptor('encrypt',$shipment->id))}}" novalidate>
+
+<div class="row">
+<form class="row g-6 needs-validation" method="post" enctype="multipart/form-data" action="{{route('shipment.update',encryptor('encrypt',$shipment->id)) }}" novalidate>
   @csrf
   @method('PATCH')
-  
-  <!-- <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$shipment->id)}}"> -->
-  
-  <div class="row">
+<div class="row">
 
   <div class="col-md-6 col-12 position-relative">
     <label for="from_city" class="form-label">From City</label>
-    <input type="text" class="form-control" id="from_city" value="{{ old('from_city',$shipment->from_city)}}" name="from_city">
-    @if($errors->has('from_city'))
+    <select class="form-control" name="from_city" id="from_city">
+      <option value="">Select From City</option>
+      @forelse($city as $r)
+          <option value="{{$r->id}}" {{ old('from_city',$shipment->from_city)==$r->id?"selected":""}}> {{ $r->name}}</option>
+      @empty
+          <option value="">No From City</option>
+      @endforelse
+      </select>
+      @if($errors->has('from_city'))
       <span class="text-danger"> {{ $errors->first('from_city') }}</span>
-    @endif
+      @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
@@ -28,7 +32,17 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="to_city" class="form-label">To City</label>
-    <input type="text" class="form-control" id="to_city" value="{{ old('to_city',$shipment->to_city)}}" name="to_city">
+    <select class="form-control" name="to_city" id="to_city">
+        <option value="">Select To City</option>
+        @forelse($city as $r)
+            <option value="{{$r->id}}" {{ old('to_city',$shipment->to_city)==$r->id?"selected":""}}> {{$r->name}}</option>
+        @empty
+            <option value="">No Role found</option>
+        @endforelse
+        </select>
+        @if($errors->has('to_city'))
+        <span class="text-danger"> {{$errors->first('to_city')}}</span>
+        @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
@@ -86,7 +100,7 @@
   <div class="col-12 d-flex justify-content-start">
       <button type="submit" class="btn btn-info ms-1 mt-1">Save</button>
   </div>
-</div>
+  </div>
 </form>
 </div>
 @endsection

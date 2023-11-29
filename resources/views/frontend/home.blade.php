@@ -49,8 +49,9 @@
               </div>
             </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us
             </a>
+            <a href="{{route('user.register')}}" class="btn btn-primary mx-2">User Resistration</a>
               <a class="btn btn-primary mx-2" href="{{route('user.login')}}">
-              Sign in
+              User Signin
               </a>
               <!-- <a class="btn btn-danger mx-2" href="{{route('register')}}">
               Register

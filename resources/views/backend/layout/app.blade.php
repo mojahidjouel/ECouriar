@@ -36,6 +36,7 @@
 <body>
 
     <div class="container-fluid position-relative d-flex p-0">
+
         <!-- Spinner Start 
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -43,7 +44,6 @@
             </div>
         </div>
          Spinner End -->
-
 
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
@@ -67,10 +67,10 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i>Users</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('adminuser.index')}}" class="dropdown-item">User List</a>
-                            <a href="{{route('adminuser.create')}}" class="dropdown-item">User Create</a>
+                            <a href="{{route('adminuser.create')}}" class="dropdown-item">User Add</a>
 
                             <a href="{{route('role.index')}}" class="dropdown-item">Role List</a>
-                            <a href="{{route('role.create')}}" class="dropdown-item">Role Create</a>
+                            <a href="{{route('role.create')}}" class="dropdown-item">Role Add</a>
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i>Assets</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('asset.index')}}" class="dropdown-item">Asset List</a>
-                            <a href="{{route('asset.create')}}" class="dropdown-item">Asset Create</a>
+                            <a href="{{route('asset.create')}}" class="dropdown-item">Asset Add</a>
                         </div>
                     </div>
 
@@ -86,8 +86,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Company</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('company.index')}}" class="dropdown-item">Company List</a>
-                            <a href="{{route('company.create')}}" class="dropdown-item">Company Create</a>
-                            <a href="" class="dropdown-item">Other Company</a>
+                            <a href="{{route('company.create')}}" class="dropdown-item">Company Add</a>
                         </div>
                     </div>
 
@@ -95,8 +94,15 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Branch</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('branch.index')}}" class="dropdown-item">Branch List</a>
-                            <a href="{{route('branch.create')}}" class="dropdown-item">Branch Create</a>
-                            <a href="" class="dropdown-item">Other Branch</a>
+                            <a href="{{route('branch.create')}}" class="dropdown-item">Branch Add</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Shipment</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('shipment.index')}}" class="dropdown-item">Shipment List</a>
+                            <a href="{{route('shipment.create')}}" class="dropdown-item">Shipment Edit</a>
                         </div>
                     </div>
 
@@ -104,8 +110,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>City</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('city.index')}}" class="dropdown-item">City List</a>
-                            <a href="{{route('city.create')}}" class="dropdown-item">City Create</a>
-                            <a href="" class="dropdown-item">Other City</a>
+                            <a href="{{route('city.create')}}" class="dropdown-item">City Add</a>
                         </div>
                     </div>
 
@@ -113,31 +118,29 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Price</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('price.index')}}" class="dropdown-item">Price List</a>
-                            <a href="{{route('price.create')}}" class="dropdown-item">Price Create</a>
-                            <a href="" class="dropdown-item">Other Price</a>
+                            <a href="{{route('price.create')}}" class="dropdown-item">Price Add</a>
                         </div>
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>General_Setting</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>General Setting</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('general_setting.index')}}" class="dropdown-item">General_Setting_List</a>
-                            <a href="{{route('general_setting.create')}}" class="dropdown-item">General_Setting_Create</a>
-                            <a href="" class="dropdown-item">Other General_Setting</a>
+                            <a href="{{route('general_setting.index')}}" class="dropdown-item">General Setting List</a>
+                            <a href="{{route('general_setting.create')}}" class="dropdown-item">General Setting Add</a>
                         </div>
                     </div>
 
-                    <a href="" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <!-- <a href="" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                    <a href="" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('login')}}" class="dropdown-item">Sign In</a>
                             <a href="{{route('register')}}" class="dropdown-item">Sign Up</a>
                             <a href="#" class="dropdown-item">404 Error</a>
-                            <a href="#" class="dropdown-item">Blank Page</a>
+                            <!-- <a href="#" class="dropdown-item">Blank Page</a> -->
                         </div>
                     </div>
                 </div>

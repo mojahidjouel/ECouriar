@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Shipment;
+use App\Models\City;
+use App\Models\Backend\AdminUser;
 
 
 use Illuminate\Support\Facades\Hash;
 use Exception;
 use File;
 use Toastr;
-
 
 class ShipmentController extends Controller
 {
@@ -20,8 +21,8 @@ class ShipmentController extends Controller
      */
     public function index()
     {
-        $data=Shipment::paginate(5);
-        return view('shipment.index',compact('data'));
+        $data=Shipment::paginate(10);
+        return view('backend.shipment.index',compact('data'));
     }
 
     /**
@@ -30,7 +31,8 @@ class ShipmentController extends Controller
     public function create()
     {
         $shipment=Shipment::get();
-        return view('shipment.create',compact('shipment'));
+        $city=City::get();
+        return view('backend.shipment.create',compact('shipment','city'));
     }
 
     /**
@@ -42,8 +44,8 @@ class ShipmentController extends Controller
             try{
                 $data=new Shipment();
                 $data->from_city=$request->from_city;
-                $data->to_city=$request->to_city;
                 $data->product_name=$request->product_name;
+                $data->to_city=$request->to_city;
                 $data->product_description=$request->product_description;
                 $data->product_weight=$request->product_weight;
                 $data->receiver_address=$request->receiver_address;
@@ -61,7 +63,7 @@ class ShipmentController extends Controller
                     return redirect()->back()->withInput()->with('error','Please try again');
                 
             }catch(Exception $e){
-                // dd($e);
+                //dd($e);
                 return redirect()->back()->withInput()->with('error','Please try again');
             }
         }
@@ -72,7 +74,7 @@ class ShipmentController extends Controller
      */
     public function show(shipment $shipment)
     {
-        return view('shipment.show', compact('shipment'));
+        return view('backend.shipment.show', compact('shipment'));
         
     }
 
@@ -82,8 +84,9 @@ class ShipmentController extends Controller
     public function edit($id)
     {
         $shipment=Shipment::get();
+        $city=City::get();
         $shipment=Shipment::findOrFail(encryptor('decrypt',$id));
-        return view('shipment.edit',compact('shipment'));
+        return view('backend.shipment.edit',compact('shipment','city'));
     }
 
     /**
@@ -92,7 +95,7 @@ class ShipmentController extends Controller
     public function update(Request $request, $id)
     {
         {
-            try{
+            try{  
                 $data=Shipment::findOrFail(encryptor('decrypt',$id));
                 $data->from_city=$request->from_city;
                 $data->to_city=$request->to_city;
@@ -107,7 +110,7 @@ class ShipmentController extends Controller
                 $data->unit_price=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
-    
+                
                 if($data->save()){
                     Toastr::success('Successfully updated');
                     return redirect()->route('shipment.index');
@@ -125,16 +128,10 @@ class ShipmentController extends Controller
      */
     public function destroy($id)
     {
-        $data= Shipment::findOrFail(encryptor('decrypt',$id));
-        $image_path=public_path('uploads/shipment/').$data->image;
-        
-        if($data->delete()){
-            if(File::exists($image_path)) 
-                File::delete($image_path);
-            
+        $data=Shipment::findOrFail(encryptor('decrypt',$id));
+        if($data->delete()){   
             Toastr::warning('Deleted Permanently!');
             return redirect()->back();
         }
-        
     }
 }

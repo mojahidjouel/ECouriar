@@ -1,10 +1,10 @@
 @extends('user.layout.app')
-@section('title',trans('Shipment List'))
+@section('title',trans('Order List'))
 
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-1 d-flex justify-content-start btn btn-primary" href="{{route('shipment.create')}}"><i class="fa fa-plus"></i></a>
+  <a class="fs-5 d-flex justify-content-start btn btn-primary" href="{{route('order.create')}}"><i class="fa fa-plus"></i></a>
 </div>
 <table class="table table-hover table-striped">
   <thead>
@@ -42,14 +42,13 @@
         <td>{{$p->unit_price}}</td>
         <td>{{$p->shipping_cost}}</td>
         <td>{{$p->total_cost}}</td>
+       
+ <!-- @php print_r($errors->all()) @endphp  -->
+
 
         <td class="white-space-nowrap">
-        <a href="{{route('shipment.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit"></i></a>
-        <a href="{{route('shipment.show', $p->id)}}"><i class="bi bi-eye btn btn-primary"></i></a>
-        <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
-        <form id="form{{$p->id}}" action="{{route('shipment.destroy',encryptor('encrypt',$p->id))}}" method="post">
-        @csrf
-        @method('delete')
+        <a class="text-dark" href="{{route('order.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit"></i>Edit </a>
+        <a class="text-dark" href="{{route('order.show', $p->id)}}">View</a>
         </form>
         </td>
     </tr>

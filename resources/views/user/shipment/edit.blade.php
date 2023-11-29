@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="row">
-<form class="row g-6 needs-validation" method="post" enctype="multipart/form-data" action="{{route('shipment.update',encryptor('encrypt',$shipment->id)) }}" novalidate>
+<form class="row g-6 needs-validation" method="post" enctype="multipart/form-data" action="{{route('order.update',encryptor('encrypt',$shipment->id)) }}" novalidate>
   @csrf
   @method('PATCH')
 <div class="row">

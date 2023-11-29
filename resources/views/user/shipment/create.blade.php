@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="row">
-<form class="row g-6 needs-validation" method="post" enctype="multipart/form-data" action="{{route('shipment.store')}}" novalidate>
+<form class="row g-6 needs-validation" method="post" enctype="multipart/form-data" action="{{route('order.store')}}" novalidate>
   @csrf
 <div class="row">
 

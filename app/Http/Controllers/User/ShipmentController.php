@@ -20,7 +20,7 @@ class ShipmentController extends Controller
      */
     public function index()
     {
-        $data=Shipment::paginate(5);
+        $data=Shipment::paginate(10);
         return view('user.shipment.index',compact('data'));
     }
 
@@ -57,12 +57,12 @@ class ShipmentController extends Controller
                 $data->total_cost=$request->total_cost;
     
                 if($data->save())
-                    return redirect()->route('shipment.index')->with('success','Successfully saved');
+                    return redirect()->route('order.index')->with('success','Successfully saved');
                 else
                     return redirect()->back()->withInput()->with('error','Please try again');
                 
             }catch(Exception $e){
-                dd($e);
+                //dd($e);
                 return redirect()->back()->withInput()->with('error','Please try again');
             }
         }
@@ -94,8 +94,7 @@ class ShipmentController extends Controller
     public function update(Request $request, $id)
     {
         {
-            try{
-                
+            try{  
                 $data=Shipment::findOrFail(encryptor('decrypt',$id));
                 $data->from_city=$request->from_city;
                 $data->to_city=$request->to_city;
@@ -110,10 +109,10 @@ class ShipmentController extends Controller
                 $data->unit_price=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
-    
+                
                 if($data->save()){
                     Toastr::success('Successfully updated');
-                    return redirect()->route('shipment.index');
+                    return redirect()->route('order.index');
                 }
             }catch(Exception $e){
                 Toastr::error('Please try again');
