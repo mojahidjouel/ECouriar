@@ -65,7 +65,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary"> Save</button>
+                        <button type="submit" class="btn btn-info"> Save</button>
                     </div>
                 </div>
             </form>

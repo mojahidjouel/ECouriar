@@ -10,7 +10,7 @@
 <div class="row">
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="from_city" class="form-label">From City</label>
+    <label for="from_city" class="form-label mb-1">From City</label>
     <select class="form-control" name="from_city" id="from_city">
       <option value="">Select From City</option>
       @forelse($city as $r)
@@ -25,12 +25,12 @@
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="sender_address" class="form-label">Sender Address</label>
+    <label for="sender_address" class="form-label mb-1">Sender Address</label>
     <input type="text" class="form-control" id="sender_address" value="{{old('sender_address')}}" name="sender_address">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="to_city" class="form-label">To City</label>
+    <label for="to_city" class="form-label mb-1">To City</label>
     <select class="form-control" name="to_city" id="to_city">
         <option value="">Select To City</option>
         @forelse($city as $r)
@@ -45,52 +45,52 @@
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="receiver_address" class="form-label">Receiver Address</label>
+    <label for="receiver_address" class="form-label mb-1">Receiver Address</label>
     <input type="text" class="form-control" id="receiver_address" value="{{old('receiver_address')}}" name="receiver_address">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="contact_name" class="form-label">Contact Name</label>
+    <label for="contact_name" class="form-label mb-1">Contact Name</label>
     <input type="text" class="form-control" id="contact_name" value="{{old('contact_name')}}" name="contact_name">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="contact_number" class="form-label">Contact Number</label>
+    <label for="contact_number" class="form-label mb-1">Contact Number</label>
     <input type="text" class="form-control" id="contact_number" value="{{old('contact_number')}}" name="contact_number">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="product_name" class="form-label">Product Name</label>
+    <label for="product_name" class="form-label mb-1">Product Name</label>
     <input type="text" class="form-control" id="product_name" value="{{old('product_name')}}" name="product_name">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="product_description" class="form-label">Product Description</label>
+    <label for="product_description" class="form-label mb-1">Product Description</label>
     <input type="text" class="form-control" id="product_description" value="{{old('product_description')}}" name="product_description">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="product_weight" class="form-label">Product Weight</label>
+    <label for="product_weight" class="form-label mb-1">Product Weight</label>
     <input type="text" class="form-control" id="product_weight" value="{{old('product_weight')}}" name="product_weight">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="base_price" class="form-label">Base Price</label>
+    <label for="base_price" class="form-label mb-1">Base Price</label>
     <input type="text" class="form-control" id="base_price" value="{{old('base_price')}}" name="base_price">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="unit_price" class="form-label">Unit Price</label>
+    <label for="unit_price" class="form-label mb-1">Unit Price</label>
     <input type="text" class="form-control" id="unit_price" value="{{old('unit_price')}}" name="unit_price">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="shipping_cost" class="form-label">Cargo Cost</label>
+    <label for="shipping_cost" class="form-label mb-1">Cargo Cost</label>
     <input type="text" class="form-control" id="shipping_cost" value="{{old('shipping_cost')}}" name="shipping_cost">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="total_cost" class="form-label">Total Cost</label>
+    <label for="total_cost" class="form-label mb-1">Total Cost</label>
     <input type="text" class="form-control" id="total_cost" value="{{old('total_cost')}}" name="total_cost">
   </div>
 

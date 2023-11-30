@@ -39,7 +39,7 @@ class PermissionController extends Controller
             return redirect()->route('role.index');
         }catch(Exception $e){
             $this->notice::error('Please try again');
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput();
         }
     }

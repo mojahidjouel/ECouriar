@@ -62,13 +62,12 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::get('permission/{role}', [permission::class,'index'])->name('permission.list');
     Route::post('permission/{role}', [permission::class,'save'])->name('permission.save');
     
-    
-    Route::resource('/asset', assets::class);
-    Route::resource('/company', companies::class);
-    Route::resource('/branch', branches::class);
-    Route::resource('/general_setting', general_settings::class);
-    Route::resource('/price', prices::class);
-    Route::resource('/city', cities::class);
+    Route::resource('asset', assets::class);
+    Route::resource('company', companies::class);
+    Route::resource('branch', branches::class);
+    Route::resource('general_setting', general_settings::class);
+    Route::resource('price', prices::class);
+    Route::resource('city', cities::class);
     Route::resource('shipment', shipment::class);
 });
 
