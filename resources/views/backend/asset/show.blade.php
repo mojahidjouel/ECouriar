@@ -8,40 +8,41 @@
     <div class="col-12">
       <div class="cc p-5">
         <div class="card w-75 mx-auto text-center">
-          <div class="card-body bg-info">
-            <h1 class="card-title">{{$asset->name}}</h1>
+          <div class="card-body bg-white">
+            <h6 class="text-danger">Name: </h6>
+            <h4 class="card-title text-info">{{$asset->name}}</h6>
 
-            <h4>Registration Number: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$asset->registration_number}}</p>
+            <h6 class="text-danger">Registration Number: </h6>
+            <h4 class="card-subtitle mb-2 text-info">
+            {{$asset->registration_number}}</h6>
 
-            <h4>Driver Id: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$asset->driver_id}}</p>
+            <h6 class="text-danger">Driver Id: </h6>
+            <h4 class="card-subtitle mb-2 text-info">
+            {{$asset->driver_id}}</h6>
 
-            <h4>Registration Card: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$asset->registration_card}}</p>
+            <h6 class="text-danger">Registration Card: </h6>
+            <h4 class="card-subtitle mb-2 text-info">
+            {{$asset->registration_card}}</h6>
 
-            <h4>GML: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$asset->gml}}</p>
+            <h6 class="text-danger">GML: </h6>
+            <h4 class="card-subtitle mb-2 text-info">
+            {{$asset->gml}}</h6>
 
-            <h4>CML: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$asset->cml}}</p>
+            <h6 class="text-danger">CML: </h6>
+            <h4 class="card-subtitle mb-2 text-info">
+            {{$asset->cml}}</h6>
 
-            <h4>HML: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$asset->hml}}</p>
+            <h6 class="text-danger">HML: </h6>
+            <h4 class="card-subtitle mb-2 text-info">
+            {{$asset->hml}}</h6>
 
-            <!-- <h4>Logo: </h4>
+            <!-- <h6 class="text-danger">Logo: </h6>
             <img src="{{asset('/uploads/company/'.$asset->logo)}}" width="100" alt=""> -->
  
          </div>
         </div>
         <div class="p-2 w-25 mx-auto">
-          <a class="btn btn-primary form-control" href="{{route('asset.index')}}"><b>View All Asset</b></a>
+          <a class="btn btn-danger form-control" href="{{route('asset.index')}}"><b>View All Asset</b></a>
         </div>
       </div>
 

@@ -9,19 +9,19 @@
 
       <div class="cc p-5">
         <div class="card w-75 mx-auto text-center">
-          <div class="card-body">
-            <h4>Name: </h4>
-            <p class="card-title">
-            {{$city->name}}</p>
+          <div class="card-body bg-white">
+            <h6 class="text-success">Name: </h6>
+            <h4 class="card-title text-danger">
+            {{$city->name}}</h4>
 
-            <h4>Code: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$city->code}}</p>           
+            <h6 class="text-success">Code: </h6>
+            <h4 class="card-subtitle mb-2 text-danger">
+            {{$city->code}}</h4>           
  
          </div>
         </div>
         <div class="p-2 w-25 mx-auto">
-          <a class="btn btn-primary form-control" href="{{route('city.index')}}"><b>View All City</b></a>
+          <a class="btn btn-success form-control" href="{{route('city.index')}}"><b>View All City</b></a>
         </div>
       </div>
 

@@ -35,13 +35,13 @@
         <div class="container"><a class="navbar-brand" href=""><img src="{{asset('public/assets/img/gallery/logo.png')}}" height="45" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+            <!-- <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="{{url('/')}}">Home</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="{{route('userdashboard')}}">Dashboard</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="{{route('order.index')}}">Couriar Order List</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="{{route('order.create')}}">Couriar Order</a></li>
-            </ul>
-            <div class="dropdown d-none d-lg-block">
+            </ul> -->
+            <div class="dropdown d-none d-lg-block ms-auto">
             </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us </a>
             <a href="{{route('user.login')}}" class="btn btn-primary mx-2">User Login</a>
             <a class="btn btn-primary mx-2" href="{{route('user.LogOut')}}">Log Out </a>

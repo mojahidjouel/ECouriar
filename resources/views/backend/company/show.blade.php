@@ -8,37 +8,37 @@
     <div class="col-12">
       <div class="cc p-5">
         <div class="card w-75 mx-auto text-center">
-          <div class="card-body bg-info">
-            <h4>Company Name</h4>
-            <h4 class="card-title">{{$company->company_name}}</h4>
+          <div class="card-body bg-white">
+            <h6 class="text-danger">Company Name</h6>
+            <h4 class="card-title text-info">{{$company->company_name}}</h6>
 
-            <h4>contact Number:</h4>
-            <p class="card-subtitle mb-2 text-muted">{{$company->contact_number}}</p>
+            <h6 class="text-danger">contact Number:</h6>
+            <h4 class="card-title text-info">{{$company->contact_number}}</h6>
 
-            <h4>Contact Person:</h4>
-            <p class="card-subtitle mb-2 text-muted">{{$company->company_email}}</p>
+            <h6 class="text-danger">Contact Person:</h6>
+            <h4 class="card-title text-info">{{$company->company_email}}</h6>
 
-            <h4>Company Address:</h4>           
-            <p class="card-subtitle mb-2 text-muted">{{$company->company_address}}</p>
+            <h6 class="text-danger">Company Address:</h6>           
+            <h4 class="card-title text-info">{{$company->company_address}}</h6>
 
-            <h4>Company City:</h4>           
-            <p class="card-subtitle mb-2 text-muted">{{$company->company_city}}</p>
+            <h6 class="text-danger">Company City:</h6>           
+            <h4 class="card-title text-info">{{$company->company_city}}</h6>
 
-            <h4>Company Division:</h4>           
-            <p class="card-subtitle mb-2 text-muted">{{$company->company_state}}</p>
+            <h6 class="text-danger">Company Division:</h6>           
+            <h4 class="card-title text-info">{{$company->company_state}}</h6>
 
-            <h4>Company Code: </h4>           
-            <p class="card-subtitle mb-2 text-muted">{{$company->company_pin}}</p>
+            <h6 class="text-danger">Company Code: </h6>           
+            <h4 class="card-title text-info">{{$company->company_pin}}</h6>
 
-            <h4>Company Country:</h4>           
-            <p class="card-subtitle mb-2 text-muted">{{$company->company_country}}</p>
+            <h6 class="text-danger">Company Country:</h6>           
+            <h4 class="card-title text-info">{{$company->company_country}}</h6>
 
-            <h4>Logo Image: </h4>
+            <h6 class="text-danger">Logo Image: </h6>
             <img src="{{asset('public/uploads/company/'.$company->logo_image)}}" width="100" alt="">
          </div>
         </div>
         <div class="p-2 w-20 mx-auto">
-          <a class="btn btn-primary form-control" href="{{route('company.index')}}"><b>View All Company</b></a>
+          <a class="btn btn-danger form-control" href="{{route('company.index')}}"><b>View All Company</b></a>
         </div>
       </div>
 
