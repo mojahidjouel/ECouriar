@@ -32,12 +32,14 @@
 
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href=""><img src="{{asset('public/assets/img/gallery/logo2.jpg')}}" height="45" alt="logo" /></a>
+        <div class="container"><a class="navbar-brand" href=""><img src="{{asset('public/assets/img/gallery/logo2.jpg')}}" height="30" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#home">Home</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="#services">Our Services</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#services">About Us</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#services">Location</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="#findUs">Find Us</a></li>
             </ul>
             <div class="dropdown d-none d-lg-block">
@@ -97,9 +99,9 @@
               <div class="card h-100 px-lg-5 card-span">
                 <div class="card-body d-flex flex-column justify-content-around">
                   <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-1.svg')}}" alt="..." />
-                    <h5 class="my-4">Business Services</h5>
+                    <h5 class="my-4">Person 2 Person Delivery(P2P)</h5>
                   </div>
-                  <p>Offering home delivery around the city, where your products will be at your doorstep within 48-72 hours.</p>
+                  <p>Moving life and Emotions through Individual Delivery Services from eCourier.</p>
                   <ul class="list-unstyled">
                     <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Corporate goods
                     </li>
@@ -120,9 +122,78 @@
               <div class="card h-100 px-lg-5 card-span">
                 <div class="card-body d-flex flex-column justify-content-around">
                   <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-2.svg')}}" alt="..." />
-                    <h5 class="my-4">Statewide Services</h5>
+                    <h5 class="my-4">Corporate & SME Delivery</h5>
                   </div>
-                  <p>Offering home delivery around the city, where your products will be at your doorstep within 48-72 hours.</p>
+                  <p>Moving Businesses and emotions through Corporate Delivery Services from eCourier.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
+                    </li>
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Encrypted Connection
+                    </li>
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Yes Traffic Logs
+                    </li>
+                  </ul>
+                  <div class="text-center my-5">
+                    <div class="d-grid">
+                      <button class="btn btn-danger hover-top btn-glow border-0" type="submit">Learn more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 pt-4 px-md-2 px-lg-3">
+              <div class="card h-100 px-lg-5 card-span">
+                <div class="card-body d-flex flex-column justify-content-around">
+                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-2.svg')}}" alt="..." />
+                    <h5 class="my-4">Parcel Pick & Drop Service</h5>
+                  </div>
+                  <p>Delivery services that you can rely on.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
+                    </li>
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Encrypted Connection
+                    </li>
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Yes Traffic Logs
+                    </li>
+                  </ul>
+                  <div class="text-center my-5">
+                    <div class="d-grid">
+                      <button class="btn btn-danger hover-top btn-glow border-0" type="submit">Learn more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 pt-4 px-md-2 px-lg-3">
+              <div class="card h-100 px-lg-5 card-span">
+                <div class="card-body d-flex flex-column justify-content-around">
+                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-2.svg')}}" alt="..." />
+                    <h5 class="my-4">Air Parcel</h5>
+                  </div>
+                  <p>Moving emotions with Speed through Air Parcel Services from eCourier.</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
+                    </li>
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Encrypted Connection
+                    </li>
+                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Yes Traffic Logs
+                    </li>
+                  </ul>
+                  <div class="text-center my-5">
+                    <div class="d-grid">
+                      <button class="btn btn-danger hover-top btn-glow border-0" type="submit">Learn more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 pt-4 px-md-2 px-lg-3">
+              <div class="card h-100 px-lg-5 card-span">
+                <div class="card-body d-flex flex-column justify-content-around">
+                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-2.svg')}}" alt="..." />
+                    <h5 class="my-4">Merchant Delivery Service</h5>
+                  </div>
+                  <p>Moving entrepreneurship and emotions through Merchant Delivery Services from eCourier.</p>
                   <ul class="list-unstyled">
                     <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
                     </li>
@@ -143,9 +214,9 @@
               <div class="card h-100 px-lg-5 card-span">
                 <div class="card-body d-flex flex-column justify-content-around">
                   <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-3.svg')}}" alt="..." />
-                    <h5 class="my-4">Personal Services</h5>
+                    <h5 class="my-4">bKash on Delivery (BOD)</h5>
                   </div>
-                  <p>You can trust us to safely deliver your most sensitive documents to the specific area in a short time.</p>
+                  <p>Experience zero contact delivery with utmost convenience.</p>
                   <ul class="list-unstyled">
                     <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
                     </li>

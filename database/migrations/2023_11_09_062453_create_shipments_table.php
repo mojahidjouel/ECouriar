@@ -24,9 +24,14 @@ return new class extends Migration
             $table->string('sender_address')->nullable();
             $table->string('contact_name')->nullable();
             $table->string('contact_number')->nullable();
-            $table->decimal('base_price')->nullable();
-            $table->decimal('unit_price')->nullable();;
-            $table->decimal('shipping_cost')->nullable();
+            
+            $table->unsignedBigInteger('base_price')->index();
+            $table->foreign('base_price')->references('id')->on('prices')->onDelete('cascade');
+            $table->unsignedBigInteger('unit_size')->index();
+            $table->foreign('unit_size')->references('id')->on('prices')->onDelete('cascade');
+            $table->unsignedBigInteger('shipping_cost')->index();
+            $table->foreign('shipping_cost')->references('id')->on('prices')->onDelete('cascade');
+            
             $table->decimal('total_cost')->nullable();
             
             $table->timestamps();

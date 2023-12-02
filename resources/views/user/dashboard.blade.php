@@ -9,9 +9,9 @@
   width: 160px;
   position: fixed;
   z-index: 1;
-  top: 0;
+  top: 40px;
   left: 0;
-  background-color: rgb(238, 130, 238);
+  background-color: #fff5e3;
   overflow-x: hidden;
   padding-top: 16px;
 }

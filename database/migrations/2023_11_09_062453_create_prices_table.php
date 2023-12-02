@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
-            $table->string('to_city')->nullable();
-            $table->string('from_city')->nullable();
-            $table->decimal('base_price')->nullable();
-            $table->decimal('unit_size')->nullable();
+            $table->unsignedBigInteger('to_city')->index();
+            $table->foreign('to_city')->references('id')->on('cities')->onDelete('cascade');
+            $table->unsignedBigInteger('from_city')->index();
+            $table->foreign('from_city')->references('id')->on('cities')->onDelete('cascade');
+            $table->double('base_price')->nullable();
+            $table->string('unit_size')->nullable();
             $table->decimal('unit_price')->nullable();
             
             $table->timestamps();

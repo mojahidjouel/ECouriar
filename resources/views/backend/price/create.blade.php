@@ -9,17 +9,34 @@
   @csrf
 <div class="row">
 
-<div class="col-md-6 col-12 position-relative">
+  <div class="col-md-6 col-12 position-relative">
     <label for="to_city" class="form-label">To City</label>
-    <input type="text" class="form-control" id="to_city" value="{{ old('to_city')}}" name="to_city">
-    @if($errors->has('to_city'))
-      <span class="text-danger"> {{$errors->first('to_city')}}</span>
-  @endif
+    <select class="form-control" name="to_city" id="to_city">
+        <option value="">Select To City</option>
+        @forelse($city as $r)
+            <option value="{{$r->id}}" {{ old('to_city')==$r->id?"selected":""}}> {{$r->name}}</option>
+        @empty
+            <option value="">No Role found</option>
+        @endforelse
+        </select>
+        @if($errors->has('to_city'))
+        <span class="text-danger"> {{$errors->first('to_city')}}</span>
+        @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="from_city" class="form-label">From City</label>
-    <input type="text" class="form-control" id="from_city" value="{{ old('from_city')}}" name="from_city">
+    <select class="form-control" name="from_city" id="from_city">
+      <option value="">Select From City</option>
+      @forelse($city as $r)
+          <option value="{{$r->id}}" {{ old('from_city')==$r->id?"selected":""}}> {{ $r->name}}</option>
+      @empty
+          <option value="">No From City</option>
+      @endforelse
+      </select>
+      @if($errors->has('from_city'))
+      <span class="text-danger"> {{ $errors->first('from_city') }}</span>
+      @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
@@ -29,7 +46,7 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="unit_size" class="form-label">Unit Size</label>
-    <input type="text" class="form-control" id="unit_size" value="{{ old('unit_size')}}" name="unit_size">
+    <input type="text" class="form-control" id="unit_price" value="{{ old('unit_price')}}" name="unit_size">
   </div>
 
   <div class="col-md-6 col-12 position-relative">

@@ -28,4 +28,14 @@ class shipment extends Model
     public function f_city(){
         return $this->belongsTo(city::class,'from_city','id');
     }
+
+    public function b_price(){
+        return $this->belongsTo(price::class,'b_price','id');
+    }
+    public function u_size(){
+        return $this->belongsTo(price::class,'u_size','id');
+    }
+    public function s_cost(){
+        return $this->belongsTo(price::class,'s_cost','id');
+    }
 }

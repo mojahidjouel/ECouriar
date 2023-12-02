@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-
+use App\Models\city;
 use App\Models\Price;
 use App\Models\Backend\AdminUser;
 use Illuminate\Support\Facades\Hash;
@@ -30,7 +30,8 @@ class PriceController extends Controller
     public function create()
     {
         $price=Price::get();
-        return view('backend.price.create',compact('price'));
+        $city=City::get();
+        return view('backend.price.create',compact('price','city'));
     }
 
     /**
@@ -52,7 +53,7 @@ class PriceController extends Controller
                 return redirect()->back()->withInput()->with('error','Please try again');
             
             }catch(Exception $e){
-             //dd($e);
+             dd($e);
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }
@@ -72,8 +73,9 @@ class PriceController extends Controller
     public function edit($id)
     {
         $price=Price::get();
+        $city=City::get();
         $price=Price::findOrFail(encryptor('decrypt',$id));
-        return view('backend.price.edit',compact('price'));
+        return view('backend.price.edit',compact('price','city'));
     }
 
     /**
@@ -95,7 +97,7 @@ class PriceController extends Controller
                 return redirect()->back()->withInput()->with('error','Please try again');
             
             }catch(Exception $e){
-             // dd($e);
+              dd($e);
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }
@@ -106,12 +108,7 @@ class PriceController extends Controller
     public function destroy($id)
     {
         $data=Price::findOrFail(encryptor('decrypt',$id));
-        $image_path=public_path('uploads/price/').$data->logo_image;
-        
-        if($data->delete()){
-            if(File::exists($image_path)) 
-                File::delete($image_path);
-            
+        if($data->delete()){   
             Toastr::warning('Deleted Permanently!');
             return redirect()->back();
         }

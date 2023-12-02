@@ -14,4 +14,15 @@ class price extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function t_city(){
+        return $this->belongsTo(city::class,'to_city','id');
+    }
+    public function f_city(){
+        return $this->belongsTo(city::class,'from_city','id');
+    }
+
+    public function shipment(){
+        return $this->hasMany(Shipment::class);
+    }
+
 }

@@ -37,10 +37,10 @@
         <td>{{$p->contact_number}}</td>
         <td>{{$p->product_name}}</td>
         <td>{{$p->product_description}}</td>
-        <td>{{$p->product_weight}}</td>      
-        <td>{{$p->base_price}}</td>
-        <td>{{$p->unit_price}}</td>
-        <td>{{$p->shipping_cost}}</td>
+        <td>{{$p->product_weight}}</td>
+        <td>{{$p->b_price?->name}}</td>      
+        <td>{{$p->u_size?->name}}</td>      
+        <td>{{$p->s_cost?->name}}</td>
         <td>{{$p->total_cost}}</td>
        
  <!-- @php print_r($errors->all()) @endphp  -->

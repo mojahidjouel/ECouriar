@@ -21,8 +21,8 @@
   <tbody>
   @forelse($data as $p)
   <th scope="row">{{ ++$loop->index }}</th>
-        <td>{{$p->to_city}}</td>
-        <td>{{$p->from_city}}</td>
+        <td>{{$p->t_city?->name}}</td>
+        <td>{{$p->f_city?->name}}</td>
         <td>{{$p->base_price}}</td>
         <td>{{$p->unit_size}}</td>
         <td>{{$p->unit_price}}</td>

@@ -40,7 +40,7 @@
                     </div>
                     
                     <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Login</button>
-                    <p class="text-center mb-0">Don't you have a account? <a href="{{route('user.register')}}">Sign In</a></p>
+                    <p class="text-center mb-0">Don't you have a account? <a href="{{route('user.register')}}" class="text-danger">Registration</a></p>
                 </div>
             </form>
             </div>

@@ -17,4 +17,8 @@ class city extends Model
     public function shipment(){
         return $this->hasMany(Shipment::class);
     }
+
+    public function price(){
+        return $this->hasMany(Price::class);
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Shipment;
 use App\Models\City;
 use App\Models\Backend\AdminUser;
+use App\Models\Price;
 
 
 use Illuminate\Support\Facades\Hash;
@@ -32,7 +33,8 @@ class ShipmentController extends Controller
     {
         $shipment=Shipment::get();
         $city=City::get();
-        return view('backend.shipment.create',compact('shipment','city'));
+        $price=Price::get();
+        return view('backend.shipment.create',compact('shipment','city','price'));
     }
 
     /**
@@ -53,7 +55,7 @@ class ShipmentController extends Controller
                 $data->contact_name=$request->contact_name;
                 $data->contact_number=$request->contact_number;
                 $data->base_price=$request->base_price;
-                $data->unit_price=$request->unit_price;
+                $data->unit_size=$request->unit_size;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
     
@@ -85,8 +87,9 @@ class ShipmentController extends Controller
     {
         $shipment=Shipment::get();
         $city=City::get();
+        $price=Price::get();
         $shipment=Shipment::findOrFail(encryptor('decrypt',$id));
-        return view('backend.shipment.edit',compact('shipment','city'));
+        return view('backend.shipment.edit',compact('shipment','city','price'));
     }
 
     /**
@@ -107,7 +110,7 @@ class ShipmentController extends Controller
                 $data->contact_name=$request->contact_name;
                 $data->contact_number=$request->contact_number;
                 $data->base_price=$request->base_price;
-                $data->unit_price=$request->unit_price;
+                $data->unit_size=$request->unit_size;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
                 

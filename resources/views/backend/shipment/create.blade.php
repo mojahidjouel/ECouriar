@@ -76,17 +76,47 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="base_price" class="form-label">Base Price</label>
-    <input type="text" class="form-control" id="base_price" value="{{old('base_price')}}" name="base_price">
+    <select class="form-control" name="base_price" id="base_price">
+        <option value="">Select Base Price</option>
+        @forelse($price as $r)
+            <option value="{{$r->id}}" {{ old('base_price')==$r->id?"selected":""}}> {{$r->name}}</option>
+        @empty
+            <option value="">No Base Price</option>
+        @endforelse
+        </select>
+        @if($errors->has('base_price'))
+        <span class="text-danger"> {{$errors->first('base_price')}}</span>
+        @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="unit_price" class="form-label">Unit Price</label>
-    <input type="text" class="form-control" id="unit_price" value="{{old('unit_price')}}" name="unit_price">
+    <label for="unit_size" class="form-label">Unit Size</label>
+    <select class="form-control" name="unit_size" id="unit_size">
+        <option value="">Select Unit Size</option>
+        @forelse($price as $r)
+            <option value="{{$r->id}}" {{ old('unit_size')==$r->id?"selected":""}}> {{$r->name}}</option>
+        @empty
+            <option value="">No Role found</option>
+        @endforelse
+        </select>
+        @if($errors->has('unit_size'))
+        <span class="text-danger"> {{$errors->first('unit_size')}}</span>
+        @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="shipping_cost" class="form-label">Cargo Cost</label>
-    <input type="text" class="form-control" id="shipping_cost" value="{{old('shipping_cost')}}" name="shipping_cost">
+    <select class="form-control" name="shipping_cost" id="shipping_cost">
+        <option value="">Select To City</option>
+        @forelse($price as $r)
+            <option value="{{$r->id}}" {{ old('shipping_cost')==$r->id?"selected":""}}> {{$r->name}}</option>
+        @empty
+            <option value="">No Cargo Cost</option>
+        @endforelse
+        </select>
+        @if($errors->has('shipping_cost'))
+        <span class="text-danger"> {{$errors->first('shipping_cost')}}</span>
+        @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
