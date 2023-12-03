@@ -49,8 +49,7 @@
                   <input class="form-control border-200" type="search" placeholder="Search" aria-label="Search" style="background:#FDF1DF;" />
                 </form>
               </div>
-            </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us
-            </a>
+            </div>
             <a href="{{route('user.register')}}" class="btn btn-primary mx-2">User Resistration</a>
               <a class="btn btn-primary mx-2" href="{{route('user.login')}}">
               User Signin

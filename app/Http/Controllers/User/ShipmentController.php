@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Shipment;
 use App\Models\City;
+use App\Models\price;
 
 
 use Illuminate\Support\Facades\Hash;
 use Exception;
 use File;
 use Toastr;
+use DB;
 
 class ShipmentController extends Controller
 {
@@ -33,6 +35,29 @@ class ShipmentController extends Controller
         $city=City::get();
         return view('user.shipment.create',compact('shipment','city'));
     }
+    public function order_price(Request $request)
+    {
+        $from=$request->from_city;
+        $to=$request->to_city;
+        $pw=$request->product_weight;
+        $price=price::where("to_city",$to)->where("from_city",$from)->get();
+        $base_price=$unit_price=$shipping_cost=$total_cost=0;
+        if($price){
+            foreach($price as $p){
+                $unit_size=explode('-',$p->unit_size);
+                if($unit_size[0] <= $pw and $unit_size[1] >= $pw){
+                    $base_price=$p->base_price;
+                    $unit_price=$p->unit_price;
+                    $shipping_cost=($pw * $p->unit_price);
+                    $total_cost=($base_price+$unit_price);
+                    //break;
+                }
+            }
+        }
+        print_r(json_encode(array('base_price'=>$base_price,
+        'unit_price'=>$unit_price,'shipping_cost'=>$shipping_cost,
+        'total_cost'=>$total_cost)));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -52,17 +77,17 @@ class ShipmentController extends Controller
                 $data->contact_name=$request->contact_name;
                 $data->contact_number=$request->contact_number;
                 $data->base_price=$request->base_price;
-                $data->unit_price=$request->unit_price;
+                $data->unit_size=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
-    
+                $data->customer_id=currentUserId();
                 if($data->save())
                     return redirect()->route('order.index')->with('success','Successfully saved');
                 else
                     return redirect()->back()->withInput()->with('error','Please try again');
                 
             }catch(Exception $e){
-                //dd($e);
+                dd($e);
                 return redirect()->back()->withInput()->with('error','Please try again');
             }
         }

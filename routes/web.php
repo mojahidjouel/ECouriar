@@ -49,6 +49,7 @@ Route::get('user/logout', [userauth::class,'singOut'])->name('user.LogOut');
 Route::middleware(['checkuserauth'])->prefix('user')->group(function(){
     Route::get('dashboard', [userdashboard::class,'index'])->name('userdashboard');
     Route::resource('order', shipments::class);
+    Route::get('order_price', [shipments::class,'order_price'])->name('order_price');
 });
 
 

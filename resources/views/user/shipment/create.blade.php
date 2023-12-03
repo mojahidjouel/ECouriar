@@ -8,10 +8,9 @@
 <form class="row g-6 needs-validation" method="post" enctype="multipart/form-data" action="{{route('order.store')}}" novalidate>
   @csrf
 <div class="row">
-
   <div class="col-md-6 col-12 position-relative">
     <label for="from_city" class="form-label mb-1">From City</label>
-    <select class="form-control" name="from_city" id="from_city">
+    <select class="form-control" onchange="check_price()" name="from_city" id="from_city">
       <option value="">Select From City</option>
       @forelse($city as $r)
           <option value="{{$r->id}}" {{ old('from_city')==$r->id?"selected":""}}> {{ $r->name}}</option>
@@ -31,7 +30,7 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="to_city" class="form-label mb-1">To City</label>
-    <select class="form-control" name="to_city" id="to_city">
+    <select class="form-control" onchange="check_price()" name="to_city" id="to_city">
         <option value="">Select To City</option>
         @forelse($city as $r)
             <option value="{{$r->id}}" {{ old('to_city')==$r->id?"selected":""}}> {{$r->name}}</option>
@@ -71,27 +70,27 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="product_weight" class="form-label mb-1">Product Weight</label>
-    <input type="text" class="form-control" id="product_weight" value="{{old('product_weight')}}" name="product_weight">
+    <input type="text" class="form-control" onkeyup="check_price()" id="product_weight" value="{{old('product_weight')}}" name="product_weight">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="base_price" class="form-label mb-1">Base Price</label>
-    <input type="text" class="form-control" id="base_price" value="{{old('base_price')}}" name="base_price">
+    <input type="text" readonly class="form-control" id="base_price" value="{{old('base_price')}}" name="base_price">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="unit_price" class="form-label mb-1">Unit Price</label>
-    <input type="text" class="form-control" id="unit_price" value="{{old('unit_price')}}" name="unit_price">
+    <input type="text" readonly class="form-control" id="unit_price" value="{{old('unit_price')}}" name="unit_price">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="shipping_cost" class="form-label mb-1">Cargo Cost</label>
-    <input type="text" class="form-control" id="shipping_cost" value="{{old('shipping_cost')}}" name="shipping_cost">
+    <input type="text" readonly class="form-control" id="shipping_cost" value="{{old('shipping_cost')}}" name="shipping_cost">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="total_cost" class="form-label mb-1">Total Cost</label>
-    <input type="text" class="form-control" id="total_cost" value="{{old('total_cost')}}" name="total_cost">
+    <input type="text" readonly class="form-control" id="total_cost" value="{{old('total_cost')}}" name="total_cost">
   </div>
 
 </div>
@@ -104,3 +103,29 @@
 </form>
 </div>
 @endsection
+
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  function check_price(){
+    var from_city=$('#from_city').val();
+    var to_city=$('#to_city').val();
+    var product_weight=$('#product_weight').val();
+    $.ajax({
+        autoFocus:true,
+        url: "{{route('order_price')}}",
+        method: 'GET',
+        dataType: 'json',
+        data: {from_city: from_city,to_city:to_city,product_weight:product_weight},
+        success: function(res){
+            $('#shipping_cost').val(res.shipping_cost);
+            $('#unit_price').val(res.unit_price);
+            $('#base_price').val(res.base_price);
+            $('#total_cost').val(res.total_cost);
+        },error: function(e){console.log("error "+e);}
+    });
+
+  }
+</script>
+
+@endpush

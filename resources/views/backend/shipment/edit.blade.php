@@ -77,14 +77,7 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="base_price" class="form-label">Base Price</label>
-    <select class="form-control" name="base_price" id="base_price">
-      <option value="">Select From City</option>
-      @forelse($price as $r)
-          <option value="{{$r->id}}" {{ old('base_price',$price->base_price)==$r->id?"selected":""}}> {{ $r->name}}</option>
-      @empty
-          <option value="">No Base Price</option>
-      @endforelse
-      </select>
+    <input type="text" class="form-control" id="base_price" value="{{ old('base_price',$shipment->base_price)}}" name="base_price">
       @if($errors->has('base_price'))
       <span class="text-danger"> {{ $errors->first('base_price') }}</span>
       @endif
@@ -92,14 +85,7 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="unit_size" class="form-label">Unit Size</label>
-    <select class="form-control" name="unit_size" id="unit_size">
-      <option value="">Select From City</option>
-      @forelse($price as $r)
-          <option value="{{$r->id}}" {{ old('unit_size',$price->unit_size)==$r->id?"selected":""}}> {{ $r->name}}</option>
-      @empty
-          <option value="">No Unit Size</option>
-      @endforelse
-      </select>
+    <input type="text" class="form-control" id="unit_size" value="{{ old('unit_size',$shipment->unit_size)}}" name="unit_size">
       @if($errors->has('unit_size'))
       <span class="text-danger"> {{ $errors->first('unit_size') }}</span>
       @endif
@@ -107,14 +93,8 @@
 
   <div class="col-md-6 col-12 position-relative">
     <label for="shipping_cost" class="form-label">Shipping Cost</label>
-    <select class="form-control" name="shipping_cost" id="shipping_cost">
-      <option value="">Select From City</option>
-      @forelse($price as $r)
-          <option value="{{$r->id}}" {{ old('shipping_cost',$price->shipping_cost)==$r->id?"selected":""}}> {{ $r->name}}</option>
-      @empty
-          <option value="">No Shipping Cost</option>
-      @endforelse
-      </select>
+    <input type="text" class="form-control" id="shipping_cost" value="{{ old('shipping_cost',$shipment->shipping_cost)}}" name="shipping_cost">
+    
       @if($errors->has('shipping_cost'))
       <span class="text-danger"> {{ $errors->first('shipping_cost') }}</span>
       @endif

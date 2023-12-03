@@ -4,22 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-
+use App\Models\Backend\AdminUser;
 
 class shipment extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
     
     /*
     * relation with user
     */
 
-    public function users(){
-        return $this->hasMany(User::class);
+    public function deliveryman(){
+        return $this->belongsTo(AdminUser::class,'user_id','id');
+    }
+    public function customer(){
+        return $this->belongsTo(User::class,'customer_id','id');
     }
 
     public function t_city(){
@@ -27,15 +26,5 @@ class shipment extends Model
     }
     public function f_city(){
         return $this->belongsTo(city::class,'from_city','id');
-    }
-
-    public function b_price(){
-        return $this->belongsTo(price::class,'b_price','id');
-    }
-    public function u_size(){
-        return $this->belongsTo(price::class,'u_size','id');
-    }
-    public function s_cost(){
-        return $this->belongsTo(price::class,'s_cost','id');
     }
 }

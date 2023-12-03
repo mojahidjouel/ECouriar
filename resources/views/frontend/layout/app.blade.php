@@ -49,44 +49,13 @@
             <div class="dropdown d-none d-lg-block ms-auto">
             </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="{{url('/')}}">Home</a>
             <a href="{{route('user.login')}}" class="btn btn-primary mx-2">User Login</a>
-            <a class="btn btn-primary mx-2" href="{{route('user.LogOut')}}">Log Out </a>
+            <a href="{{route('user.register')}}" class="btn btn-primary mx-2">User Resistration</a>
           </div>
         </div>
       </nav>
       <section class="pt-4" >
         <div class="container mt-5">
-          <div class="row">
-            <div class="col-sm-3">
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('userdashboard')}}" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Order</span></a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="{{route('order.index')}}" class="nav-link px-0"> <span class="d-none d-sm-inline">List</span></a>
-                            </li>
-                            <li>
-                                <a href="{{route('order.create')}}" class="nav-link px-0"> <span class="d-none d-sm-inline">Add New</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                </ul>
-            </div>
-            <div class="col-sm-9">
-              @yield('content')
-            </div>
-          </div>
+          @yield('content')
         </div>
       </section>
     </main>

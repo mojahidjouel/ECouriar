@@ -1,4 +1,4 @@
-@extends('user.layout.app')
+@extends('frontend.layout.app')
 @section('title','Sign Up')
 @section('content')
 

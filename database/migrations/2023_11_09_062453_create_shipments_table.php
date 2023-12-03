@@ -25,15 +25,13 @@ return new class extends Migration
             $table->string('contact_name')->nullable();
             $table->string('contact_number')->nullable();
             
-            $table->unsignedBigInteger('base_price')->index();
-            $table->foreign('base_price')->references('id')->on('prices')->onDelete('cascade');
-            $table->unsignedBigInteger('unit_size')->index();
-            $table->foreign('unit_size')->references('id')->on('prices')->onDelete('cascade');
-            $table->unsignedBigInteger('shipping_cost')->index();
-            $table->foreign('shipping_cost')->references('id')->on('prices')->onDelete('cascade');
-            
-            $table->decimal('total_cost')->nullable();
-            
+            $table->decimal('base_price',10,2)->nullable();
+            $table->decimal('unit_size',10,2)->nullable();
+            $table->decimal('shipping_cost',10,2)->nullable();
+            $table->decimal('total_cost',10,2)->nullable();
+            $table->integer('user_id')->nullable();
+            $table->integer('customer_id');
+            $table->integer('status')->default(0)->comment('0=Pending,1=picked up,2=delivered');
             $table->timestamps();
         });
     }
