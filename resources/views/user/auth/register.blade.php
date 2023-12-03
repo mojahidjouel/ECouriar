@@ -14,7 +14,7 @@
                         <a href="" class="">
                             <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ECouriar</h3>
                         </a>
-                        <h3>Sign Up</h3>
+                        <h3 class="text-primary">Sign Up</h3>
                     </div>
                     <form action="{{route('user.register.store')}}" method="post">
                         @csrf
@@ -60,7 +60,7 @@
                         <input type="password" class="form-control" required="" id="password_confirmation" name="password_confirmation">
                     </div>
                     <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Registration</button>
-                    <p class="text-center mb-0">Do you have a account? <a href="{{route('user.login')}}">Sign In</a></p>
+                    <p class="text-center mb-0">Do you have a account? <a href="{{route('user.login')}}" class="text-primary">Sign In</a></p>
                 </div>
             </form>
             </div>

@@ -42,7 +42,7 @@
               <li class="nav-item px-2"><a class="nav-link" href="{{route('order.create')}}">Couriar Order</a></li>
             </ul> -->
             <div class="dropdown d-none d-lg-block ms-auto">
-            </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="">Contact Us </a>
+            </div><a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="{{url('/')}}">Home</a>
             <a href="{{route('user.login')}}" class="btn btn-primary mx-2">User Login</a>
             <a class="btn btn-primary mx-2" href="{{route('user.LogOut')}}">Log Out </a>
           </div>

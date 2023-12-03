@@ -98,7 +98,7 @@
             <div class="col-md-4 pt-4 px-md-2 px-lg-3">
               <div class="card h-100 px-lg-5 card-span">
                 <div class="card-body d-flex flex-column justify-content-around">
-                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-1.svg')}}" alt="..." />
+                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-1.svg')}}" alt="" />
                     <h5 class="my-4">Person 2 Person Delivery(P2P)</h5>
                   </div>
                   <p>Moving life and Emotions through Individual Delivery Services from eCourier.</p>
@@ -135,7 +135,7 @@
                   </ul>
                   <div class="text-center my-5">
                     <div class="d-grid">
-                      <button class="btn btn-danger hover-top btn-glow border-0" type="submit">Learn more</button>
+                      <button class="btn btn-outline-danger" type="submit">Learn more </button>
                     </div>
                   </div>
                 </div>
@@ -158,7 +158,7 @@
                   </ul>
                   <div class="text-center my-5">
                     <div class="d-grid">
-                      <button class="btn btn-danger hover-top btn-glow border-0" type="submit">Learn more</button>
+                      <button class="btn btn-outline-danger" type="submit">Learn more </button>
                     </div>
                   </div>
                 </div>
@@ -181,7 +181,7 @@
                   </ul>
                   <div class="text-center my-5">
                     <div class="d-grid">
-                      <button class="btn btn-danger hover-top btn-glow border-0" type="submit">Learn more</button>
+                      <button class="btn btn-outline-danger" type="submit">Learn more </button>
                     </div>
                   </div>
                 </div>

@@ -14,7 +14,7 @@
                         <a href="" class="">
                             <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>ECouriar</h3>
                         </a>
-                        <h3>Sign Up</h3>
+                        <h3 class="text-primary">Sign Up</h3>
                     </div>
                     <form action="{{route('user.login.check')}}" method="post">
                         @csrf
@@ -40,7 +40,7 @@
                     </div>
                     
                     <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Login</button>
-                    <p class="text-center mb-0">Don't you have a account? <a href="{{route('user.register')}}" class="text-danger">Registration</a></p>
+                    <p class="text-center mb-0">Don't you have a account? <a href="{{route('user.register')}}" class="text-primary">Registration</a></p>
                 </div>
             </form>
             </div>
