@@ -8,7 +8,7 @@
 </div>
 <table class="table table-hover table-striped">
   <thead>
-    <tr>
+    <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('From City')}}</th>
     <th scope="col">{{__('To City')}}</th>
@@ -49,8 +49,8 @@
 
 
         <td class="white-space-nowrap">
-        <a class="text-dark btn btn-success" href="{{route('shipment.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit"></i>Edit </a>
-        <a class="text-dark btn btn-info" href="{{route('shipment.show', $p->id)}}">View</a>
+        <a href="{{route('shipment.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit btn btn-info btn-sm"></i></a>
+        <a href="{{route('shipment.show', $p->id)}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
         </form>
         </td>
     </tr>

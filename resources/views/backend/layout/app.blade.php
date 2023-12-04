@@ -69,7 +69,7 @@
                             <a href="{{route('adminuser.index')}}" class="dropdown-item">User List</a>
                             <a href="{{route('adminuser.create')}}" class="dropdown-item">User Add</a>
 
-                            <a href="{{route('role.index')}}" class="dropdown-item">List</a>
+                            <a href="{{route('role.index')}}" class="dropdown-item">Role List</a>
                             <a href="{{route('role.create')}}" class="dropdown-item">Add New</a>
                         </div>
                     </div>

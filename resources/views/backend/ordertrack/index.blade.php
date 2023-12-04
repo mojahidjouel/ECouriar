@@ -8,7 +8,7 @@
 </div>
 <table class="table">
   <thead>
-    <tr>
+    <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('User Id')}}</th>
     <th scope="col">{{__('Shipment Id')}}</th>

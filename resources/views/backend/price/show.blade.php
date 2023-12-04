@@ -9,21 +9,21 @@
 
       <div class="cc p-5">
         <div class="card w-75 mx-auto text-center">
-          <div class="card-body">
-            <h4>From City: </h4>
-            <p class="card-subtitle mb-2 text-muted">{{$price->from_city}}</p>
+          <div class="card-body bg-white">
+            <h6 class="text-danger">From City: </h6>
+            <h4 class="card-title text-info">{{$price->from_city}}</h4>
           
-            <h4>To City: </h4>
-            <p class="card-title mb-2 text-muted">{{$price->to_city}}</p>
+            <h6 class="text-danger">To City: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$price->to_city}}</h4>
 
-            <h4>Base Price: </h4>
-            <p class="card-subtitle mb-2 text-muted">{{$price->base_price}}</p>
+            <h6 class="text-danger">Base Price: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$price->base_price}}</h4>
 
-            <h4>Unit Size: </h4>
-            <p class="card-subtitle mb-2 text-muted">{{$price->unit_size}}</p>
+            <h6 class="text-danger">Unit Size: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$price->unit_size}}</h4>
 
-            <h4>Unit Price: </h4>
-            <p class="card-subtitle mb-2 text-muted">{{$price->unit_price}}</p>
+            <h6 class="text-danger">Unit Price: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$price->unit_price}}</h4>
 
          </div>
         </div>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 08:46 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Dec 04, 2023 at 06:57 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -73,6 +73,15 @@ CREATE TABLE `assets` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `assets`
+--
+
+INSERT INTO `assets` (`id`, `name`, `registration_number`, `driver_id`, `registration_card`, `gml`, `cml`, `hml`, `created_at`, `updated_at`) VALUES
+(1, 'mojahid Islam', '105', 1, '5321701707610.jpg', 1.00, 4.00, 5.00, '2023-12-04 10:27:27', '2023-12-04 10:33:30'),
+(2, 'mojahid Islam', '102', 1, NULL, 2.00, 3.00, 6.00, '2023-12-04 10:27:57', '2023-12-04 10:27:57'),
+(3, 'kaiser', '103', 1, NULL, 4.00, 5.00, 6.00, '2023-12-04 10:28:32', '2023-12-04 10:28:32');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +103,13 @@ CREATE TABLE `branches` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `branches`
+--
+
+INSERT INTO `branches` (`id`, `company_id`, `branch_name`, `branch_email`, `branch_phone`, `branch_address`, `branch_city`, `branch_state`, `branch_pin`, `branch_country`, `logo_image`, `created_at`, `updated_at`) VALUES
+(1, 105, 'Dhaka', 'mojahidjouel@yahoo.com', '+8801814415108', '(H-333) 1st Floor, Road-14, Black-B, Chandgaon R/A, Chandgaon, Chattogram.', 'Chandgaon', 'Dhaka', '501', 'Bangladesh', '6111701707981.jpg', '2023-12-04 10:39:41', '2023-12-04 10:40:00');
 
 -- --------------------------------------------------------
 
@@ -121,7 +137,11 @@ INSERT INTO `cities` (`id`, `name`, `code`, `created_at`, `updated_at`) VALUES
 (5, 'Sylhet', '105', '2023-12-03 21:22:44', '2023-12-03 21:22:44'),
 (6, 'Borishal', '106', '2023-12-03 21:56:50', '2023-12-03 21:56:50'),
 (7, 'Dinajpur', '107', '2023-12-03 21:57:09', '2023-12-03 21:57:09'),
-(8, 'Rongpur', '108', '2023-12-03 21:57:22', '2023-12-03 21:57:22');
+(8, 'Rongpur', '108', '2023-12-03 21:57:22', '2023-12-03 21:57:22'),
+(9, 'Munshiganj', '109', '2023-12-04 10:11:32', '2023-12-04 10:14:53'),
+(10, 'Jessore', '110', '2023-12-04 10:12:05', '2023-12-04 10:15:11'),
+(11, 'Bandarban', '110', '2023-12-04 10:12:53', '2023-12-04 10:12:53'),
+(12, 'Khulna', '111', '2023-12-04 10:13:54', '2023-12-04 10:13:54');
 
 -- --------------------------------------------------------
 
@@ -143,6 +163,13 @@ CREATE TABLE `companies` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `companies`
+--
+
+INSERT INTO `companies` (`id`, `company_name`, `contact_number`, `company_email`, `company_address`, `company_city`, `company_state`, `company_pin`, `company_country`, `logo_image`, `created_at`, `updated_at`) VALUES
+(1, 'Joy building', '+8801814415108', 'mojahidjouel@yahoo.com', '(H-333) 1st Floor, Road-14, Black-B, Chandgaon R/A, Chandgaon, Chattogram.', 'Chandgaon', 'Chattogram', '4200', 'Bangladesh', '6141701707914.jpg', '2023-12-04 10:38:34', '2023-12-04 10:39:04');
 
 -- --------------------------------------------------------
 
@@ -344,9 +371,19 @@ CREATE TABLE `prices` (
 --
 
 INSERT INTO `prices` (`id`, `to_city`, `from_city`, `base_price`, `unit_size`, `unit_price`, `created_at`, `updated_at`) VALUES
-(3, 1, 1, 50, '0-5', '5.00', '2023-12-03 21:59:50', '2023-12-03 21:59:50'),
-(4, 1, 2, 50, '0-5', '5.00', '2023-12-03 22:00:16', '2023-12-03 22:00:16'),
-(5, 2, 1, 50, '0-5', '5.00', '2023-12-03 22:00:31', '2023-12-03 22:00:31');
+(3, 1, 1, 50, '0-5', 5.00, '2023-12-03 21:59:50', '2023-12-03 21:59:50'),
+(4, 1, 2, 50, '0-5', 5.00, '2023-12-03 22:00:16', '2023-12-03 22:00:16'),
+(5, 2, 1, 50, '0-5', 5.00, '2023-12-03 22:00:31', '2023-12-03 22:00:31'),
+(6, 3, 1, 50, '0-5', 5.00, '2023-12-04 10:17:07', '2023-12-04 10:17:07'),
+(7, 1, 3, 50, '0-5', 5.00, '2023-12-04 10:18:10', '2023-12-04 10:18:10'),
+(8, 4, 1, 50, '0-5', 5.00, '2023-12-04 10:18:30', '2023-12-04 10:18:30'),
+(9, 1, 4, 50, '0-5', 5.00, '2023-12-04 10:19:06', '2023-12-04 10:19:28'),
+(10, 2, 4, 50, '0-5', 5.00, '2023-12-04 10:19:45', '2023-12-04 10:19:45'),
+(11, 4, 2, 50, '0-5', 5.00, '2023-12-04 10:20:06', '2023-12-04 10:20:06'),
+(12, 4, 3, 50, '0-5', 5.00, '2023-12-04 10:20:32', '2023-12-04 10:20:32'),
+(13, 1, 1, 40, '5-10', 4.00, '2023-12-04 11:54:46', '2023-12-04 11:54:46'),
+(14, 1, 1, 35, '10-20', 3.00, '2023-12-04 11:55:48', '2023-12-04 11:55:48'),
+(15, 1, 1, 30, '20-50', 30.00, '2023-12-04 11:56:30', '2023-12-04 11:56:30');
 
 -- --------------------------------------------------------
 
@@ -405,7 +442,7 @@ CREATE TABLE `shipments` (
 --
 
 INSERT INTO `shipments` (`id`, `from_city`, `to_city`, `product_name`, `product_description`, `product_weight`, `receiver_address`, `sender_address`, `contact_name`, `contact_number`, `base_price`, `unit_size`, `shipping_cost`, `total_cost`, `user_id`, `customer_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 'Cloths', 'Some of Cloths', '5.00', 'def', 'abc', 'noman', '01815', '50.00', NULL, '25.00', '55.00', NULL, 1, 2, '2023-12-04 00:08:13', '2023-12-04 00:48:14');
+(1, 1, 2, 'Cloths', 'Some of Cloths', 5.00, 'def', 'abc', 'noman', '01815', 50.00, NULL, 25.00, 55.00, NULL, 1, 2, '2023-12-04 00:08:13', '2023-12-04 00:48:14');
 
 -- --------------------------------------------------------
 
@@ -564,25 +601,25 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `assets`
 --
 ALTER TABLE `assets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `couriar_information`
@@ -624,7 +661,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `prices`
 --
 ALTER TABLE `prices`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `roles`

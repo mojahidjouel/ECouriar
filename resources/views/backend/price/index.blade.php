@@ -4,11 +4,11 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-end" href="{{route('price.create')}}"><i class="fa fa-plus"></i></a>
+  <a href="{{route('price.create')}}"></a>
 </div>
 <table class="table">
   <thead>
-    <tr>
+    <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('From City')}}</th>
     <th scope="col">{{__('To City')}}</th>

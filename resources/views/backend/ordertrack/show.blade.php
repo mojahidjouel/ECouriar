@@ -9,22 +9,18 @@
 
       <div class="cc p-5">
         <div class="card w-75 mx-auto text-center">
-          <div class="card-body">
-            <h4>User Id: </h4>
-            <p class="card-title mb-2 text-muted">
-            {{$order_track->user_id}}</p>
+          <div class="card-body bg-white">
+            <h6 class="text-danger">User Id: </h6>
+            <h4 class="card-title text-info">{{$order_track->user_id}}</h4>
 
-            <h4>Shipment Id: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$order_track->shipment_id}}</p>
+            <h6 class="text-danger">Shipment Id: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$order_track->shipment_id}}</h4>
 
-            <h4>Comment: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$order_track->comment}}</p>
+            <h6 class="text-danger">Comment: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$order_track->comment}}</h4>
 
-            <h4>Status: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$order_track->status}}</p>
+            <h6 class="text-danger">Status: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$order_track->status}}</h4>
 
          </div>
         </div>

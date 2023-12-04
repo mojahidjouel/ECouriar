@@ -8,7 +8,7 @@
 </div>
 <table class="table table-hover table-striped">
   <thead>
-    <tr>
+    <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('Name')}}</th>
     <th scope="col">{{__('Registration_Number')}}</th>
