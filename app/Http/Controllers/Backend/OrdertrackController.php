@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Ordertrack;
+
+use App\Models\Backend\Ordertrack;
 
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -18,8 +19,8 @@ class OrdertrackController extends Controller
      */
     public function index()
     {
-        $data=Order_track::paginate(10);
-        return view('user.order_track.index',compact('data'));
+        $data=Ordertrack::paginate(10);
+        return view('backend.ordertrack.index',compact('data'));
     }
 
     /**
@@ -27,8 +28,8 @@ class OrdertrackController extends Controller
      */
     public function create()
     {
-        $order_track=Order_track::get();
-        return view('user.order_track.create',compact('order_track'));
+        $ordertrack=Ordertrack::get();
+        return view('backend.ordertrack.create',compact('ordertrack'));
     }
 
     /**
@@ -38,14 +39,14 @@ class OrdertrackController extends Controller
     {
         {
             try{
-                $data=new Order_track();
+                $data=new Ordertrack();
                 $data->user_id=$request->user_id;
                 $data->shipment_id=$request->shipment_id;
                 $data->comment=$request->comment;
                 $data->status=$request->status;
 
                 if($data->save())
-                    return redirect()->route('order_track.index')->with('success','Successfully saved');
+                    return redirect()->route('ordertrack.index')->with('success','Successfully saved');
                 else
                     return redirect()->back()->withInput()->with('error','Please try again');
                 
@@ -61,7 +62,7 @@ class OrdertrackController extends Controller
      */
     public function show(order_track $order_track)
     {
-        return view('user.order_track.show', compact('order_track'));
+        return view('backend.ordertrack.show', compact('ordertrack'));
         
     }
 
@@ -72,7 +73,7 @@ class OrdertrackController extends Controller
     {
         $order_track=Order_track::get();
         $order_track=Order_track::findOrFail(encryptor('decrypt',$id));
-        return view('user.order_track.edit',compact('order_track'));
+        return view('backend.ordertrack.edit',compact('ordertrack'));
     }
 
     /**
@@ -90,7 +91,7 @@ class OrdertrackController extends Controller
                
                 if($data->save()){
                     Toastr::success('Successfully updated');
-                    return redirect()->route('order_track.index');
+                    return redirect()->route('ordertrack.index');
                 }
             }catch(Exception $e){
                 Toastr::error('Please try again');
@@ -105,7 +106,7 @@ class OrdertrackController extends Controller
      */
     public function destroy($id)
     {
-        $data=Order_track::findOrFail(encryptor('decrypt',$id));
+        $data=Ordertrack::findOrFail(encryptor('decrypt',$id));
         if($data->delete()){   
             Toastr::warning('Deleted Permanently!');
             return redirect()->back();

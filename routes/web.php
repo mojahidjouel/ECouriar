@@ -71,7 +71,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('price', prices::class);
     Route::resource('city', cities::class);
     Route::resource('shipment', shipment::class);
-    Route::resource('ordertrack', ordertracks::class);
+    Route::resource('ordertrack', ordertrack::class);
 });
 
 Route::get('/', function () {

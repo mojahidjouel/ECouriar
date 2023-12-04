@@ -125,8 +125,8 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i>Order Tracking</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('price.index')}}" class="dropdown-item">List</a>
-                            <a href="{{route('price.create')}}" class="dropdown-item">Add New</a>
+                            <a href="{{route('ordertrack.index')}}" class="dropdown-item">List</a>
+                            <a href="{{route('ordertrack.create')}}" class="dropdown-item">Add New</a>
                         </div>
                     </div>
 
