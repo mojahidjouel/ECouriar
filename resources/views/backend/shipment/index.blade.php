@@ -1,18 +1,18 @@
 @extends('backend.layout.app')
-@section('title',trans('Shipment List'))
+@section('title',trans('Order List'))
 
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="" href="{{route('shipment.create')}}"></a>
+  <a class="fs-5 d-flex" href="{{route('shipment.create')}}"></a>
 </div>
 <table class="table table-hover table-striped">
   <thead>
     <tr>
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('From City')}}</th>
-    <th scope="col">{{__('Sender Address')}}</th>
     <th scope="col">{{__('To City')}}</th>
+    <th scope="col">{{__('Sender Address')}}</th>
     <th scope="col">{{__('Receiver Address')}}</th>
     <th scope="col">{{__('Contact Name')}}</th>
     <th scope="col">{{__('Contact Number')}}</th>
@@ -23,6 +23,7 @@
     <th scope="col">{{__('Unit Price')}}</th>
     <th scope="col">{{__('Cargo Cost')}}</th>
     <th scope="col">{{__('Total Cost')}}</th>
+    <th scope="col">{{__('Status')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
     </tr>
   </thead>
@@ -30,30 +31,26 @@
   @forelse($data as $p)
   <th scope="row">{{ ++$loop->index }}</th>
         <td>{{$p->f_city?->name}}</td>
-        <td>{{$p->sender_address}}</td>
         <td>{{$p->t_city?->name}}</td>
+        <td>{{$p->sender_address}}</td>
         <td>{{$p->receiver_address}}</td>
         <td>{{$p->contact_name}}</td>
         <td>{{$p->contact_number}}</td>
         <td>{{$p->product_name}}</td>
         <td>{{$p->product_description}}</td>
-        <td>{{$p->product_weight}}</td>
-        <td>{{$p->base_price}}</td>      
-        <td>{{$p->unit_size}}</td>      
+        <td>{{$p->product_weight}}</td>      
+        <td>{{$p->base_price}}</td>
+        <td>{{$p->unit_price}}</td>
         <td>{{$p->shipping_cost}}</td>
         <td>{{$p->total_cost}}</td>
+        <td>@if($p->status == 0) {{__('Pending') }} @elseif($p->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif</td>
        
  <!-- @php print_r($errors->all()) @endphp  -->
 
 
         <td class="white-space-nowrap">
-        <a href="{{route('shipment.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit btn btn-info btn-sm"></i></a>
-        <a href="{{route('shipment.show', $p->id)}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
-
-        <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
-        <form id="form{{$p->id}}" action="{{route('shipment.destroy',encryptor('encrypt',$p->id))}}" method="post">
-        @csrf
-        @method('delete')
+        <a class="text-dark btn btn-success" href="{{route('shipment.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit"></i>Edit </a>
+        <a class="text-dark btn btn-info" href="{{route('shipment.show', $p->id)}}">View</a>
         </form>
         </td>
     </tr>

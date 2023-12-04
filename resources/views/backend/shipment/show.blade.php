@@ -7,8 +7,8 @@
   <div class="row">
     <div class="col-12">
       <div class="cc p-8">
-        <div class="card w-75 mx-auto text-center ">
-          <div class="card-body bg-white">
+        <div class="card w-85 mx-auto text-center">
+        <div class="card-body bg-white">
             <h6 class="text-danger">From City:</h6>
             <h4 class="card-title text-info">{{$shipment->f_city?->name}}</h6>
 

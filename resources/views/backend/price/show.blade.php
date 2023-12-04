@@ -10,12 +10,11 @@
       <div class="cc p-5">
         <div class="card w-75 mx-auto text-center">
           <div class="card-body">
-          <h4>To City: </h4>
-            <p class="card-title mb-2 text-muted">{{$price->to_city}}</p>
-
             <h4>From City: </h4>
-            <p class="card-subtitle mb-2 text-muted">
-            {{$price->from_city}}</p>
+            <p class="card-subtitle mb-2 text-muted">{{$price->from_city}}</p>
+          
+            <h4>To City: </h4>
+            <p class="card-title mb-2 text-muted">{{$price->to_city}}</p>
 
             <h4>Base Price: </h4>
             <p class="card-subtitle mb-2 text-muted">{{$price->base_price}}</p>

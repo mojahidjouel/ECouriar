@@ -80,6 +80,7 @@ class ShipmentController extends Controller
                 $data->unit_size=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
+                $data->status=$request->status;
                 $data->customer_id=currentUserId();
                 if($data->save())
                     return redirect()->route('order.index')->with('success','Successfully saved');
@@ -134,6 +135,7 @@ class ShipmentController extends Controller
                 $data->unit_price=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
+                $data->status=$request->status;
                 
                 if($data->save()){
                     Toastr::success('Successfully updated');

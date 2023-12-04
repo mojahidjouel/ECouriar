@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-start btn btn-primary" href="{{route('order.create')}}"><i class="fa fa-plus"></i></a>
+  <a class="fs-5 d-flex justify-content-start" href="{{route('order.create')}}"></a>
 </div>
 <table class="table table-hover table-striped">
   <thead>
@@ -23,6 +23,7 @@
     <th scope="col">{{__('Unit Price')}}</th>
     <th scope="col">{{__('Cargo Cost')}}</th>
     <th scope="col">{{__('Total Cost')}}</th>
+    <th scope="col">{{__('Status')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
     </tr>
   </thead>
@@ -42,6 +43,7 @@
         <td>{{$p->unit_price}}</td>
         <td>{{$p->shipping_cost}}</td>
         <td>{{$p->total_cost}}</td>
+        <td>@if($p->status == 0) {{__('Pending') }} @elseif($p->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif</td>
        
  <!-- @php print_r($errors->all()) @endphp  -->
 

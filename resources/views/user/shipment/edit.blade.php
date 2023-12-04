@@ -94,6 +94,18 @@
     <input type="text" class="form-control" id="total_cost" value="{{ old('total_cost',$shipment->total_cost)}}" name="total_cost">
   </div>
 
+  <div class="col-md-6 col-12 position-relative">
+    <label for="status" class="form-label mb-1">Status</label>
+    <select id="status" class="form-control" name="status">
+    <option value="0" @if(old('status')==0) selected @endif>Pending</option>
+    <option value="1" @if(old('status')==1) selected @endif>Picked Up</option>
+    <option value="2" @if(old('status')==2) selected @endif>Delivered</option>
+  </select>
+    @if($errors->has('status'))
+        <span class="text-danger"> {{ $errors->first('status') }}</span>
+    @endif
+</div>
+
 </div>
 
 <div class="row">

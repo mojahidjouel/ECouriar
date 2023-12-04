@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\GeneralsettingController as general_settings;
 use App\Http\Controllers\Backend\PriceController as prices;
 use App\Http\Controllers\Backend\CityController as cities;
 use App\Http\Controllers\Backend\ShipmentController as shipment;
+use App\Http\Controllers\Backend\OrdertrackController as ordertrack;
 
 /* user panel */
 use App\Http\Controllers\User\AuthController as userauth;
@@ -70,6 +71,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('price', prices::class);
     Route::resource('city', cities::class);
     Route::resource('shipment', shipment::class);
+    Route::resource('ordertrack', ordertracks::class);
 });
 
 Route::get('/', function () {

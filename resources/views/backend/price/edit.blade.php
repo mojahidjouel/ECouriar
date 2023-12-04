@@ -10,6 +10,21 @@
   @method('PATCH')
   
   <div class="row">
+    
+  <div class="col-md-6 col-12 position-relative">
+    <label for="from_city" class="form-label">From City</label>
+    <select class="form-control" name="from_city" id="from_city">
+      <option value="">Select From City</option>
+      @forelse($city as $r)
+          <option value="{{$r->id}}" {{ old('from_city',$price->from_city)==$r->id?"selected":""}}> {{ $r->name}}</option>
+      @empty
+          <option value="">No From City</option>
+      @endforelse
+      </select>
+      @if($errors->has('from_city'))
+      <span class="text-danger"> {{ $errors->first('from_city') }}</span>
+      @endif
+  </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="to_city" class="form-label">To City</label>
@@ -24,21 +39,6 @@
         @if($errors->has('to_city'))
         <span class="text-danger"> {{$errors->first('to_city')}}</span>
         @endif
-  </div>
-
-  <div class="col-md-6 col-12 position-relative">
-    <label for="from_city" class="form-label">From City</label>
-    <select class="form-control" name="from_city" id="from_city">
-      <option value="">Select From City</option>
-      @forelse($city as $r)
-          <option value="{{$r->id}}" {{ old('from_city',$price->from_city)==$r->id?"selected":""}}> {{ $r->name}}</option>
-      @empty
-          <option value="">No From City</option>
-      @endforelse
-      </select>
-      @if($errors->has('from_city'))
-      <span class="text-danger"> {{ $errors->first('from_city') }}</span>
-      @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">

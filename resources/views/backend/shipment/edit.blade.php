@@ -26,11 +26,6 @@
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="sender_address" class="form-label">Sender Address</label>
-    <input type="text" class="form-control" id="sender_address" value="{{ old('sender_address',$shipment->sender_address)}}" name="sender_address">
-  </div>
-
-  <div class="col-md-6 col-12 position-relative">
     <label for="to_city" class="form-label">To City</label>
     <select class="form-control" name="to_city" id="to_city">
         <option value="">Select To City</option>
@@ -43,6 +38,11 @@
         @if($errors->has('to_city'))
         <span class="text-danger"> {{$errors->first('to_city')}}</span>
         @endif
+  </div>
+
+  <div class="col-md-6 col-12 position-relative">
+    <label for="sender_address" class="form-label">Sender Address</label>
+    <input type="text" class="form-control" id="sender_address" value="{{ old('sender_address',$shipment->sender_address)}}" name="sender_address">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
@@ -74,35 +74,36 @@
     <label for="product_weight" class="form-label">Product Weight</label>
     <input type="text" class="form-control" id="gproduct_weightml" value="{{ old('product_weight',$shipment->product_weight)}}" name="product_weight">
   </div>
-
   <div class="col-md-6 col-12 position-relative">
     <label for="base_price" class="form-label">Base Price</label>
     <input type="text" class="form-control" id="base_price" value="{{ old('base_price',$shipment->base_price)}}" name="base_price">
-      @if($errors->has('base_price'))
-      <span class="text-danger"> {{ $errors->first('base_price') }}</span>
-      @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="unit_size" class="form-label">Unit Size</label>
-    <input type="text" class="form-control" id="unit_size" value="{{ old('unit_size',$shipment->unit_size)}}" name="unit_size">
-      @if($errors->has('unit_size'))
-      <span class="text-danger"> {{ $errors->first('unit_size') }}</span>
-      @endif
+    <label for="unit_price" class="form-label">Unit Price</label>
+    <input type="text" class="form-control" id="unit_price" value="{{ old('unit_price',$shipment->unit_price)}}" name="unit_price">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
     <label for="shipping_cost" class="form-label">Shipping Cost</label>
     <input type="text" class="form-control" id="shipping_cost" value="{{ old('shipping_cost',$shipment->shipping_cost)}}" name="shipping_cost">
-    
-      @if($errors->has('shipping_cost'))
-      <span class="text-danger"> {{ $errors->first('shipping_cost') }}</span>
-      @endif
   </div>
   
   <div class="col-md-6 col-12 position-relative">
     <label for="total_cost" class="form-label">Total Cost</label>
     <input type="text" class="form-control" id="total_cost" value="{{ old('total_cost',$shipment->total_cost)}}" name="total_cost">
+  </div>
+
+  <div class="col-md-6 col-12 position-relative">
+    <label for="status" class="form-label mb-1">Status</label>
+    <select id="status" class="form-control" name="status">
+    <option value="0" @if(old('status')==0) selected @endif>Pending</option>
+    <option value="1" @if(old('status')==1) selected @endif>Picked Up</option>
+    <option value="2" @if(old('status')==2) selected @endif>Delivered</option>
+  </select>
+    @if($errors->has('status'))
+        <span class="text-danger"> {{ $errors->first('status') }}</span>
+    @endif
   </div>
 
 </div>

@@ -10,8 +10,8 @@
   <thead>
     <tr>
     <th scope="col">{{__('#SL')}}</th>
-    <th scope="col">{{__('To City')}}</th>
     <th scope="col">{{__('From City')}}</th>
+    <th scope="col">{{__('To City')}}</th>
     <th scope="col">{{__('Base Price')}}</th>
     <th scope="col">{{__('Unit Size')}}</th>
     <th scope="col">{{__('Unit Price')}}</th>
@@ -21,8 +21,8 @@
   <tbody>
   @forelse($data as $p)
   <th scope="row">{{ ++$loop->index }}</th>
-        <td>{{$p->t_city?->name}}</td>
         <td>{{$p->f_city?->name}}</td>
+        <td>{{$p->t_city?->name}}</td>
         <td>{{$p->base_price}}</td>
         <td>{{$p->unit_size}}</td>
         <td>{{$p->unit_price}}</td>

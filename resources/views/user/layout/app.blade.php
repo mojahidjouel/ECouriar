@@ -56,13 +56,13 @@
       <section class="pt-4" >
         <div class="container mt-5">
           <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="{{route('userdashboard')}}" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
@@ -70,7 +70,7 @@
                     </li>
                     <li>
                         <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Order</span></a>
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Shipment Order</span></a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="{{route('order.index')}}" class="nav-link px-0"> <span class="d-none d-sm-inline">List</span></a>
@@ -83,7 +83,7 @@
                     
                 </ul>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-10">
               @yield('content')
             </div>
           </div>

@@ -10,21 +10,6 @@
 <div class="row">
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="to_city" class="form-label">To City</label>
-    <select class="form-control" name="to_city" id="to_city">
-        <option value="">Select To City</option>
-        @forelse($city as $r)
-            <option value="{{$r->id}}" {{ old('to_city')==$r->id?"selected":""}}> {{$r->name}}</option>
-        @empty
-            <option value="">No Role found</option>
-        @endforelse
-        </select>
-        @if($errors->has('to_city'))
-        <span class="text-danger"> {{$errors->first('to_city')}}</span>
-        @endif
-  </div>
-
-  <div class="col-md-6 col-12 position-relative">
     <label for="from_city" class="form-label">From City</label>
     <select class="form-control" name="from_city" id="from_city">
       <option value="">Select From City</option>
@@ -37,6 +22,21 @@
       @if($errors->has('from_city'))
       <span class="text-danger"> {{ $errors->first('from_city') }}</span>
       @endif
+  </div>
+
+  <div class="col-md-6 col-12 position-relative">
+    <label for="to_city" class="form-label">To City</label>
+    <select class="form-control" name="to_city" id="to_city">
+        <option value="">Select To City</option>
+        @forelse($city as $r)
+            <option value="{{$r->id}}" {{ old('to_city')==$r->id?"selected":""}}> {{$r->name}}</option>
+        @empty
+            <option value="">No Role found</option>
+        @endforelse
+        </select>
+        @if($errors->has('to_city'))
+        <span class="text-danger"> {{$errors->first('to_city')}}</span>
+        @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
