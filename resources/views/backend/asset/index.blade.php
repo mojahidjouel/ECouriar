@@ -11,9 +11,9 @@
     <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('Name')}}</th>
-    <th scope="col">{{__('Registration_Number')}}</th>
-    <th scope="col">{{__('Driver_Id')}}</th>
-    <th scope="col">{{__('Registration_Card')}}</th>
+    <th scope="col">{{__('Registration Number')}}</th>
+    <th scope="col">{{__('Driver Id')}}</th>
+    <th scope="col">{{__('Registration Card')}}</th>
     <th scope="col">{{__('GML')}}</th>
     <th scope="col">{{__('CML')}}</th>
     <th scope="col">{{__('HML')}}</th>
