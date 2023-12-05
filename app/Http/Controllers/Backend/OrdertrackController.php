@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Backend\Ordertrack;
-
+use App\Models\Shipment;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Exception;
 use File;
@@ -29,7 +30,9 @@ class OrdertrackController extends Controller
     public function create()
     {
         $ordertrack=Ordertrack::get();
-        return view('backend.ordertrack.create',compact('ordertrack'));
+        $user=User::get();
+        $shipment=Shipment::get();
+        return view('backend.ordertrack.create',compact('ordertrack','user','shipment'));
     }
 
     /**
@@ -71,9 +74,11 @@ class OrdertrackController extends Controller
      */
     public function edit($id)
     {
-        $order_track=Order_track::get();
-        $order_track=Order_track::findOrFail(encryptor('decrypt',$id));
-        return view('backend.ordertrack.edit',compact('ordertrack'));
+        $ordertrack=Ordertrack::get();
+        $user=User::get();
+        $shipment=Shipment::get();
+        $ordertrack=Ordertrack::findOrFail(encryptor('decrypt',$id));
+        return view('backend.ordertrack.edit',compact('ordertrack','user','shipment'));
     }
 
     /**
@@ -83,7 +88,7 @@ class OrdertrackController extends Controller
     {
         {
             try{  
-                $data=Order_track::findOrFail(encryptor('decrypt',$id));
+                $data=Ordertrack::findOrFail(encryptor('decrypt',$id));
                 $data->user_id=$request->user_id;
                 $data->shipment_id=$request->shipment_id;
                 $data->comment=$request->comment;

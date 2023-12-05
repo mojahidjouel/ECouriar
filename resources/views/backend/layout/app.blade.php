@@ -36,16 +36,7 @@
 <body>
 
     <div class="container-fluid position-relative d-flex p-0">
-
-        <!-- Spinner Start 
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-         Spinner End -->
-
-        <!-- Sidebar Start -->
+        
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="" class="navbar-brand mx-4 mb-3">
@@ -263,7 +254,7 @@
                         <div class="col-12 col-sm-6 text-center text-sm-end text-white">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                             Designed By <a href="">Muhammad Mojahedul Islam</a>
-                            <br>Distributed By: <a href="" target="_blank">WDPF_Round_54</a>
+                            <br>Distributed By: <a href="" target="">WDPF_Round_54</a>
                         </div>
                     </div>
                 </div>

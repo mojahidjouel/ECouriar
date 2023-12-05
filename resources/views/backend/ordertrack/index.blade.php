@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-end" href="{{route('ordertrack.create')}}"><i class="fa fa-plus"></i></a>
+  <a href="{{route('ordertrack.create')}}"></a>
 </div>
 <table class="table">
   <thead>
@@ -20,13 +20,13 @@
   <tbody>
   @forelse($data as $p)
   <th scope="row">{{ ++$loop->index }}</th>
-        <td>{{$p->user_id}}</td>
-        <td>{{$p->shipment_id}}</td>
+        <td>{{$p->user?->name}}</td>
+        <td>{{$p->shipment?->name}}</td>
         <td>{{$p->comment}}</td>
         <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>
 
         <td class="white-space-nowrap">
-        <a href="{{route('ordertrack.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit"></i></a>
+        <a href="{{route('ordertrack.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit btn btn-info btn-sm"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
         <form id="form{{$p->id}}" action="{{route('ordertrack.destroy',encryptor('encrypt',$p->id))}}" method="post">
         @csrf

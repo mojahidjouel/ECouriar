@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 06:57 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 05, 2023 at 08:46 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -78,9 +78,9 @@ CREATE TABLE `assets` (
 --
 
 INSERT INTO `assets` (`id`, `name`, `registration_number`, `driver_id`, `registration_card`, `gml`, `cml`, `hml`, `created_at`, `updated_at`) VALUES
-(1, 'mojahid Islam', '105', 1, '5321701707610.jpg', 1.00, 4.00, 5.00, '2023-12-04 10:27:27', '2023-12-04 10:33:30'),
-(2, 'mojahid Islam', '102', 1, NULL, 2.00, 3.00, 6.00, '2023-12-04 10:27:57', '2023-12-04 10:27:57'),
-(3, 'kaiser', '103', 1, NULL, 4.00, 5.00, 6.00, '2023-12-04 10:28:32', '2023-12-04 10:28:32');
+(1, 'mojahid Islam', '105', 1, '5321701707610.jpg', '1.00', '4.00', '5.00', '2023-12-04 10:27:27', '2023-12-04 10:33:30'),
+(2, 'mojahid Islam', '102', 1, NULL, '2.00', '3.00', '6.00', '2023-12-04 10:27:57', '2023-12-04 10:27:57'),
+(3, 'kaiser', '103', 1, NULL, '4.00', '5.00', '6.00', '2023-12-04 10:28:32', '2023-12-04 10:28:32');
 
 -- --------------------------------------------------------
 
@@ -316,6 +316,15 @@ CREATE TABLE `ordertracks` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `ordertracks`
+--
+
+INSERT INTO `ordertracks` (`id`, `user_id`, `shipment_id`, `comment`, `status`, `created_at`, `updated_at`) VALUES
+(2, 1, '105', 'noman', 0, '2023-12-04 22:39:56', '2023-12-05 01:12:33'),
+(4, NULL, '102', 'noman', 1, '2023-12-05 01:02:14', '2023-12-05 01:15:13'),
+(5, 3, '1', 'mm', 1, '2023-12-05 01:41:53', '2023-12-05 01:41:53');
+
 -- --------------------------------------------------------
 
 --
@@ -371,19 +380,19 @@ CREATE TABLE `prices` (
 --
 
 INSERT INTO `prices` (`id`, `to_city`, `from_city`, `base_price`, `unit_size`, `unit_price`, `created_at`, `updated_at`) VALUES
-(3, 1, 1, 50, '0-5', 5.00, '2023-12-03 21:59:50', '2023-12-03 21:59:50'),
-(4, 1, 2, 50, '0-5', 5.00, '2023-12-03 22:00:16', '2023-12-03 22:00:16'),
-(5, 2, 1, 50, '0-5', 5.00, '2023-12-03 22:00:31', '2023-12-03 22:00:31'),
-(6, 3, 1, 50, '0-5', 5.00, '2023-12-04 10:17:07', '2023-12-04 10:17:07'),
-(7, 1, 3, 50, '0-5', 5.00, '2023-12-04 10:18:10', '2023-12-04 10:18:10'),
-(8, 4, 1, 50, '0-5', 5.00, '2023-12-04 10:18:30', '2023-12-04 10:18:30'),
-(9, 1, 4, 50, '0-5', 5.00, '2023-12-04 10:19:06', '2023-12-04 10:19:28'),
-(10, 2, 4, 50, '0-5', 5.00, '2023-12-04 10:19:45', '2023-12-04 10:19:45'),
-(11, 4, 2, 50, '0-5', 5.00, '2023-12-04 10:20:06', '2023-12-04 10:20:06'),
-(12, 4, 3, 50, '0-5', 5.00, '2023-12-04 10:20:32', '2023-12-04 10:20:32'),
-(13, 1, 1, 40, '5-10', 4.00, '2023-12-04 11:54:46', '2023-12-04 11:54:46'),
-(14, 1, 1, 35, '10-20', 3.00, '2023-12-04 11:55:48', '2023-12-04 11:55:48'),
-(15, 1, 1, 30, '20-50', 30.00, '2023-12-04 11:56:30', '2023-12-04 11:56:30');
+(3, 1, 1, 50, '0-5', '5.00', '2023-12-03 21:59:50', '2023-12-03 21:59:50'),
+(4, 1, 2, 50, '0-5', '5.00', '2023-12-03 22:00:16', '2023-12-03 22:00:16'),
+(5, 2, 1, 50, '0-5', '5.00', '2023-12-03 22:00:31', '2023-12-03 22:00:31'),
+(6, 3, 1, 50, '0-5', '5.00', '2023-12-04 10:17:07', '2023-12-04 10:17:07'),
+(7, 1, 3, 50, '0-5', '5.00', '2023-12-04 10:18:10', '2023-12-04 10:18:10'),
+(8, 4, 1, 50, '0-5', '5.00', '2023-12-04 10:18:30', '2023-12-04 10:18:30'),
+(9, 1, 4, 50, '0-5', '5.00', '2023-12-04 10:19:06', '2023-12-04 10:19:28'),
+(10, 2, 4, 50, '0-5', '5.00', '2023-12-04 10:19:45', '2023-12-04 10:19:45'),
+(11, 4, 2, 50, '0-5', '5.00', '2023-12-04 10:20:06', '2023-12-04 10:20:06'),
+(12, 4, 3, 50, '0-5', '5.00', '2023-12-04 10:20:32', '2023-12-04 10:20:32'),
+(13, 1, 1, 40, '5-10', '4.00', '2023-12-04 11:54:46', '2023-12-04 11:54:46'),
+(14, 1, 1, 35, '10-20', '3.00', '2023-12-04 11:55:48', '2023-12-04 11:55:48'),
+(15, 1, 1, 30, '20-50', '30.00', '2023-12-04 11:56:30', '2023-12-04 11:56:30');
 
 -- --------------------------------------------------------
 
@@ -442,7 +451,7 @@ CREATE TABLE `shipments` (
 --
 
 INSERT INTO `shipments` (`id`, `from_city`, `to_city`, `product_name`, `product_description`, `product_weight`, `receiver_address`, `sender_address`, `contact_name`, `contact_number`, `base_price`, `unit_size`, `shipping_cost`, `total_cost`, `user_id`, `customer_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 'Cloths', 'Some of Cloths', 5.00, 'def', 'abc', 'noman', '01815', 50.00, NULL, 25.00, 55.00, NULL, 1, 2, '2023-12-04 00:08:13', '2023-12-04 00:48:14');
+(1, 1, 2, 'Cloths', 'Some of Cloths', '5.00', 'def', 'abc', 'noman', '01815', '50.00', NULL, '25.00', '55.00', NULL, 1, 2, '2023-12-04 00:08:13', '2023-12-04 00:48:14');
 
 -- --------------------------------------------------------
 
@@ -474,7 +483,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `address`, `email`, `contact_no`, `bank_account_no`, `bank_name`, `bank_branch_name`, `password`, `image`, `company_id`, `brunch_id`, `status`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'Noman', NULL, 'noman@gmail.com', '01815', NULL, NULL, NULL, '$2y$12$D29FCnSWD.vcEvscuHcuD.EWyVHOqgNmCoyj9RTpa9X.ekQQDuDfS', NULL, NULL, NULL, 1, NULL, '2023-12-03 21:29:35', '2023-12-03 21:29:35');
+(1, 'Noman', NULL, 'noman@gmail.com', '01815', NULL, NULL, NULL, '$2y$12$D29FCnSWD.vcEvscuHcuD.EWyVHOqgNmCoyj9RTpa9X.ekQQDuDfS', NULL, NULL, NULL, 1, NULL, '2023-12-03 21:29:35', '2023-12-03 21:29:35'),
+(2, 'Mojahid', NULL, 'mojahidjouel@yahoo.com', '01814415108', NULL, NULL, NULL, '$2y$12$1aPL0MBcK1RzIxptkWJiQ.s0Cc.3Ajb4Q8j3vT.qQex9L6Ym00ngC', NULL, NULL, NULL, 1, NULL, '2023-12-05 01:09:31', '2023-12-05 01:09:31'),
+(3, 'Kamal', NULL, 'kamal@gmail.com', '018', NULL, NULL, NULL, '$2y$12$L4lNRupHww9AX.JNX8RZyeh2oR4kUJBSjmsWMApGQH2tqnfHRohOK', NULL, NULL, NULL, 1, NULL, '2023-12-05 01:09:54', '2023-12-05 01:09:54'),
+(4, 'Kaiser', NULL, 'kaiser@gmail.com', '0177', NULL, NULL, NULL, '$2y$12$mEF9fP/JzoN3B2HYtwLXsunNS.yvDhB6eHVcaOmZz/BtPQpSIkB.K', NULL, NULL, NULL, 1, NULL, '2023-12-05 01:10:16', '2023-12-05 01:10:16');
 
 --
 -- Indexes for dumped tables
@@ -643,7 +655,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `ordertracks`
 --
 ALTER TABLE `ordertracks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -679,7 +691,7 @@ ALTER TABLE `shipments`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

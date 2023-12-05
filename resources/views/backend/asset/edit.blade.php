@@ -24,6 +24,7 @@
     <label for="registration_number" class="form-label">Registration Number</label>
     <input type="text" class="form-control" id="registration_number" value="{{ old('registration_number',$asset->registration_number)}}" name="registration_number">
   </div>
+  
   <div class="col-md-6 col-12 position-relative">
     <label for="driver_id" class="form-label">Driver Id	</label>
     <select name="driver_id" class="form-control" id="driver_id" >

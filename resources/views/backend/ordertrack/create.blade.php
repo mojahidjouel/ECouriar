@@ -10,16 +10,27 @@
 <div class="row">
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="user_id" class="form-label">User Id</label>
-    <input type="text" class="form-control" id="user_id" value="{{old('user_id')}}" name="user_id">
-    @if($errors->has('user_id'))
-      <span class="text-danger"> {{$errors->first('user_id')}}</span>
-    @endif
+    <label for="user_id" class="form-label">User Id	</label>
+    <select name="user_id" class="form-control" id="user_id" >
+      <option value="">Select User</option>
+      @forelse($user as $u)
+        <option value="{{$u->id}}" @if(old('user_id')==$u->id) selected @endif>{{$u->name}}</option>
+      @empty
+        <option value="">No User Found</option>
+      @endforelse
+    </select>
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="shipment_id" class="form-label">Shipment Id</label>
-    <input type="text" class="form-control" id="shipment_id" value="{{ old('shipment_id')}}" name="shipment_id">
+    <label for="shipment_id" class="form-label">Shipment Id	</label>
+    <select name="shipment_id" class="form-control" id="shipment_id" >
+      <option value="">Select Shipment</option>
+      @forelse($shipment as $u)
+        <option value="{{$u->id}}" @if(old('shipment_id')==$u->id) selected @endif>{{$u->id}}</option>
+      @empty
+        <option value="">No Shipment Found</option>
+      @endforelse
+    </select>
   </div>
 
   <div class="col-md-6 col-12 position-relative">

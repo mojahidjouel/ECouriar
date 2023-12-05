@@ -3,9 +3,9 @@
 
 @section('content')
 
-<div class="table-responsive"><div>
-  <a class="fs-5 d-flex justify-content-start" href="{{route('city.create')}}"><i class="fa fa-plus"></i></a>
-</div>
+<div class="table-responsive">
+  <div><a class="fs-5 d-flex justify-content-start" href="{{route('city.create')}}"><i class="fa fa-plus"></i></a>
+
 <table class="table table-hover table-striped">
   <thead>
     <tr class="text-danger">
@@ -22,7 +22,7 @@
         <td>{{$p->code}}</td>
 
         <td class="white-space-nowrap">
-        <a href="{{route('city.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit btn btn-info btn-sm"></i></a>
+        <a href="{{route('city.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit btn btn-info btn-sm"></i></a>
         <a href="{{route('city.show', $p->id)}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
         <form id="form{{$p->id}}" action="{{route('city.destroy',encryptor('encrypt',$p->id))}}" method="post">
@@ -37,6 +37,11 @@
     </tr>
     @endforelse
   </tbody>
+  <!-- {{$data->links()}} -->
 </table>
+
+
+</div>
+</div>
 
 @endsection
