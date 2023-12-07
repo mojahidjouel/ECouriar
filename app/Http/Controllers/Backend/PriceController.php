@@ -20,7 +20,7 @@ class PriceController extends Controller
      */
     public function index()
     {
-        $data=Price::paginate(10);
+        $data=Price::oldest()->paginate(5);
         return view('backend.price.index',compact('data'));
     }
 

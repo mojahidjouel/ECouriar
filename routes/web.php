@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\RoleController as role;
 
 
 use App\Http\Controllers\Backend\AdminUserController as adminuser;
+use App\Http\Controllers\Backend\UserController as user;
 use App\Http\Controllers\Backend\AssetController as assets;
 use App\Http\Controllers\Backend\CompanyController as companies;
 use App\Http\Controllers\Backend\BranchController as branches;
@@ -49,6 +50,7 @@ Route::get('user/logout', [userauth::class,'singOut'])->name('user.LogOut');
 
 Route::middleware(['checkuserauth'])->prefix('user')->group(function(){
     Route::get('dashboard', [userdashboard::class,'index'])->name('userdashboard');
+    //Route::resource('user', user::class);
     Route::resource('order', shipments::class);
     Route::get('order_price', [shipments::class,'order_price'])->name('order_price');
 });
@@ -63,7 +65,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
     Route::resource('role', role::class);
     Route::get('permission/{role}', [permission::class,'index'])->name('permission.list');
     Route::post('permission/{role}', [permission::class,'save'])->name('permission.save');
-    
+    Route::resource('user', user::class);  
     Route::resource('asset', assets::class);
     Route::resource('company', companies::class);
     Route::resource('branch', branches::class);

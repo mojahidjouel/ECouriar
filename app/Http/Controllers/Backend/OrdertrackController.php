@@ -20,7 +20,7 @@ class OrdertrackController extends Controller
      */
     public function index()
     {
-        $data=Ordertrack::paginate(10);
+        $data=Ordertrack::oldest()->paginate(5);
         return view('backend.ordertrack.index',compact('data'));
     }
 

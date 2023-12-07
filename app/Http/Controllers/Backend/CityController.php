@@ -20,10 +20,10 @@ class CityController extends Controller
      */
     public function index()
     {
-        $data=City::paginate(10);
+        $data=City::oldest()->paginate(5);
         return view('backend.city.index',compact('data'));
     }
-
+        //oldest/latest()->paginate(10);
     /**
      * Show the form for creating a new resource.
      */
@@ -57,8 +57,9 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(city $city)
+    public function show($id)
     {
+        $city=City::findOrFail(encryptor('decrypt',$id));
         return view('backend.city.show', compact('city'));
         
     }

@@ -17,7 +17,7 @@ class BranchController extends Controller
      */
     public function index()
     {
-        $data=Branch::paginate(10);
+        $data=Branch::oldest()->paginate(5);
         return view('backend.branch.index',compact('data'));
     }
 
@@ -59,7 +59,7 @@ class BranchController extends Controller
                 return redirect()->back()->withInput()->with('error','Please try again');
             
             }catch(Exception $e){
-            // dd($e);
+             dd($e);
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }
@@ -112,7 +112,7 @@ class BranchController extends Controller
                 return redirect()->back()->withInput()->with('error','Please try again');
             
             }catch(Exception $e){
-            // dd($e);
+            dd($e);
             return redirect()->back()->withInput()->with('error','Please try again');
         }
     }

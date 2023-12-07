@@ -19,7 +19,7 @@ class AssetController extends Controller
      */
     public function index()
     {
-        $data=Asset::paginate(10);
+        $data=Asset::oldest()->paginate(5);
         return view('backend.asset.index',compact('data'));
     }
 

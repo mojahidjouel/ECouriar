@@ -19,7 +19,7 @@ class AdminUserController extends Controller
      * Display a listing of the resource.
      */
     public function index(){
-        $data=AdminUser::paginate(10);
+        $data=AdminUser::oldest()->paginate(5);
         return view('backend.adminuser.index',compact('data'));
     }
 

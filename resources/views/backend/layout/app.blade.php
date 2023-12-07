@@ -57,8 +57,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i>Users</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('adminuser.index')}}" class="dropdown-item">User List</a>
-                            <a href="{{route('adminuser.create')}}" class="dropdown-item">User Add</a>
+                            <a href="{{route('adminuser.index')}}" class="dropdown-item">Admin List</a>
+                            <a href="{{route('adminuser.create')}}" class="dropdown-item">Add New</a>
+
+                            <a href="{{route('user.index')}}" class="dropdown-item">User List</a>
+                            <a href="{{route('user.create')}}" class="dropdown-item">Add New</a>
 
                             <a href="{{route('role.index')}}" class="dropdown-item">Role List</a>
                             <a href="{{route('role.create')}}" class="dropdown-item">Add New</a>
@@ -138,8 +141,6 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('login')}}" class="dropdown-item">Sign In</a>
                             <a href="{{route('register')}}" class="dropdown-item">Sign Up</a>
-                            <a href="#" class="dropdown-item">404 Error</a>
-                            <!-- <a href="#" class="dropdown-item">Blank Page</a> -->
                         </div>
                     </div>
                 </div>

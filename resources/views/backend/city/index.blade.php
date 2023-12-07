@@ -23,7 +23,7 @@
 
         <td class="white-space-nowrap">
         <a href="{{route('city.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit btn btn-info btn-sm"></i></a>
-        <a href="{{route('city.show', $p->id)}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
+        <a href="{{route('city.show',encryptor('encrypt',$p->id))}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>
         <form id="form{{$p->id}}" action="{{route('city.destroy',encryptor('encrypt',$p->id))}}" method="post">
         @csrf
@@ -37,10 +37,9 @@
     </tr>
     @endforelse
   </tbody>
-  <!-- {{$data->links()}} -->
+
 </table>
-
-
+{{$data->links('pagination::bootstrap-5')}}
 </div>
 </div>
 

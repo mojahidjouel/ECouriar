@@ -23,7 +23,7 @@ class ShipmentController extends Controller
     public function index()
     {
         //$data=Shipment::where('user_id',currentUserId())->paginate(10);
-        $data=Shipment::paginate(10);
+        $data=Shipment::oldest()->paginate(5);
         return view('backend.shipment.index',compact('data'));
     }
 

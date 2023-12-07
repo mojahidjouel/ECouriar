@@ -17,7 +17,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $data=Company::paginate(10);
+        $data=Company::oldest()->paginate(5);
         return view('backend.company.index',compact('data'));
     }
     /**

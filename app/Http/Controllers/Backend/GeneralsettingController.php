@@ -17,7 +17,7 @@ class GeneralsettingController extends Controller
      */
     public function index()
     {
-        $data=General_setting::paginate(10);
+        $data=General_setting::oldest()->paginate(5);
         return view('backend.general_setting.index',compact('data'));
     }
 
