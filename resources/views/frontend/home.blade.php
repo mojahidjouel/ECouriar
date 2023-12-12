@@ -32,14 +32,13 @@
 
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href=""><img src="{{asset('public/assets/img/gallery/logo2.jpg')}}" height="30" alt="logo" /></a>
+        <div class="container"><a class="navbar-brand" href=""><img src="{{asset('public/assets/img/gallery/logo1.jpg')}}" height="30" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#home">Home</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="#services">Our Services</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="#services">About Us</a></li>
-              <li class="nav-item px-2"><a class="nav-link" href="#services">Location</a></li>
               <li class="nav-item px-2"><a class="nav-link" href="#findUs">Find Us</a></li>
             </ul>
             <div class="dropdown d-none d-lg-block">
@@ -263,7 +262,7 @@
               </div>
             </div>
             <div class="col-6 col-lg mb-5">
-              <div class="text-center"><img src="assets/img/icons/goods.png" alt="..." />
+              <div class="text-center"><img src="{{asset('public/assets/img/icons/goods.png')}}" alt="..." />
                 <h1 class="text-primary mt-4">130M+</h1>
                 <h5 class="text-800">Goods delivered</h5>
               </div>
@@ -561,13 +560,16 @@
             <div class="col-12">
               <div class="card card-span rounded-2 mb-3">
                 <div class="row">
-                  <div class="col-md-6 col-lg-7 d-flex"><img class="w-100 fit-cover rounded-md-start rounded-top rounded-md-top-0" src="{{asset('public/assets/img/gallery/map.svg')}}" alt="map" /></div>
+                  <div class="col-md-6 col-lg-7 d-flex">
+                    <img class="w-100 fit-cover rounded-md-start rounded-top rounded-md-top-0" src="{{asset('public/assets/img/gallery/map.svg')}}" alt="map" />
+                  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14759.358121667348!2d91.79605617713216!3d22.359687213393304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd971deb16c35%3A0xc0b8c0d4599e0ced!2sSolosohor%202%20no%20gate!5e0!3m2!1sen!2sbd!4v1702362048560!5m2!1sen!2sbd" class="w-100 fit-cover rounded-md-start rounded-top rounded-md-top-0" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                </div>
                   <div class="col-md-6 col-lg-5 d-flex flex-center">
                     <div class="card-body">
                       <h5>Contact with us</h5>
-                      <p class="text-700 my-4"> <i class="fas fa-map-marker-alt text-warning me-3"></i><span>2277 Lorem Ave, San Diego, CA 22553</span></p>
+                      <p class="text-700 my-4"> <i class="fas fa-map-marker-alt text-warning me-3"></i><span>2no Gate, Sholoshohor, Chattogram, Bangladesh +880</span></p>
                       <p><i class="fas fa-phone-alt text-warning me-3"></i><span class="text-700">Monday - Friday: 10 am - 10pm<br/><span class="ps-4">Sunday: 11 am - 9pm  </span></span></p>
-                      <p><i class="fas fa-envelope text-warning me-3"> </i><a class="text-700" href=""> info@quriarbox.com</a></p>
+                      <p><i class="fas fa-envelope text-warning me-3"> </i><a class="text-700" href=""> info@gmail.com</a></p>
                       <ul class="list-unstyled list-inline mt-5">
                         <li class="list-inline-item"><a class="text-decoration-none" href="#"><i class="fab fa-facebook-square fs-2"></i></a></li>
                         <li class="list-inline-item"><a class="text-decoration-none" href="#"><i class="fab fa-instagram-square fs-2"></i></a></li>
@@ -578,7 +580,7 @@
                 </div>
               </div>
               <div class="text-center">
-                <button class="btn btn-primary px-5" type="submit"><i class="fas fa-phone-alt me-2"></i><a class="text-light" href="#">Call us to delivery 123-456789</a></button>
+                <button class="btn btn-primary px-5" type="submit"><i class="fas fa-phone-alt me-2"></i><a class="text-light" href="#">Call us to delivery 01814-415108</a></button>
               </div>
             </div>
           </div>
@@ -623,7 +625,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="#"><img src="{{asset('public/assets/img/gallery/footer-logo.png')}}" height="51" alt="" /></a>
+            <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href=""><img src="{{asset('public/assets/img/gallery/logo1.jpg')}}" height="51" alt="" /></a>
               <p class="text-500 my-4">The most trusted Courier<br />company in your area.</p>
             </div>
             <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">

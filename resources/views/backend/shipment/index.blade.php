@@ -24,6 +24,8 @@
     <th scope="col">{{__('Cargo Cost')}}</th>
     <th scope="col">{{__('Total Cost')}}</th>
     <th scope="col">{{__('Status')}}</th>
+    <th scope="col">{{__('User Id')}}</th>
+    <th scope="col">{{__('Customer Id')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
     </tr>
   </thead>
@@ -44,6 +46,9 @@
         <td>{{$p->shipping_cost}}</td>
         <td>{{$p->total_cost}}</td>
         <td>@if($p->status == 0) {{__('Pending') }} @elseif($p->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif</td>
+        <td>{{$p->user_id}}</td>
+        <td>{{$p->customer_id}}</td>
+        <!-- <td>{{$p->user?->name}}</td> -->
        
  <!-- @php print_r($errors->all()) @endphp  -->
 

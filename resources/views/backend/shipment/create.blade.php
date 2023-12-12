@@ -105,6 +105,30 @@
     @endif
   </div>
 
+  <div class="col-md-6 col-12 position-relative">
+    <label for="user_id" class="form-label">User Id	</label>
+    <select name="user_id" class="form-control" id="user_id" >
+      <option value="">Select User</option>
+      @forelse($shipment as $u)
+        <option value="{{$u->id}}" @if(old('user_id')==$u->id) selected @endif>{{$u->name}}</option>
+      @empty
+        <option value="">No User Found</option>
+      @endforelse
+    </select>
+  </div>
+
+  <div class="col-md-6 col-12 position-relative">
+    <label for="customer_id" class="form-label">Customer Id	</label>
+    <select name="customer_id" class="form-control" id="customer_id" >
+      <option value="">Select Customer</option>
+      @forelse($shipment as $u)
+        <option value="{{$u->id}}" @if(old('customer_id')==$u->id) selected @endif>{{$u->name}}</option>
+      @empty
+        <option value="">No Customer Found</option>
+      @endforelse
+    </select>
+  </div>
+
 </div>
 
 <div class="row">

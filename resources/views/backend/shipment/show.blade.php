@@ -47,6 +47,15 @@
 
             <h6 class="text-danger">Total Cost:</h6>
             <h4 class="card-title text-info">{{$shipment->total_cost}}</h4>
+
+            <h6 class="text-danger">Status:</h6>
+            <h4 class="card-title text-info">{{$shipment->status}}</h4>
+
+            <h6 class="text-danger">User Id:</h6>
+            <h4 class="card-title text-info">{{$shipment->user_id}}</h4>
+
+            <h6 class="text-danger">Customer Id:</h6>
+            <h4 class="card-title text-info">{{$shipment->customer_id}}</h4>
  
          </div>
         </div>

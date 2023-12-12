@@ -67,7 +67,7 @@ class ShipmentController extends Controller
                     return redirect()->back()->withInput()->with('error','Please try again');
                 
             }catch(Exception $e){
-                //dd($e);
+            // dd($e);
                 return redirect()->back()->withInput()->with('error','Please try again');
             }
         }
@@ -123,7 +123,7 @@ class ShipmentController extends Controller
                 }
             }catch(Exception $e){
                 Toastr::error('Please try again');
-                // dd($e);
+                //dd($e);
                 return redirect()->back()->withInput();
             }
         }
