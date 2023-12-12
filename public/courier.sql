@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2023 at 08:46 AM
+-- Generation Time: Dec 12, 2023 at 08:18 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -52,7 +52,7 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `name`, `email`, `contact_no`, `role_id`, `password`, `image`, `company_id`, `brunch_id`, `full_access`, `status`, `remember_token`, `access_block`, `token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Mojahid', 'mojahidjouel@yahoo.com', '01814415108', 1, '$2y$12$umtrEe1X/MKRztX9Wf9S7eLpseXZcunZ1Tx7vC7ginpnVuSrJaTxC', '9561701660191.jpg', NULL, NULL, 1, 1, NULL, NULL, NULL, '2023-12-03 21:21:04', '2023-12-03 21:23:11', NULL);
+(1, 'Mojahid', 'mojahidjouel@yahoo.com', '01814', 1, '$2y$12$umtrEe1X/MKRztX9Wf9S7eLpseXZcunZ1Tx7vC7ginpnVuSrJaTxC', '9561701660191.jpg', NULL, NULL, 1, 1, NULL, NULL, NULL, '2023-12-03 21:21:04', '2023-12-03 21:23:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -92,8 +92,8 @@ CREATE TABLE `branches` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `company_id` int(11) DEFAULT NULL,
   `branch_name` varchar(255) DEFAULT NULL,
-  `branch_email` varchar(255) NOT NULL,
-  `branch_phone` varchar(255) NOT NULL,
+  `branch_email` varchar(255) DEFAULT NULL,
+  `branch_phone` varchar(255) DEFAULT NULL,
   `branch_address` text DEFAULT NULL,
   `branch_city` text DEFAULT NULL,
   `branch_state` text DEFAULT NULL,
@@ -392,7 +392,13 @@ INSERT INTO `prices` (`id`, `to_city`, `from_city`, `base_price`, `unit_size`, `
 (12, 4, 3, 50, '0-5', '5.00', '2023-12-04 10:20:32', '2023-12-04 10:20:32'),
 (13, 1, 1, 40, '5-10', '4.00', '2023-12-04 11:54:46', '2023-12-04 11:54:46'),
 (14, 1, 1, 35, '10-20', '3.00', '2023-12-04 11:55:48', '2023-12-04 11:55:48'),
-(15, 1, 1, 30, '20-50', '30.00', '2023-12-04 11:56:30', '2023-12-04 11:56:30');
+(15, 1, 1, 30, '20-50', '30.00', '2023-12-04 11:56:30', '2023-12-04 11:56:30'),
+(16, 1, 1, 45, '6-10', '4.00', '2023-12-11 22:07:38', '2023-12-11 22:07:38'),
+(17, 1, 2, 45, '6-10', '4.00', '2023-12-11 22:08:26', '2023-12-11 22:08:26'),
+(18, 3, 1, 40, '6-10', '4.50', '2023-12-11 22:09:16', '2023-12-11 22:09:16'),
+(19, 4, 1, 45, '6-10', '4.50', '2023-12-11 22:10:17', '2023-12-11 22:10:17'),
+(20, 2, 4, 45, '6-10', '4.80', '2023-12-11 22:10:55', '2023-12-11 22:10:55'),
+(21, 4, 3, 45, '6-10', '4.50', '2023-12-12 00:34:15', '2023-12-12 00:34:15');
 
 -- --------------------------------------------------------
 
@@ -619,7 +625,7 @@ ALTER TABLE `assets`
 -- AUTO_INCREMENT for table `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -673,7 +679,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `prices`
 --
 ALTER TABLE `prices`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `roles`
