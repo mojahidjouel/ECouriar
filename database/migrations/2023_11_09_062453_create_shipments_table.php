@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
+            $table->string('invoice_no')->nullable();
             $table->unsignedBigInteger('from_city')->index();
             $table->foreign('from_city')->references('id')->on('cities')->onDelete('cascade');
             $table->unsignedBigInteger('to_city')->index();
@@ -26,7 +27,7 @@ return new class extends Migration
             $table->string('contact_number')->nullable();
             
             $table->decimal('base_price',10,2)->nullable();
-            $table->decimal('unit_size',10,2)->nullable();
+            $table->decimal('unit_price',10,2)->nullable();
             $table->decimal('shipping_cost',10,2)->nullable();
             $table->decimal('total_cost',10,2)->nullable();
             $table->integer('user_id')->nullable();

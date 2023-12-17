@@ -22,6 +22,8 @@ use App\Http\Controllers\Backend\OrdertrackController as ordertrack;
 use App\Http\Controllers\User\AuthController as userauth;
 use App\Http\Controllers\User\DashboardController as userdashboard;
 use App\Http\Controllers\User\ShipmentController as shipments;
+
+use App\Http\Controllers\HomeController as home;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +55,7 @@ Route::middleware(['checkuserauth'])->prefix('user')->group(function(){
     //Route::resource('user', user::class);
     Route::resource('order', shipments::class);
     Route::get('order_price', [shipments::class,'order_price'])->name('order_price');
+    Route::get('ordertrack/{id}', [shipments::class,'ordertrack'])->name('ordertrack');
 });
 
 
@@ -78,8 +81,8 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function(){
 
 Route::get('/', function () {
     return view('frontend.home');
-
 });
+Route::get('front-ordertrack', [home::class,'ordertrack'])->name('front.ordertrack');
 
 
 // Route::get('/dashboard', function () {

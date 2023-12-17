@@ -10,18 +10,12 @@
   <thead>
     <tr>
     <th scope="col">{{__('#SL')}}</th>
+    <th scope="col">{{__('Invoice')}}</th>
     <th scope="col">{{__('From City')}}</th>
-    <th scope="col">{{__('Sender Address')}}</th>
     <th scope="col">{{__('To City')}}</th>
-    <th scope="col">{{__('Receiver Address')}}</th>
-    <th scope="col">{{__('Contact Name')}}</th>
     <th scope="col">{{__('Contact Number')}}</th>
     <th scope="col">{{__('Product Name')}}</th>
-    <th scope="col">{{__('Product Description')}}</th>
     <th scope="col">{{__('Product Weight')}}</th>
-    <th scope="col">{{__('Base Price')}}</th>
-    <th scope="col">{{__('Unit Price')}}</th>
-    <th scope="col">{{__('Cargo Cost')}}</th>
     <th scope="col">{{__('Total Cost')}}</th>
     <th scope="col">{{__('Status')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
@@ -30,27 +24,19 @@
   <tbody>
   @forelse($data as $p)
   <th scope="row">{{ ++$loop->index }}</th>
+        <td>{{$p->invoice_no}}</td>
         <td>{{$p->f_city?->name}}</td>
-        <td>{{$p->sender_address}}</td>
         <td>{{$p->t_city?->name}}</td>
-        <td>{{$p->receiver_address}}</td>
-        <td>{{$p->contact_name}}</td>
         <td>{{$p->contact_number}}</td>
         <td>{{$p->product_name}}</td>
-        <td>{{$p->product_description}}</td>
-        <td>{{$p->product_weight}}</td>      
-        <td>{{$p->base_price}}</td>
-        <td>{{$p->unit_price}}</td>
-        <td>{{$p->shipping_cost}}</td>
+        <td>{{$p->product_weight}}</td> 
         <td>{{$p->total_cost}}</td>
         <td>@if($p->status == 0) {{__('Pending') }} @elseif($p->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif</td>
        
- <!-- @php print_r($errors->all()) @endphp  -->
-
-
         <td class="white-space-nowrap">
         <a class="text-dark btn btn-primary" href="{{route('order.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit"></i>Edit </a>
         <a class="text-dark btn btn-info" href="{{route('order.show', $p->id)}}">View</a>
+        <a class="text-dark btn btn-warning" href="{{route('ordertrack', $p->id)}}">Track</a>
         </form>
         </td>
     </tr>

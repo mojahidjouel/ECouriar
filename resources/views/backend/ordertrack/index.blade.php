@@ -10,7 +10,7 @@
   <thead>
     <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
-    <th scope="col">{{__('User Id')}}</th>
+    <th scope="col">{{__('Deliveryman')}}</th>
     <th scope="col">{{__('Shipment Id')}}</th>
     <th scope="col">{{__('Comment')}}</th>
     <th scope="col">{{__('Status')}}</th>
@@ -20,10 +20,10 @@
   <tbody>
   @forelse($data as $p)
   <th scope="row">{{ ++$loop->index }}</th>
-        <td>{{$p->user?->name}}</td>
-        <td>{{$p->shipment?->name}}</td>
+        <td>{{$p->shipment?->deliveryman?->name}}</td>
+        <td>{{$p->shipment?->invoice_no}}</td>
         <td>{{$p->comment}}</td>
-        <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>
+        <td>@if($p->status == 0) {{__('Pending') }} @elseif($p->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif</td>
 
         <td class="white-space-nowrap">
         <a href="{{route('ordertrack.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit btn btn-info btn-sm"></i></a>

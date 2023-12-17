@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Shipment;
 use App\Models\City;
 use App\Models\price;
+use App\Models\Backend\Ordertrack;
 
 
 use Illuminate\Support\Facades\Hash;
@@ -77,14 +78,16 @@ class ShipmentController extends Controller
                 $data->contact_name=$request->contact_name;
                 $data->contact_number=$request->contact_number;
                 $data->base_price=$request->base_price;
-                $data->unit_size=$request->unit_price;
+                $data->unit_price=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
-                $data->status=$request->status;
+                $data->status=0;
                 $data->customer_id=currentUserId();
-                if($data->save())
+                if($data->save()){
+                    $data->invoice_no=$data->id.date('Y').date('m').date('d');
+                    $data->save();
                     return redirect()->route('order.index')->with('success','Successfully saved');
-                else
+                }else
                     return redirect()->back()->withInput()->with('error','Please try again');
                 
             }catch(Exception $e){
@@ -138,12 +141,14 @@ class ShipmentController extends Controller
                 $data->status=$request->status;
                 
                 if($data->save()){
+                    $data->invoice_no=$data->id.date('Y').date('m').date('d');
+                    $data->save();
                     Toastr::success('Successfully updated');
                     return redirect()->route('order.index');
                 }
             }catch(Exception $e){
                 Toastr::error('Please try again');
-                // dd($e);
+                dd($e);
                 return redirect()->back()->withInput();
             }
         }
@@ -163,5 +168,11 @@ class ShipmentController extends Controller
             Toastr::warning('Deleted Permanently!');
             return redirect()->back();
         }
+    }
+
+    public function ordertrack($id)
+    {
+        $data=Ordertrack::where('shipment_id',$id)->oldest()->paginate(5);
+        return view('user.shipment.ordertrack',compact('data'));
     }
 }

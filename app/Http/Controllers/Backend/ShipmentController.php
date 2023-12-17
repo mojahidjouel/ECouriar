@@ -87,11 +87,11 @@ class ShipmentController extends Controller
      */
     public function edit($id)
     {
-        $shipment=Shipment::get();
+        $deliveryman=AdminUser::where('role_id',3)->get();
         $city=City::get();
         $price=Price::get();
         $shipment=Shipment::findOrFail(encryptor('decrypt',$id));
-        return view('backend.shipment.edit',compact('shipment','city','price'));
+        return view('backend.shipment.edit',compact('deliveryman','shipment','city','price'));
     }
 
     /**
@@ -116,6 +116,7 @@ class ShipmentController extends Controller
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
                 $data->status=$request->status;
+                $data->user_id=$request->user_id;
                 
                 if($data->save()){
                     Toastr::success('Successfully updated');

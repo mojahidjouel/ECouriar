@@ -29,10 +29,8 @@ class OrdertrackController extends Controller
      */
     public function create()
     {
-        $ordertrack=Ordertrack::get();
-        $user=User::get();
         $shipment=Shipment::get();
-        return view('backend.ordertrack.create',compact('ordertrack','user','shipment'));
+        return view('backend.ordertrack.create',compact('shipment'));
     }
 
     /**
@@ -40,24 +38,23 @@ class OrdertrackController extends Controller
      */
     public function store(Request $request)
     {
-        {
-            try{
-                $data=new Ordertrack();
-                $data->user_id=$request->user_id;
-                $data->shipment_id=$request->shipment_id;
-                $data->comment=$request->comment;
-                $data->status=$request->status;
-
-                if($data->save())
-                    return redirect()->route('ordertrack.index')->with('success','Successfully saved');
-                else
-                    return redirect()->back()->withInput()->with('error','Please try again');
-                
-            }catch(Exception $e){
-                //dd($e);
-                return redirect()->back()->withInput()->with('error','Please try again');
+        try{
+            $data=new Ordertrack();
+            $data->user_id=currentUserId();
+            $data->shipment_id=$request->shipment_id;
+            $data->comment=$request->comment;
+            
+            if($data->save()){
+                $shipment=Shipment::find($request->shipment_id);
+                $shipment->status=$request->status;
+                $shipment->save();
+                return redirect()->route('ordertrack.index')->with('success','Successfully saved');
             }
+        }catch(Exception $e){
+            //dd($e);
+            return redirect()->back()->withInput()->with('error','Please try again');
         }
+        
     }
 
     /**
@@ -74,7 +71,6 @@ class OrdertrackController extends Controller
      */
     public function edit($id)
     {
-        $ordertrack=Ordertrack::get();
         $user=User::get();
         $shipment=Shipment::get();
         $ordertrack=Ordertrack::findOrFail(encryptor('decrypt',$id));
