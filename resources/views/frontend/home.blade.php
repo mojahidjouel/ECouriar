@@ -525,17 +525,22 @@
             <div class="col-md-6 col-lg-5 col-xl-4">
               <form class="row">
                 <div class="mb-3">
-                  <label class="form-label visually-hidden" for="inputName">Name</label>
-                  <input class="form-control form-quriar-control" id="inputName" type="text" placeholder="Name" />
+                  <label class="form-label visually-hidden" for="name">Name</label>
+                  <input class="form-control form-quriar-control" id="name" name="name" type="text" placeholder="Name" />
                 </div>
                 <div class="mb-3">
-                  <label class="form-label visually-hidden" for="inputEmail">Another label</label>
-                  <input class="form-control form-quriar-control" id="inputEmail" type="email" placeholder="Email" />
+                  <label class="form-label visually-hidden" for="email">Another label</label>
+                  <input class="form-control form-quriar-control" id="email" type="email" name="email" placeholder="Email" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label visually-hidden" for="contact">Another label</label>
+                  <input class="form-control form-quriar-control" id="contact" name="contact" type="text" placeholder="Contact" />
                 </div>
                 <div class="mb-5">
-                  <label class="form-label visually-hidden" for="validationTextarea">Message</label>
-                  <textarea class="form-control form-quriar-control is-invalid border-400" id="validationTextarea" placeholder="Message" style="height: 150px" required="required"></textarea>
+                  <label class="form-label visually-hidden" for="comment">Message</label>
+                  <textarea class="form-control form-quriar-control is-invalid border-400" id="comment" name="comment" placeholder="Message" style="height: 150px" required="required"></textarea>
                 </div>
+
                 <div class="d-grid">
                   <button class="btn btn-primary" type="submit">Send Message<i class="fas fa-paper-plane ms-2"></i></button>
                 </div>
