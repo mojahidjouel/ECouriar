@@ -11,7 +11,7 @@
           
             <h6 class="text-danger">From City:</h6>
             <h4 class="card-title text-info"></h6>
-<?php print_r($data); ?>
+            <?php print_r($data); ?>
             
          </div>
         </div>

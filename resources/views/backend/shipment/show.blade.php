@@ -5,61 +5,139 @@
 @section('content')
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <div class="cc p-8">
-        <div class="card w-85 mx-auto text-center">
-        <div class="card-body bg-white">
-            <h6 class="text-danger">From City:</h6>
-            <h4 class="card-title text-info">{{$shipment->f_city?->name}}</h6>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">From City:</h5>
+        <h4 class="card-text text-dark">{{$shipment->f_city?->name}}</h4>      
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">To City:</h5>
+        <h4 class="card-text text-dark">{{$shipment->t_city?->name}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Product Name:</h5>
+        <h4 class="card-text text-dark">{{$shipment->product_name}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Product Description:</h5>
+        <h4 class="card-text text-dark">{{$shipment->product_description}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Product Weight:</h5>
+        <h4 class="card-text text-dark">{{$shipment->product_weight}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Receiver Address:</h5>
+        <h4 class="card-text text-dark">{{$shipment->receiver_address}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Sender Address:</h5>
+        <h4 class="card-text text-dark">{{$shipment->sender_address}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Contact Name:</h5>
+        <h4 class="card-text text-dark">{{$shipment->contact_name}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Contact Number:</h5>
+        <h4 class="card-text text-dark">{{$shipment->contact_number}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Base Price:</h5>
+        <h4 class="card-text text-dark">{{$shipment->base_price}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Unit Price:</h5>
+        <h4 class="card-text text-dark">{{$shipment->unit_price}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Shipping Cost:</h5>
+        <h4 class="card-text text-dark">{{$shipment->shipping_cost}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Total Cost:</h5>
+        <h4 class="card-text text-dark">{{$shipment->total_cost}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Status:</h5>
+        <h4 class="card-text text-dark">{{$shipment->status}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">User Id:</h5>
+        <h4 class="card-text text-dark">{{$shipment->deliveryman?->name}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-light">Customer Id:</h5>
+        <h4 class="card-text text-dark">{{$shipment->customer?->name}}</h4>
+      </div>
+    </div>
+  </div>
 
-            <h6 class="text-danger">To City:</h6>
-            <h4 class="card-title text-info">{{$shipment->t_city?->name}}</h4>
-
-            <h6 class="text-danger">Product Name: </h6>
-            <h4 class="card-title text-info">{{$shipment->product_name}}</h4>
-
-            <h6 class="text-danger">Product Description:</h6>
-            <h4 class="card-title text-info">{{$shipment->product_description}}</h4>
-
-            <h6 class="text-danger">Product Weight:</h6>
-            <h4 class="card-title text-info">{{$shipment->product_weight}}</h4>
-
-            <h6 class="text-danger">Receiver Address:</h6>
-            <h4 class="card-title text-info">{{$shipment->receiver_address}}</h4>
-
-            <h6 class="text-danger">Sender Address:</h6>
-            <h4 class="card-title text-info">{{$shipment->sender_address}}</h4>
-
-            <h6 class="text-danger">Contact Name:</h6>
-            <h4 class="card-title text-info">{{$shipment->contact_name}}</h4>
-
-            <h6 class="text-danger">Contact Number:</h6>
-            <h4 class="card-title text-info">{{$shipment->contact_number}}</h4>
-
-            <h6 class="text-danger">Base Price:</h6>
-            <h4 class="card-title text-info">{{$shipment->base_price}}</h4>
-
-            <h6 class="text-danger">Unit Price: </h6>
-            <h4 class="card-title text-info">{{$shipment->unit_price}}</h4>
-
-            <h6 class="text-danger">Shipping Cost:</h6>
-            <h4 class="card-title text-info">{{$shipment->shipping_cost}}</h4>
-
-            <h6 class="text-danger">Total Cost:</h6>
-            <h4 class="card-title text-info">{{$shipment->total_cost}}</h4>
-
-            <h6 class="text-danger">Status:</h6>
-            <h4 class="card-title text-info">{{$shipment->status}}</h4>
-
-            <h6 class="text-danger">User Id:</h6>
-            <h4 class="card-title text-info">{{$shipment->user_id}}</h4>
-
-            <h6 class="text-danger">Customer Id:</h6>
-            <h4 class="card-title text-info">{{$shipment->customer_id}}</h4>
- 
+</div>
          </div>
         </div>
-        <div class="p-2 w-20 mx-auto">
+        <div class="p-2 w-10 mx-auto">
           <a class="btn btn-danger form-control" href="{{route('shipment.index')}}"><b>View All Shipment</b></a>
         </div>
       </div>
