@@ -13,7 +13,7 @@
     <th scope="col">{{__('Name')}}</th>
     <th scope="col">{{__('Email')}}</th>
     <th scope="col">{{__('Contact')}}</th>
-    <th scope="col">{{__('Role')}}</th>
+    <th scope="col">{{__('Address')}}</th>
     <th scope="col">{{__('Image')}}</th>
     <th scope="col">{{__('Status')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
@@ -24,8 +24,8 @@
   <th scope="row">{{ ++$loop->index }}</th>
         <td>{{$p->name_en}}</td>
         <td>{{$p->email}}</td>
-        <td>{{$p->contact_no_en}}</td>
-        <td>{{$p->role?->name}}</td>
+        <td>{{$p->contact_no}}</td>
+        <td>{{$p->address}}</td>
         <td><img width="50px" src="{{asset('public/uploads/users/'.$p->image)}}" alt=""></td>
         
         <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>

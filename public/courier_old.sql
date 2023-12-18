@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2023 at 08:40 AM
+-- Generation Time: Dec 12, 2023 at 08:18 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -52,10 +52,7 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `name`, `email`, `contact_no`, `role_id`, `password`, `image`, `company_id`, `brunch_id`, `full_access`, `status`, `remember_token`, `access_block`, `token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Mojahid', 'mojahidjouel@yahoo.com', '01814', 1, '$2y$12$BqjrsxaIstgNZOlfB58m0OeECHeg2qgIFLmsU3SgPBgBOd3tsYp5u', '2811702871693.jpg', NULL, NULL, 1, 1, NULL, NULL, NULL, '2023-12-17 21:38:31', '2023-12-17 21:54:53', NULL),
-(2, 'Kamal', 'kamal@gmail.com', '0181', 4, '$2y$12$.sI2QdpgchtL.5ApNlIbKecTNkcygTcR7IfkIM82.VcWrIwQ/fEhe', NULL, NULL, NULL, 0, 1, NULL, NULL, NULL, '2023-12-17 22:53:28', '2023-12-17 22:53:28', NULL),
-(3, 'Kaiser', 'kaiser@gmail.com', '0182', 4, '$2y$12$YZZx46UZZanjUD8HShyUtOWKOSjix/u9GhqZAwPDnEnbyHM9jCENa', NULL, NULL, NULL, 0, 1, NULL, NULL, NULL, '2023-12-17 22:53:52', '2023-12-17 22:53:52', NULL),
-(4, 'Jasim', 'jasim@gmail.com', '0183', 4, '$2y$12$PrSH9JWzIiNHCcpK/OFo4uT1.rWbQtJquURAgL28WIvMJeS50izuW', NULL, NULL, NULL, 0, 1, NULL, NULL, NULL, '2023-12-17 22:54:11', '2023-12-17 22:54:11', NULL);
+(1, 'Mojahid', 'mojahidjouel@yahoo.com', '01814', 1, '$2y$12$umtrEe1X/MKRztX9Wf9S7eLpseXZcunZ1Tx7vC7ginpnVuSrJaTxC', '9561701660191.jpg', NULL, NULL, 1, 1, NULL, NULL, NULL, '2023-12-03 21:21:04', '2023-12-03 21:23:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -76,6 +73,15 @@ CREATE TABLE `assets` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `assets`
+--
+
+INSERT INTO `assets` (`id`, `name`, `registration_number`, `driver_id`, `registration_card`, `gml`, `cml`, `hml`, `created_at`, `updated_at`) VALUES
+(1, 'mojahid Islam', '105', 1, '5321701707610.jpg', '1.00', '4.00', '5.00', '2023-12-04 10:27:27', '2023-12-04 10:33:30'),
+(2, 'mojahid Islam', '102', 1, NULL, '2.00', '3.00', '6.00', '2023-12-04 10:27:57', '2023-12-04 10:27:57'),
+(3, 'kaiser', '103', 1, NULL, '4.00', '5.00', '6.00', '2023-12-04 10:28:32', '2023-12-04 10:28:32');
+
 -- --------------------------------------------------------
 
 --
@@ -86,8 +92,8 @@ CREATE TABLE `branches` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `company_id` int(11) DEFAULT NULL,
   `branch_name` varchar(255) DEFAULT NULL,
-  `branch_email` varchar(255) NOT NULL,
-  `branch_phone` varchar(255) NOT NULL,
+  `branch_email` varchar(255) DEFAULT NULL,
+  `branch_phone` varchar(255) DEFAULT NULL,
   `branch_address` text DEFAULT NULL,
   `branch_city` text DEFAULT NULL,
   `branch_state` text DEFAULT NULL,
@@ -97,6 +103,13 @@ CREATE TABLE `branches` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `branches`
+--
+
+INSERT INTO `branches` (`id`, `company_id`, `branch_name`, `branch_email`, `branch_phone`, `branch_address`, `branch_city`, `branch_state`, `branch_pin`, `branch_country`, `logo_image`, `created_at`, `updated_at`) VALUES
+(1, 105, 'Dhaka', 'mojahidjouel@yahoo.com', '+8801814415108', '(H-333) 1st Floor, Road-14, Black-B, Chandgaon R/A, Chandgaon, Chattogram.', 'Chandgaon', 'Dhaka', '501', 'Bangladesh', '6111701707981.jpg', '2023-12-04 10:39:41', '2023-12-04 10:40:00');
 
 -- --------------------------------------------------------
 
@@ -117,18 +130,18 @@ CREATE TABLE `cities` (
 --
 
 INSERT INTO `cities` (`id`, `name`, `code`, `created_at`, `updated_at`) VALUES
-(1, 'Chattogram', '101', '2023-12-17 22:00:10', '2023-12-17 22:00:10'),
-(2, 'Dhaka', '102', '2023-12-17 22:00:25', '2023-12-17 22:00:25'),
-(3, 'Rajshahi', '103', '2023-12-17 22:01:28', '2023-12-17 22:01:28'),
-(4, 'Sylhet', '104', '2023-12-17 22:01:48', '2023-12-17 22:01:48'),
-(5, 'Mymensingh', '105', '2023-12-17 22:02:01', '2023-12-17 22:02:01'),
-(6, 'Barisal', '106', '2023-12-17 22:02:19', '2023-12-17 22:02:19'),
-(7, 'Rangpur', '107', '2023-12-17 22:02:50', '2023-12-17 22:02:50'),
-(8, 'Khulna', '108', '2023-12-17 22:03:10', '2023-12-17 22:03:10'),
-(9, 'Cox\'s Bazar', '109', '2023-12-17 22:05:28', '2023-12-17 22:14:42'),
-(10, 'Rangamati', '110', '2023-12-17 22:13:02', '2023-12-17 22:15:24'),
-(11, 'Comilla', '111', '2023-12-17 22:16:01', '2023-12-17 22:16:01'),
-(12, 'Noakhali', '112', '2023-12-17 22:16:39', '2023-12-17 22:16:39');
+(1, 'Chattogram', '101', '2023-12-03 21:21:55', '2023-12-03 21:21:55'),
+(2, 'Dhaka', '102', '2023-12-03 21:22:08', '2023-12-03 21:22:08'),
+(3, 'Comilla', '103', '2023-12-03 21:22:19', '2023-12-03 21:22:19'),
+(4, 'Rajshai', '104', '2023-12-03 21:22:31', '2023-12-03 21:22:31'),
+(5, 'Sylhet', '105', '2023-12-03 21:22:44', '2023-12-03 21:22:44'),
+(6, 'Borishal', '106', '2023-12-03 21:56:50', '2023-12-03 21:56:50'),
+(7, 'Dinajpur', '107', '2023-12-03 21:57:09', '2023-12-03 21:57:09'),
+(8, 'Rongpur', '108', '2023-12-03 21:57:22', '2023-12-03 21:57:22'),
+(9, 'Munshiganj', '109', '2023-12-04 10:11:32', '2023-12-04 10:14:53'),
+(10, 'Jessore', '110', '2023-12-04 10:12:05', '2023-12-04 10:15:11'),
+(11, 'Bandarban', '110', '2023-12-04 10:12:53', '2023-12-04 10:12:53'),
+(12, 'Khulna', '111', '2023-12-04 10:13:54', '2023-12-04 10:13:54');
 
 -- --------------------------------------------------------
 
@@ -150,6 +163,13 @@ CREATE TABLE `companies` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `companies`
+--
+
+INSERT INTO `companies` (`id`, `company_name`, `contact_number`, `company_email`, `company_address`, `company_city`, `company_state`, `company_pin`, `company_country`, `logo_image`, `created_at`, `updated_at`) VALUES
+(1, 'Joy building', '+8801814415108', 'mojahidjouel@yahoo.com', '(H-333) 1st Floor, Road-14, Black-B, Chandgaon R/A, Chandgaon, Chattogram.', 'Chandgaon', 'Chattogram', '4200', 'Bangladesh', '6141701707914.jpg', '2023-12-04 10:38:34', '2023-12-04 10:39:04');
 
 -- --------------------------------------------------------
 
@@ -251,22 +271,6 @@ CREATE TABLE `general_settings` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
---
-
-CREATE TABLE `messages` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` int(11) DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
-  `contact` varchar(255) DEFAULT NULL,
-  `comment` text DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `migrations`
 --
 
@@ -281,21 +285,20 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(16, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(17, '2023_11_09_062426_create_companies_table', 1),
-(18, '2023_11_09_062453_create_branches_table', 1),
-(19, '2023_11_09_062453_create_cities_table', 1),
-(20, '2023_11_09_062453_create_prices_table', 1),
-(21, '2023_11_09_062453_create_shipments_table', 1),
-(22, '2023_11_09_070019_create_assets_table', 1),
-(24, '2023_11_12_034411_create_users_table', 1),
-(25, '2023_11_12_043129_create_permissions_table', 1),
-(26, '2023_11_12_060037_create_admin_users_table', 1),
-(27, '2023_11_19_034901_couriar_information_table', 1),
-(28, '2023_11_19_034901_create_general_settings_table', 1),
-(29, '2023_12_04_065622_create_messages_table', 1),
-(30, '2023_12_04_065622_create_ordertracks_table', 1),
-(33, '2023_11_11_034205_create_roles_table', 2);
+(1, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(2, '2023_11_09_062426_create_companies_table', 1),
+(3, '2023_11_09_062453_create_branches_table', 1),
+(4, '2023_11_09_062453_create_cities_table', 1),
+(5, '2023_11_09_062453_create_prices_table', 1),
+(6, '2023_11_09_062453_create_shipments_table', 1),
+(7, '2023_11_09_070019_create_assets_table', 1),
+(8, '2023_11_11_034205_create_roles_table', 1),
+(9, '2023_11_12_034411_create_users_table', 1),
+(10, '2023_11_12_043129_create_permissions_table', 1),
+(11, '2023_11_12_060037_create_admin_users_table', 1),
+(12, '2023_11_19_034901_couriar_information_table', 1),
+(13, '2023_11_19_034901_create_general_settings_table', 1),
+(14, '2023_12_04_065622_create_ordertracks_table', 2);
 
 -- --------------------------------------------------------
 
@@ -312,6 +315,15 @@ CREATE TABLE `ordertracks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ordertracks`
+--
+
+INSERT INTO `ordertracks` (`id`, `user_id`, `shipment_id`, `comment`, `status`, `created_at`, `updated_at`) VALUES
+(2, 1, '105', 'noman', 0, '2023-12-04 22:39:56', '2023-12-05 01:12:33'),
+(4, NULL, '102', 'noman', 1, '2023-12-05 01:02:14', '2023-12-05 01:15:13'),
+(5, 3, '1', 'mm', 1, '2023-12-05 01:41:53', '2023-12-05 01:41:53');
 
 -- --------------------------------------------------------
 
@@ -368,75 +380,25 @@ CREATE TABLE `prices` (
 --
 
 INSERT INTO `prices` (`id`, `to_city`, `from_city`, `base_price`, `unit_size`, `unit_price`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 50, '0-5', '5.00', '2023-12-17 22:17:05', '2023-12-17 22:17:05'),
-(2, 1, 1, 48, '6-20', '4.50', '2023-12-17 22:17:42', '2023-12-17 22:17:42'),
-(3, 1, 1, 40, '21-50', '4.00', '2023-12-17 22:18:16', '2023-12-17 22:18:16'),
-(4, 1, 1, 38, '51-500', '3.80', '2023-12-17 22:18:55', '2023-12-17 22:26:18'),
-(5, 2, 1, 50, '0-5', '5.00', '2023-12-17 22:20:46', '2023-12-17 22:20:46'),
-(6, 2, 1, 48, '6-20', '4.50', '2023-12-17 22:24:39', '2023-12-17 22:24:39'),
-(7, 2, 1, 40, '21-50', '4.00', '2023-12-17 22:25:36', '2023-12-17 22:25:36'),
-(8, 2, 1, 38, '51-500', '3.80', '2023-12-17 22:26:56', '2023-12-17 22:26:56'),
-(9, 11, 1, 50, '0-5', '5.00', '2023-12-17 22:27:20', '2023-12-17 22:27:20'),
-(10, 11, 1, 48, '6-20', '4.50', '2023-12-17 22:27:49', '2023-12-17 22:27:49'),
-(11, 11, 1, 40, '21-50', '4.00', '2023-12-17 22:28:20', '2023-12-17 22:28:20'),
-(12, 11, 1, 38, '21-500', '3.80', '2023-12-17 22:28:47', '2023-12-17 22:28:47'),
-(13, 3, 1, 50, '0-5', '5.00', '2023-12-17 22:29:07', '2023-12-17 22:29:07'),
-(14, 3, 1, 48, '6-20', '4.50', '2023-12-17 22:29:31', '2023-12-17 22:30:11'),
-(15, 3, 1, 40, '21-50', '4.00', '2023-12-17 22:30:44', '2023-12-17 22:30:44'),
-(16, 3, 1, 38, '21-500', '3.80', '2023-12-17 22:31:06', '2023-12-17 22:31:06'),
-(17, 4, 1, 50, '0-5', '5.00', '2023-12-17 22:31:33', '2023-12-17 22:31:33'),
-(18, 4, 1, 48, '6-20', '4.50', '2023-12-17 22:32:01', '2023-12-17 22:32:01'),
-(19, 4, 1, 40, '21-50', '4.00', '2023-12-17 22:32:29', '2023-12-17 22:32:29'),
-(20, 4, 1, 38, '21-500', '3.80', '2023-12-17 22:32:46', '2023-12-17 22:32:46'),
-(21, 5, 1, 50, '0-5', '5.00', '2023-12-17 22:33:05', '2023-12-17 22:33:05'),
-(22, 5, 1, 48, '6-20', '4.50', '2023-12-17 22:33:31', '2023-12-17 22:33:31'),
-(23, 5, 1, 40, '21-50', '4.00', '2023-12-17 22:34:02', '2023-12-17 22:34:02'),
-(24, 5, 1, 38, '51-500', '3.80', '2023-12-17 22:34:36', '2023-12-17 22:34:36'),
-(25, 6, 1, 50, '0-5', '5.00', '2023-12-17 22:34:55', '2023-12-17 22:34:55'),
-(26, 6, 1, 48, '6-20', '4.50', '2023-12-17 22:35:15', '2023-12-17 22:35:15'),
-(27, 6, 1, 40, '21-50', '4.00', '2023-12-17 22:35:33', '2023-12-17 22:35:33'),
-(28, 6, 1, 38, '51-500', '3.80', '2023-12-17 22:35:58', '2023-12-17 22:35:58'),
-(29, 7, 1, 50, '0-5', '5.00', '2023-12-17 22:36:17', '2023-12-17 22:36:17'),
-(30, 7, 1, 48, '6-20', '4.50', '2023-12-17 22:36:35', '2023-12-17 22:36:35'),
-(31, 7, 1, 48, '6-20', '4.50', '2023-12-17 22:37:18', '2023-12-17 22:37:18'),
-(32, 7, 1, 40, '21-50', '4.00', '2023-12-17 22:37:46', '2023-12-17 22:37:46'),
-(33, 7, 1, 38, '21-500', '3.80', '2023-12-17 22:38:09', '2023-12-17 22:38:09'),
-(34, 8, 1, 50, '0-5', '5.00', '2023-12-17 22:38:31', '2023-12-17 22:38:31'),
-(35, 8, 1, 48, '6-20', '4.50', '2023-12-17 22:38:45', '2023-12-17 22:38:45'),
-(36, 8, 1, 40, '21-50', '4.00', '2023-12-17 22:39:10', '2023-12-17 22:39:10'),
-(37, 8, 1, 38, '21-500', '3.80', '2023-12-17 22:39:29', '2023-12-17 22:39:29'),
-(38, 9, 1, 50, '0-5', '5.00', '2023-12-17 22:39:49', '2023-12-17 22:39:49'),
-(39, 9, 1, 48, '6-20', '4.50', '2023-12-17 22:40:11', '2023-12-17 22:40:11'),
-(40, 9, 1, 40, '21-50', '4.00', '2023-12-17 22:40:31', '2023-12-17 22:40:31'),
-(41, 9, 1, 38, '21-500', '3.80', '2023-12-17 22:40:45', '2023-12-17 22:40:45'),
-(42, 10, 1, 50, '0-5', '5.00', '2023-12-17 22:41:04', '2023-12-17 22:41:04'),
-(43, 10, 1, 48, '6-20', '4.50', '2023-12-17 22:41:22', '2023-12-17 22:41:22'),
-(44, 10, 1, 40, '21-50', '4.00', '2023-12-17 22:41:44', '2023-12-17 22:42:18'),
-(45, 10, 1, 38, '21-500', '3.80', '2023-12-17 22:42:45', '2023-12-17 22:42:45'),
-(46, 11, 1, 50, '0-5', '5.00', '2023-12-17 22:43:00', '2023-12-17 22:43:00'),
-(47, 11, 1, 48, '6-20', '4.50', '2023-12-17 22:43:18', '2023-12-17 22:43:18'),
-(48, 11, 1, 40, '21-50', '4.00', '2023-12-17 22:43:35', '2023-12-17 22:43:35'),
-(49, 11, 1, 38, '21-500', '3.80', '2023-12-17 22:43:48', '2023-12-17 22:43:48'),
-(50, 12, 1, 50, '0-5', '5.00', '2023-12-17 22:44:05', '2023-12-17 22:44:05'),
-(51, 12, 1, 48, '6-20', '4.50', '2023-12-17 22:44:19', '2023-12-17 22:44:19'),
-(52, 12, 1, 40, '21-50', '4.00', '2023-12-17 22:44:36', '2023-12-17 22:44:36'),
-(53, 12, 1, 38, '21-500', '3.80', '2023-12-17 22:44:52', '2023-12-17 22:44:52'),
-(54, 1, 2, 50, '0-5', '5.00', '2023-12-17 22:46:12', '2023-12-17 22:46:12'),
-(55, 1, 2, 48, '6-20', '4.50', '2023-12-17 22:46:26', '2023-12-17 22:46:26'),
-(56, 1, 2, 40, '21-50', '4.00', '2023-12-17 22:46:43', '2023-12-17 22:46:43'),
-(57, 1, 2, 38, '21-500', '3.80', '2023-12-17 22:46:57', '2023-12-17 22:46:57'),
-(58, 2, 2, 50, '0-5', '5.00', '2023-12-17 22:47:22', '2023-12-17 22:47:22'),
-(59, 2, 2, 48, '6-20', '4.50', '2023-12-17 22:47:37', '2023-12-17 22:47:37'),
-(60, 2, 2, 40, '21-50', '4.00', '2023-12-17 22:47:50', '2023-12-17 22:47:50'),
-(61, 2, 2, 38, '21-500', '3.80', '2023-12-17 22:48:09', '2023-12-17 22:48:09'),
-(62, 3, 2, 50, '0-5', '5.00', '2023-12-17 22:48:25', '2023-12-17 22:48:25'),
-(63, 3, 2, 48, '6-20', '4.50', '2023-12-17 22:48:43', '2023-12-17 22:48:43'),
-(64, 3, 2, 40, '21-50', '4.00', '2023-12-17 22:49:00', '2023-12-17 22:49:00'),
-(65, 3, 2, 38, '21-500', '3.80', '2023-12-17 22:49:19', '2023-12-17 22:49:19'),
-(66, 4, 2, 50, '0-5', '5.00', '2023-12-17 22:49:33', '2023-12-17 22:49:33'),
-(67, 3, 2, 48, '6-20', '4.50', '2023-12-17 22:49:48', '2023-12-17 22:49:48'),
-(68, 4, 2, 40, '21-50', '4.00', '2023-12-17 22:50:02', '2023-12-17 22:50:02'),
-(69, 4, 2, 38, '21-500', '3.80', '2023-12-17 22:50:15', '2023-12-17 22:50:15');
+(3, 1, 1, 50, '0-5', '5.00', '2023-12-03 21:59:50', '2023-12-03 21:59:50'),
+(4, 1, 2, 50, '0-5', '5.00', '2023-12-03 22:00:16', '2023-12-03 22:00:16'),
+(5, 2, 1, 50, '0-5', '5.00', '2023-12-03 22:00:31', '2023-12-03 22:00:31'),
+(6, 3, 1, 50, '0-5', '5.00', '2023-12-04 10:17:07', '2023-12-04 10:17:07'),
+(7, 1, 3, 50, '0-5', '5.00', '2023-12-04 10:18:10', '2023-12-04 10:18:10'),
+(8, 4, 1, 50, '0-5', '5.00', '2023-12-04 10:18:30', '2023-12-04 10:18:30'),
+(9, 1, 4, 50, '0-5', '5.00', '2023-12-04 10:19:06', '2023-12-04 10:19:28'),
+(10, 2, 4, 50, '0-5', '5.00', '2023-12-04 10:19:45', '2023-12-04 10:19:45'),
+(11, 4, 2, 50, '0-5', '5.00', '2023-12-04 10:20:06', '2023-12-04 10:20:06'),
+(12, 4, 3, 50, '0-5', '5.00', '2023-12-04 10:20:32', '2023-12-04 10:20:32'),
+(13, 1, 1, 40, '5-10', '4.00', '2023-12-04 11:54:46', '2023-12-04 11:54:46'),
+(14, 1, 1, 35, '10-20', '3.00', '2023-12-04 11:55:48', '2023-12-04 11:55:48'),
+(15, 1, 1, 30, '20-50', '30.00', '2023-12-04 11:56:30', '2023-12-04 11:56:30'),
+(16, 1, 1, 45, '6-10', '4.00', '2023-12-11 22:07:38', '2023-12-11 22:07:38'),
+(17, 1, 2, 45, '6-10', '4.00', '2023-12-11 22:08:26', '2023-12-11 22:08:26'),
+(18, 3, 1, 40, '6-10', '4.50', '2023-12-11 22:09:16', '2023-12-11 22:09:16'),
+(19, 4, 1, 45, '6-10', '4.50', '2023-12-11 22:10:17', '2023-12-11 22:10:17'),
+(20, 2, 4, 45, '6-10', '4.80', '2023-12-11 22:10:55', '2023-12-11 22:10:55'),
+(21, 4, 3, 45, '6-10', '4.50', '2023-12-12 00:34:15', '2023-12-12 00:34:15');
 
 -- --------------------------------------------------------
 
@@ -457,10 +419,10 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `identity`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'superadmin', '2023-12-18 00:00:09', NULL),
-(2, 'Admin', 'admin', '2023-12-18 00:00:09', NULL),
-(3, 'Deliver Manager', 'delivermanager', '2023-12-18 00:00:09', NULL),
-(4, 'Delivery Man', 'deliveryman', '2023-12-18 00:00:09', NULL);
+(1, 'Super Admin', 'superadmin', '2023-12-03 21:20:15', NULL),
+(2, 'Admin', 'admin', '2023-12-03 21:20:15', NULL),
+(3, 'Sales Manager', 'salesmanager', '2023-12-03 21:20:15', NULL),
+(4, 'Sales Man', 'salesman', '2023-12-03 21:20:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -470,7 +432,6 @@ INSERT INTO `roles` (`id`, `name`, `identity`, `created_at`, `updated_at`) VALUE
 
 CREATE TABLE `shipments` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `invoice_no` varchar(255) DEFAULT NULL,
   `from_city` bigint(20) UNSIGNED NOT NULL,
   `to_city` bigint(20) UNSIGNED NOT NULL,
   `product_name` varchar(255) DEFAULT NULL,
@@ -481,7 +442,7 @@ CREATE TABLE `shipments` (
   `contact_name` varchar(255) DEFAULT NULL,
   `contact_number` varchar(255) DEFAULT NULL,
   `base_price` decimal(10,2) DEFAULT NULL,
-  `unit_price` decimal(10,2) DEFAULT NULL,
+  `unit_size` decimal(10,2) DEFAULT NULL,
   `shipping_cost` decimal(10,2) DEFAULT NULL,
   `total_cost` decimal(10,2) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
@@ -495,9 +456,8 @@ CREATE TABLE `shipments` (
 -- Dumping data for table `shipments`
 --
 
-INSERT INTO `shipments` (`id`, `invoice_no`, `from_city`, `to_city`, `product_name`, `product_description`, `product_weight`, `receiver_address`, `sender_address`, `contact_name`, `contact_number`, `base_price`, `unit_price`, `shipping_cost`, `total_cost`, `user_id`, `customer_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, '120231218', 1, 2, 'Cloths', 'Some of Cloths', '5.00', '2 no Gate', 'Oshkain, Village+Post- Oshkain', 'MOJAHID', '01814415108', '50.00', '5.00', '25.00', '55.00', 4, 1, 1, '2023-12-17 23:01:43', '2023-12-18 01:33:26'),
-(2, '220231218', 1, 1, 'Stationary', 'Some of Stationary', '40.00', 'Bahaddarhat', 'Anwara', 'Kaiser', '015545455', '40.00', '4.00', '160.00', '44.00', NULL, 1, 0, '2023-12-17 23:03:32', '2023-12-17 23:03:32');
+INSERT INTO `shipments` (`id`, `from_city`, `to_city`, `product_name`, `product_description`, `product_weight`, `receiver_address`, `sender_address`, `contact_name`, `contact_number`, `base_price`, `unit_size`, `shipping_cost`, `total_cost`, `user_id`, `customer_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, 'Cloths', 'Some of Cloths', '5.00', 'def', 'abc', 'noman', '01815', '50.00', NULL, '25.00', '55.00', NULL, 1, 2, '2023-12-04 00:08:13', '2023-12-04 00:48:14');
 
 -- --------------------------------------------------------
 
@@ -529,9 +489,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `address`, `email`, `contact_no`, `bank_account_no`, `bank_name`, `bank_branch_name`, `password`, `image`, `company_id`, `brunch_id`, `status`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'Noman Uddin', 'Sholoshohor', 'noman@gmail.com', '01815', NULL, NULL, NULL, '$2y$12$Iy5X8D/gJejtcfPobkjl7OsBF56OpoaDxCF29myMpJ5a2DAN0vgF2', '6461702884349.jpg', NULL, NULL, 1, NULL, '2023-12-17 21:39:33', '2023-12-18 01:25:49'),
-(2, 'Safayat', NULL, 'safayat@gmail.com', '01816', NULL, NULL, NULL, '$2y$12$qhh7AG/x9d8Pxwc.YomQG.21Vg1NNNf9mYTMrT6dZMfSGfh2pXG5y', NULL, NULL, NULL, 1, NULL, '2023-12-17 21:56:27', '2023-12-17 21:56:27'),
-(3, 'Kamal', NULL, 'kamal@gmail.com', '01817', NULL, NULL, NULL, '$2y$12$lDy0n0p/VIxYZUQkDozkxuVjVx.lAEyTkK3kqLkMhJ9seCkyBXCYi', NULL, NULL, NULL, 1, NULL, '2023-12-17 21:56:49', '2023-12-17 21:56:49');
+(1, 'Noman', NULL, 'noman@gmail.com', '01815', NULL, NULL, NULL, '$2y$12$D29FCnSWD.vcEvscuHcuD.EWyVHOqgNmCoyj9RTpa9X.ekQQDuDfS', NULL, NULL, NULL, 1, NULL, '2023-12-03 21:29:35', '2023-12-03 21:29:35'),
+(2, 'Mojahid', NULL, 'mojahidjouel@yahoo.com', '01814415108', NULL, NULL, NULL, '$2y$12$1aPL0MBcK1RzIxptkWJiQ.s0Cc.3Ajb4Q8j3vT.qQex9L6Ym00ngC', NULL, NULL, NULL, 1, NULL, '2023-12-05 01:09:31', '2023-12-05 01:09:31'),
+(3, 'Kamal', NULL, 'kamal@gmail.com', '018', NULL, NULL, NULL, '$2y$12$L4lNRupHww9AX.JNX8RZyeh2oR4kUJBSjmsWMApGQH2tqnfHRohOK', NULL, NULL, NULL, 1, NULL, '2023-12-05 01:09:54', '2023-12-05 01:09:54'),
+(4, 'Kaiser', NULL, 'kaiser@gmail.com', '0177', NULL, NULL, NULL, '$2y$12$mEF9fP/JzoN3B2HYtwLXsunNS.yvDhB6eHVcaOmZz/BtPQpSIkB.K', NULL, NULL, NULL, 1, NULL, '2023-12-05 01:10:16', '2023-12-05 01:10:16');
 
 --
 -- Indexes for dumped tables
@@ -584,13 +545,6 @@ ALTER TABLE `couriar_information`
 --
 ALTER TABLE `general_settings`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `messages`
---
-ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `messages_email_unique` (`email`);
 
 --
 -- Indexes for table `migrations`
@@ -659,19 +613,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin_users`
 --
 ALTER TABLE `admin_users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `assets`
 --
 ALTER TABLE `assets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -683,7 +637,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `couriar_information`
@@ -698,22 +652,16 @@ ALTER TABLE `general_settings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `ordertracks`
 --
 ALTER TABLE `ordertracks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -731,7 +679,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `prices`
 --
 ALTER TABLE `prices`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -743,13 +691,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `shipments`
 --
 ALTER TABLE `shipments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

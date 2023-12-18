@@ -27,12 +27,12 @@ return new class extends Migration
                 'identity' => 'admin',
                 'created_at' => Carbon::now()
             ],[
-                'name' => 'Sales Manager',
-                'identity' => 'salesmanager',
+                'name' => 'Deliver Manager',
+                'identity' => 'delivermanager',
                 'created_at' => Carbon::now()
             ],[
-                'name' => 'Sales Man',
-                'identity' => 'salesman',
+                'name' => 'Delivery Man',
+                'identity' => 'deliveryman',
                 'created_at' => Carbon::now()
             ]
         ]);

@@ -3,9 +3,8 @@
 
 @section('content')
 
-<div class="table-responsive"><div>
-  <a href="{{route('price.create')}}"></a>
-</div>
+<div class="table-responsive">
+<div><a class="fs-5 d-flex justify-content-start" href="{{route('price.create')}}"><i class="fa fa-plus"></i></a>
 <table class="table">
   <thead>
     <tr class="text-danger">
@@ -45,5 +44,7 @@
   </tbody>
 </table>
 {{$data->links('pagination::bootstrap-5')}}
+</div>
+</div>
 
 @endsection

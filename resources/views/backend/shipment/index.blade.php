@@ -12,6 +12,7 @@
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('From')}}</th>
     <th scope="col">{{__('To')}}</th>
+    <th scope="col">{{__('Contact Name')}}</th>
     <th scope="col">{{__('Contact Number')}}</th>
     <th scope="col">{{__('Product Name')}}</th>
     <th scope="col">{{__('Weight')}}</th>
@@ -28,6 +29,7 @@
         <td>{{$p->f_city?->name}}</td>
         <td>{{$p->t_city?->name}}</td>
         <td>{{$p->contact_name}}</td>
+        <td>{{$p->contact_number}}</td>
         <td>{{$p->product_name}}</td>
         <td>{{$p->product_weight}}</td> 
         <td>{{$p->total_cost}}</td>

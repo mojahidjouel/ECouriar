@@ -10,34 +10,12 @@
   @method('PATCH')
   <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$user->id)}}">
   <div class="row">
-  <div class="col-md-6 col-12 position-relative">
-    <label for="roleId" class="form-label">Role <i class="text-danger">*</i></label>
-    <select class="form-control" name="roleId" id="roleId">
-      <option value="">Select Role</option>
-      @forelse($role as $r)
-      <option value="{{$r->id}}" {{ old('roleId',$user->role_id)==$r->id?"selected":""}}> {{ $r->name}}</option>
-      @empty
-          <option value="">No Role found</option>
-      @endforelse
-      </select>
-      @if($errors->has('roleId'))
-        <span class="text-danger"> {{ $errors->first('roleId') }}</span>
-      @endif
-  </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="userName_en" class="form-label">Name (English) <i class="text-danger">*</i></label>
-    <input type="text" class="form-control white-text-input" id="userName_en" value="{{ old('userName_en',$user->name_en)}}" name="userName_en">
-    @if($errors->has('userName_en'))
-        <span class="text-danger"> {{ $errors->first('userName_en') }}</span>
-    @endif
-  </div>
-
-  <div class="col-md-6 col-12 position-relative">
-    <label for="userName_bn" class="form-label">Name (Bangla)</label>
-    <input type="text" class="form-control" id="userName_bn" value="{{ old('userName_bn',$user->name_bn)}}" name="userName_bn">
-    @if($errors->has('userName_bn'))
-        <span class="text-danger"> {{ $errors->first('userName_bn') }}</span>
+    <label for="userName" class="form-label">Name <i class="text-danger">*</i></label>
+    <input type="text" class="form-control white-text-input" id="userName" value="{{ old('userName',$user->name)}}" name="userName">
+    @if($errors->has('userName'))
+        <span class="text-danger"> {{ $errors->first('userName') }}</span>
     @endif
   </div>
 
@@ -50,19 +28,16 @@
   </div>
   
   <div class="col-md-6 col-12 position-relative">
-    <label for="contactNumber_en" class="form-label">Contact Number (English)<i class="text-danger">*</i></label>
-    <input type="text" class="form-control" id="contactNumber_en" value="{{ old('contactNumber_en',$user->contact_no_en)}}" name="contactNumber_en">
-    @if($errors->has('contactNumber_en'))
-        <span class="text-danger"> {{ $errors->first('contactNumber_en') }}</span>
+    <label for="contactNumber" class="form-label">Contact Number <i class="text-danger">*</i></label>
+    <input type="text" class="form-control" id="contactNumber" value="{{ old('contactNumber',$user->contact_no)}}" name="contactNumber">
+    @if($errors->has('contactNumber'))
+        <span class="text-danger"> {{ $errors->first('contactNumber') }}</span>
     @endif
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="contactNumber_bn" class="form-label">Contact Number (Bangla)</label>
-    <input type="text" class="form-control" id="contactNumber_bn" value="{{ old('contactNumber_bn',$user->contact_no_bn)}}" name="contactNumber_bn">
-  @if($errors->has('contactNumber_bn'))
-      <span class="text-danger"> {{ $errors->first('contactNumber_bn') }}</span>
-  @endif
+    <label for="address" class="form-label">Address </label>
+    <input type="text" class="form-control" id="address" value="{{ old('address',$user->address)}}" name="address">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
@@ -76,18 +51,6 @@
   @endif
   </div>
 
-  <div class="col-md-6 col-12 position-relative">
-    <label for="fullAccess" class="form-label">Full Access</label>
-    <select id="fullAccess" class="form-control" name="fullAccess">
-    <option value="0" @if(old('fullAccess',$user->full_access)==0) selected @endif>No</option>
-    <option value="1" @if(old('fullAccess',$user->full_access)==1) selected @endif>Yes</option>
-  </select>
-  @if($errors->has('fullAccess'))
-      <span class="text-danger"> {{ $errors->first('fullAccess') }}</span>
-  @endif
-  </div>
-</div>
-<div class="row">
   <div class="col-md-6 col-12 position-relative">
     <label for="password" class="form-label">Password<i class="text-danger">*</i></label>
     <input type="password" class="form-control" id="password" name="password">

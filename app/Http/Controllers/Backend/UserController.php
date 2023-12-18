@@ -40,14 +40,13 @@ class UserController extends Controller
     {
         try{
             $data=new User();
-            $data->name_en=$request->userName_en;
-            $data->name_bn=$request->userName_bn;
+            $data->name=$request->userName;
             $data->email=$request->EmailAddress;
-            $data->contact_no_en=$request->contactNumber_en;
-            $data->contact_no_bn=$request->contactNumber_bn;
-            $data->role_id=$request->roleId;
+            $data->contact_no=$request->contactNumber;
+            $data->address=$request->address;
+            
             $data->status=$request->status;
-            $data->full_access=$request->fullAccess;
+            
             $data->language='en';
             $data->password=Hash::make($request->password);
 
@@ -94,14 +93,13 @@ class UserController extends Controller
     {
         try{
             $data=User::findOrFail(encryptor('decrypt',$id));
-            $data->name_en=$request->userName_en;
-            $data->name_bn=$request->userName_bn;
+            $data->name=$request->userName;
             $data->email=$request->EmailAddress;
-            $data->contact_no_en=$request->contactNumber_en;
-            $data->contact_no_bn=$request->contactNumber_bn;
-            $data->role_id=$request->roleId;
+            $data->contact_no=$request->contactNumber;
+            $data->address=$request->address;
+            
             $data->status=$request->status;
-            $data->full_access=$request->fullAccess;
+           
 
             if($request->password)
                 $data->password=Hash::make($request->password);
@@ -118,7 +116,7 @@ class UserController extends Controller
             }
         }catch(Exception $e){
             Toastr::error('Please try again');
-            //dd($e);
+            dd($e);
             return redirect()->back()->withInput();
         }
     }

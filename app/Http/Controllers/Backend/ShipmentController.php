@@ -56,7 +56,7 @@ class ShipmentController extends Controller
                 $data->contact_name=$request->contact_name;
                 $data->contact_number=$request->contact_number;
                 $data->base_price=$request->base_price;
-                $data->unit_size=$request->unit_size;
+                $data->unit_price=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
                 $data->status=$request->status;
@@ -87,7 +87,7 @@ class ShipmentController extends Controller
      */
     public function edit($id)
     {
-        $deliveryman=AdminUser::where('role_id',3)->get();
+        $deliveryman=AdminUser::where('role_id',4)->get();
         $city=City::get();
         $price=Price::get();
         $shipment=Shipment::findOrFail(encryptor('decrypt',$id));
@@ -112,7 +112,7 @@ class ShipmentController extends Controller
                 $data->contact_name=$request->contact_name;
                 $data->contact_number=$request->contact_number;
                 $data->base_price=$request->base_price;
-                $data->unit_size=$request->unit_size;
+                $data->unit_price=$request->unit_price;
                 $data->shipping_cost=$request->shipping_cost;
                 $data->total_cost=$request->total_cost;
                 $data->status=$request->status;
