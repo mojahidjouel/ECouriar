@@ -100,8 +100,9 @@ class ShipmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(shipment $shipment)
+    public function show($id)
     {
+        $shipment=Shipment::findOrFail(encryptor('decrypt',$id));
         return view('user.shipment.show', compact('shipment'));
         
     }

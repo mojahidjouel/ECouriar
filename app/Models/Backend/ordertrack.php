@@ -18,4 +18,5 @@ class Ordertrack extends Model
     public function shipment(){
         return $this->belongsTo(Shipment::class,'shipment_id','id');
     }
+    
 }

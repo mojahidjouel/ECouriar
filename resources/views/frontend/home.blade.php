@@ -597,7 +597,6 @@
 
       <!-- <section> begin ============================-->
       <section class="bg-1000">
-
         <div class="container">
           <div class="row">
             <div class="col-lg-6">

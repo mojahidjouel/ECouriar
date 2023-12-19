@@ -60,7 +60,7 @@ class OrdertrackController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(order_track $order_track)
+    public function show(ordertrack $ordertrack)
     {
         return view('backend.ordertrack.show', compact('ordertrack'));
         

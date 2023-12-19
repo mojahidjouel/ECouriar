@@ -35,7 +35,7 @@
        
         <td class="white-space-nowrap">
         <a class="text-dark btn btn-primary" href="{{route('order.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit"></i>Edit </a>
-        <a class="text-dark btn btn-info" href="{{route('order.show', $p->id)}}">View</a>
+        <a class="text-dark btn btn-info" href="{{route('order.show',encryptor('encrypt',$p->id))}}">View</a>
         <a class="text-dark btn btn-warning" href="{{route('ordertrack', $p->id)}}">Track</a>
         </form>
         </td>

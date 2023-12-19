@@ -9,7 +9,7 @@
         <div class="card w-85 mx-auto text-center">
         <div class="card-body bg-white">
           
-            <h6 class="text-danger">From City:</h6>
+            <h6 class="text-danger">ID:</h6>
             <h4 class="card-title text-info"></h6>
           <?php print_r($data); ?>
             
