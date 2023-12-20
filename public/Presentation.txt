@@ -1,0 +1,14 @@
+
+Client/Vendor/Shopkeeper to Client/Buyer/Comsumer
+Client/Vendor/Shopkeeper Product order/give >>>>Admin User/Delivery man receive >>>>>Client/Buyer/Comsumer receive then payment(if)>>>>Admin>>>>Client/Vendor/Shopkeeper pay
+
+
+
+Admin User >>>>> Deliveryman
+User>>>>>>> Customer
+
+
+GML = General Mass Limits, The GML state the allowable mass for all types of heavy vehicle axle groups unless the vehicle is operating under an accreditation or an exemption under the Heavy Vehicle National Law (HVNL).
+CML = Concessional Mass Limits, Concessional Mass Limits (CML) allows an operator to operate at mass limits above the national general limits provided the operator is accredited under the National Heavy Vehicle Accreditation Scheme (NHVAS).
+HML = Higher Mass Limits, HML allows particular heavy vehicles to. access additional mass entitlements providing: ͧ operators of vehicles or combinations running HML. on triaxle groups are accredited under the Mass.
+

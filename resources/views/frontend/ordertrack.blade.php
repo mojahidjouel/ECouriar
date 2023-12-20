@@ -7,29 +7,28 @@
     <div class="col-12">
       <div class="cc p-8">
         <div class="card w-85 mx-auto text-center">
-        <div class="card-body bg-white">
-          
-            <h6 class="text-danger">ID:</h6>
-            <h4 class="card-title text-info"></h6>
-          <?php print_r($data); ?>
-          {{--<div class="card-body bg-white">
-            <h6 class="text-danger">User Id: </h6>
-            <h4 class="card-title text-info">{{$data->user?->name}}</h4>
+        <div class="card-body bg-white">   
+      @forelse($data as $d)
+          <div class="card-body bg-white">
+            <h6 class="text-danger">Delivery Man: </h6>
+            <h4 class="card-title text-info">{{$d->shipment?->deliveryman?->name}}</h4>
 
-            <h6 class="text-danger">Shipment Id: </h6>
-            <h4 class="card-subtitle mb-2 text-info">{{$data->shipment?->deliveryman?->name}}</h4>
+            <h6 class="text-danger">Customer Invoice: </h6>
+            <h4 class="card-subtitle mb-2 text-info">{{$d->shipment?->invoice_no}}</h4>
 
             <h6 class="text-danger">Comment: </h6>
-            <h4 class="card-subtitle mb-2 text-info">{{$data->comment}}</h4>
+            <h4 class="card-subtitle mb-2 text-info">{{$d->comment}}</h4>
 
             <h6 class="text-danger">Status: </h6>
             <h4 class="card-subtitle mb-2 text-info">
-            @if($data->status == 0) {{__('Pending') }} @elseif($data->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif
+            @if($d->status == 0) {{__('Pending') }} @elseif($d->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif
             </h4>
-
-         </div> --}}
+            @empty
+    @endforelse
+         </div> 
          </div>
         </div>
+
         <div class="p-2 w-20 mx-auto">
           <a class="btn btn-danger form-control" href="{{route('order.index')}}"><b>View All Shipment</b></a>
         </div>

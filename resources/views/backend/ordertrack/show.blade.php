@@ -10,10 +10,10 @@
       <div class="cc p-5">
         <div class="card w-75 mx-auto text-center">
           <div class="card-body bg-white">
-            <h6 class="text-danger">User Id: </h6>
+            <h6 class="text-danger">Customer: </h6>
             <h4 class="card-title text-info">{{$ordertrack->user?->name}}</h4>
 
-            <h6 class="text-danger">Shipment Id: </h6>
+            <h6 class="text-danger">Delivery Man: </h6>
             <h4 class="card-subtitle mb-2 text-info">{{$ordertrack->shipment?->deliveryman?->name}}</h4>
 
             <h6 class="text-danger">Comment: </h6>

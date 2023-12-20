@@ -126,21 +126,10 @@ class ShipmentController extends Controller
         {
             try{  
                 $data=Shipment::findOrFail(encryptor('decrypt',$id));
-                $data->from_city=$request->from_city;
-                $data->to_city=$request->to_city;
                 $data->product_name=$request->product_name;
                 $data->product_description=$request->product_description;
-                $data->product_weight=$request->product_weight;
-                $data->receiver_address=$request->receiver_address;
-                $data->sender_address=$request->sender_address;
                 $data->contact_name=$request->contact_name;
-                $data->contact_number=$request->contact_number;
-                $data->base_price=$request->base_price;
-                $data->unit_price=$request->unit_price;
-                $data->shipping_cost=$request->shipping_cost;
-                $data->total_cost=$request->total_cost;
-                $data->status=$request->status;
-                
+                $data->contact_number=$request->contact_number;  
                 if($data->save()){
                     $data->invoice_no=$data->id.date('Y').date('m').date('d');
                     $data->save();

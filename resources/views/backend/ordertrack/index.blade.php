@@ -4,14 +4,14 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a href="{{route('ordertrack.create')}}"></a>
+  <a class="fs-5 d-flex justify-content-start" href="{{route('ordertrack.create')}}"><i class="fa fa-plus"></i></a>
 </div>
 <table class="table">
   <thead>
     <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
-    <th scope="col">{{__('Deliveryman')}}</th>
-    <th scope="col">{{__('Shipment Id')}}</th>
+    <th scope="col">{{__('Delivery Man')}}</th>
+    <th scope="col">{{__('Tracking Number')}}</th>
     <th scope="col">{{__('Comment')}}</th>
     <th scope="col">{{__('Status')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>

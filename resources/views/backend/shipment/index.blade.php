@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="table-responsive"><div>
-  <a class="fs-5 d-flex" href="{{route('shipment.create')}}"></a>
+  <a class="fs-5 d-flex justify-content-start" href="{{route('shipment.create')}}"><i class="fa fa-plus"></i></a>
 </div>
 <table class="table table-hover table-striped">
   <thead>
@@ -12,14 +12,14 @@
     <th scope="col">{{__('#SL')}}</th>
     <th scope="col">{{__('From')}}</th>
     <th scope="col">{{__('To')}}</th>
-    <th scope="col">{{__('Contact Name')}}</th>
-    <th scope="col">{{__('Contact Number')}}</th>
+    <th scope="col">{{__('Con Name')}}</th>
+    <th scope="col">{{__('Cont Number')}}</th>
     <th scope="col">{{__('Product Name')}}</th>
     <th scope="col">{{__('Weight')}}</th>
     <th scope="col">{{__('Total Cost')}}</th>
     <th scope="col">{{__('Status')}}</th>
-    <th scope="col">{{__('Deliveryman')}}</th>
-    <th scope="col">{{__('Customer')}}</th>
+    <th scope="col">{{__('Delivery Man')}}</th>
+    <th scope="col">{{__('Customer Name')}}</th>
     <th class="white-space-nowrap">{{__('Action') }}</th>
     </tr>
   </thead>

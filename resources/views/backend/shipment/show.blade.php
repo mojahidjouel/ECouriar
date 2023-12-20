@@ -113,14 +113,15 @@
     <div class="card text-center">
       <div class="card-body">
         <h5 class="card-title text-light">Status:</h5>
-        <h4 class="card-text text-dark">{{$shipment->status}}</h4>
+        <h4 class="card-text text-dark">@if($shipment->status == 0) {{__('Pending') }} @elseif($shipment->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif
+        </h4>
       </div>
     </div>
   </div>
   <div class="col-sm-4">
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title text-light">User Id:</h5>
+        <h5 class="card-title text-light">Delivary Man:</h5>
         <h4 class="card-text text-dark">{{$shipment->deliveryman?->name}}</h4>
       </div>
     </div>
@@ -128,7 +129,7 @@
   <div class="col-sm-4">
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title text-light">Customer Id:</h5>
+        <h5 class="card-title text-light">Customer Name:</h5>
         <h4 class="card-text text-dark">{{$shipment->customer?->name}}</h4>
       </div>
     </div>

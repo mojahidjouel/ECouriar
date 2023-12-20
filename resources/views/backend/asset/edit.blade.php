@@ -11,7 +11,6 @@
   <!-- <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$asset->id)}}"> -->
   
   <div class="row">
-
   <div class="col-md-6 col-12 position-relative">
     <label for="name" class="form-label">Name</label>
     <input type="text" class="form-control" id="name" value="{{ old('name',$asset->name)}}" name="name">
@@ -26,7 +25,7 @@
   </div>
   
   <div class="col-md-6 col-12 position-relative">
-    <label for="driver_id" class="form-label">Driver Id	</label>
+    <label for="driver_id" class="form-label">Driver Name	</label>
     <select name="driver_id" class="form-control" id="driver_id" >
       <option value="">Select Driver</option>
       @forelse($user as $u)

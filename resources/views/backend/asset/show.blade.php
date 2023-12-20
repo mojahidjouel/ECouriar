@@ -15,7 +15,7 @@
             <h6 class="text-danger">Registration Number: </h6>
             <h4 class="card-subtitle mb-2 text-info">{{$asset->registration_number}}</h6>
 
-            <h6 class="text-danger">Driver Id: </h6>
+            <h6 class="text-danger">Driver Name: </h6>
             <h4 class="card-subtitle mb-2 text-info">{{$asset->driver_id}}</h6>
 
             <h6 class="text-danger">Registration Card: </h6>
@@ -31,9 +31,6 @@
 
             <h6 class="text-danger">HML: </h6>
             <h4 class="card-subtitle mb-2 text-info">{{$asset->hml}}</h6>
-
-            <!-- <h6 class="text-danger">Logo: </h6>
-            <img src="{{asset('public/uploads/company/'.$asset->logo)}}" width="100" alt=""> -->
  
          </div>
         </div>

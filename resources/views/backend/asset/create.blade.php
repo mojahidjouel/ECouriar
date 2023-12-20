@@ -18,12 +18,12 @@
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="registration_number" class="form-label">Registration_Number</label>
+    <label for="registration_number" class="form-label">Registration Number</label>
     <input type="text" class="form-control" id="registration_number" value="{{ old('registration_number')}}" name="registration_number">
   </div>
 
   <div class="col-md-6 col-12 position-relative">
-    <label for="driver_id" class="form-label">Driver Id	</label>
+    <label for="driver_id" class="form-label">Driver Name	</label>
     <select name="driver_id" class="form-control" id="driver_id" >
       <option value="">Select Driver</option>
       @forelse($user as $u)

@@ -9,8 +9,8 @@
   <thead>
     <tr class="text-danger">
     <th scope="col">{{__('#SL')}}</th>
-    <th scope="col">{{__('From City')}}</th>
-    <th scope="col">{{__('To City')}}</th>
+    <th scope="col">{{__('From')}}</th>
+    <th scope="col">{{__('To')}}</th>
     <th scope="col">{{__('Base Price')}}</th>
     <th scope="col">{{__('Unit Size')}}</th>
     <th scope="col">{{__('Unit Price')}}</th>

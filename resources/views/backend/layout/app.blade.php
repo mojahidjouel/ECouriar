@@ -53,15 +53,25 @@
                 <div class="navbar-nav w-100">
                     <a href="{{route('dashboard')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i> Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i> Users</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i> Admin User</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('adminuser.index')}}" class="dropdown-item"> Admin List</a>
-                            <a href="{{route('adminuser.create')}}" class="dropdown-item"> Add New</a>
+                            <a href="{{route('adminuser.index')}}" class="dropdown-item">List </a>
+                            <a href="{{route('adminuser.create')}}" class="dropdown-item">Add New </a>
+                        </div>
+                    </div>
 
-                            <a href="{{route('user.index')}}" class="dropdown-item"> User List</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i>User</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('user.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('user.create')}}" class="dropdown-item"> Add New</a>
+                        </div>
+                    </div>
 
-                            <a href="{{route('role.index')}}" class="dropdown-item"> Role List</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i> Role</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('role.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('role.create')}}" class="dropdown-item"> Add New</a>
                         </div>
                     </div>
@@ -91,14 +101,6 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Shipment</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{route('shipment.index')}}" class="dropdown-item"> List</a>
-                            <a href="{{route('shipment.create')}}" class="dropdown-item"> Add New</a>
-                        </div>
-                    </div>
-
-                    <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> City</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('city.index')}}" class="dropdown-item"> List</a>
@@ -111,6 +113,14 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('price.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('price.create')}}" class="dropdown-item"> Add New</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Shipment</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{route('shipment.index')}}" class="dropdown-item"> List</a>
+                            <a href="{{route('shipment.create')}}" class="dropdown-item"> Add New</a>
                         </div>
                     </div>
 
@@ -163,7 +173,7 @@
                             <span class="d-none d-lg-inline-flex">{{encryptor('decrypt',request()->session()->get('userName')) }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
+                            <!-- <a href="#" class="dropdown-item">My Profile</a> -->
                             <a href="#" class="dropdown-item">Settings</a>
                             <a href="{{route('logOut')}}" class="dropdown-item">Log Out</a>
                         </div>
