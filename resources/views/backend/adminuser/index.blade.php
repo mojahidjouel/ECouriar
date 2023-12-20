@@ -27,9 +27,7 @@
         <td>{{$p->contact_no}}</td>
         <td>{{$p->role?->name}}</td>
         <td><img width="50px" src="{{asset('public/uploads/adminuser/'.$p->image)}}" alt=""></td>
-        
         <td>@if($p->status == 1) {{__('Active') }} @else {{__('Inactive') }} @endif</td>
-        
         <td class="white-space-nowrap">
         <a href="{{route('adminuser.edit',encryptor('encrypt',$p->id))}}"> <i class="fa fa-edit btn btn-info btn-sm"></i></a>
         <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()"><i class="fa fa-trash"></i></a>

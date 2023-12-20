@@ -43,6 +43,7 @@
   <div class="col-md-6 col-12 position-relative">
     <label for="status" class="form-label">Status</label>
     <select id="status" class="form-control" name="status">
+    <option value="">Select Option</option>
     <option value="0" @if(old('status')==0) selected @endif>Inactive</option>
     <option value="1" @if(old('status')==1) selected @endif>Active</option>
 </select>
