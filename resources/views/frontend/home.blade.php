@@ -142,75 +142,6 @@
             <div class="col-md-4 pt-4 px-md-2 px-lg-3">
               <div class="card h-100 px-lg-5 card-span">
                 <div class="card-body d-flex flex-column justify-content-around">
-                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-2.svg')}}" alt="..." />
-                    <h5 class="my-4">Parcel Pick & Drop Service</h5>
-                  </div>
-                  <p>Delivery services that you can rely on.</p>
-                  <ul class="list-unstyled">
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
-                    </li>
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Encrypted Connection
-                    </li>
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Yes Traffic Logs
-                    </li>
-                  </ul>
-                  <div class="text-center my-5">
-                    <div class="d-grid">
-                      <button class="btn btn-outline-danger" type="submit">Learn more </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 pt-4 px-md-2 px-lg-3">
-              <div class="card h-100 px-lg-5 card-span">
-                <div class="card-body d-flex flex-column justify-content-around">
-                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-2.svg')}}" alt="..." />
-                    <h5 class="my-4">Air Parcel</h5>
-                  </div>
-                  <p>Moving emotions with Speed through Air Parcel Services from eCourier.</p>
-                  <ul class="list-unstyled">
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
-                    </li>
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Encrypted Connection
-                    </li>
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Yes Traffic Logs
-                    </li>
-                  </ul>
-                  <div class="text-center my-5">
-                    <div class="d-grid">
-                      <button class="btn btn-outline-danger" type="submit">Learn more </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 pt-4 px-md-2 px-lg-3">
-              <div class="card h-100 px-lg-5 card-span">
-                <div class="card-body d-flex flex-column justify-content-around">
-                  <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-2.svg')}}" alt="..." />
-                    <h5 class="my-4">Merchant Delivery Service</h5>
-                  </div>
-                  <p>Moving entrepreneurship and emotions through Merchant Delivery Services from eCourier.</p>
-                  <ul class="list-unstyled">
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Unlimited Bandwidth
-                    </li>
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Encrypted Connection
-                    </li>
-                    <li class="mb-2"><span class="me-2"><i class="fas fa-circle text-primary" style="font-size:.5rem"></i></span>Yes Traffic Logs
-                    </li>
-                  </ul>
-                  <div class="text-center my-5">
-                    <div class="d-grid">
-                      <button class="btn btn-danger hover-top btn-glow border-0" type="submit">Learn more</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 pt-4 px-md-2 px-lg-3">
-              <div class="card h-100 px-lg-5 card-span">
-                <div class="card-body d-flex flex-column justify-content-around">
                   <div class="text-center pt-5"><img class="img-fluid" src="{{asset('public/assets/img/icons/services-3.svg')}}" alt="..." />
                     <h5 class="my-4">bKash on Delivery (BOD)</h5>
                   </div>
@@ -523,7 +454,8 @@
               <p class="text-muted">Monday to Friday, 9am-5pm.</p>
             </div>
             <div class="col-md-6 col-lg-5 col-xl-4">
-              <form class="row">
+
+              <form class="row" method="get" action="">
                 <div class="mb-3">
                   <label class="form-label visually-hidden" for="name">Name</label>
                   <input class="form-control form-quriar-control" id="name" name="name" type="text" placeholder="Name" />
@@ -601,7 +533,7 @@
           <div class="row">
             <div class="col-lg-6">
               <h2 class="fw-bold text-white">Track Your Order</h2>
-              <p class="text-300">We ensure that your product is delivered in the safest possible<br />manner, at the correct location, at the right time.</p>
+              <p class="text-300">It is a unique tracking ID number or code assigned to a package or<br />parcel. The tracking number is typically printed on the shipping label.</p>
             </div>
             <div class="col-lg-6">
               <h5 class="text-primary mb-3">Order Track </h5>

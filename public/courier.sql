@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2023 at 08:49 AM
+-- Generation Time: Dec 21, 2023 at 08:02 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -345,10 +345,11 @@ CREATE TABLE `ordertracks` (
 --
 
 INSERT INTO `ordertracks` (`id`, `user_id`, `shipment_id`, `comment`, `status`, `created_at`, `updated_at`) VALUES
-(6, NULL, '4', 'Product on the processing', 0, '2023-12-19 22:17:08', '2023-12-20 00:34:15'),
-(7, 1, '5', 'Processing', 1, '2023-12-19 23:02:47', '2023-12-19 23:02:47'),
-(8, 1, '7', 'On the Way', 1, '2023-12-19 23:03:16', '2023-12-19 23:03:16'),
-(9, NULL, '8', 'Near Customer', 2, '2023-12-19 23:03:52', '2023-12-20 00:34:33');
+(6, 1, '4', 'Product on the processing', 0, '2023-12-19 22:17:08', '2023-12-21 00:34:34'),
+(7, 1, '5', 'Processingddd', 0, '2023-12-19 23:02:47', '2023-12-21 00:34:41'),
+(8, 1, '7', 'On the Way', 0, '2023-12-19 23:03:16', '2023-12-20 23:15:44'),
+(9, 1, '8', 'Near Customer', 0, '2023-12-19 23:03:52', '2023-12-21 00:34:47'),
+(11, 1, '9', 'Go To', 0, '2023-12-21 00:13:03', '2023-12-21 00:26:32');
 
 -- --------------------------------------------------------
 
@@ -533,10 +534,11 @@ CREATE TABLE `shipments` (
 --
 
 INSERT INTO `shipments` (`id`, `invoice_no`, `from_city`, `to_city`, `product_name`, `product_description`, `product_weight`, `receiver_address`, `sender_address`, `contact_name`, `contact_number`, `base_price`, `unit_price`, `shipping_cost`, `total_cost`, `user_id`, `customer_id`, `status`, `created_at`, `updated_at`) VALUES
-(4, '420231220', 1, 1, 'Cloths', 'Some of Cloths', '8.00', 'Anwara', '2 no Gate', 'Noman', '01815679542', '48.00', '4.50', '36.00', '52.50', 2, 1, 0, '2023-12-19 21:59:15', '2023-12-20 01:31:29'),
+(4, '420231221', 1, 1, 'Cloths', 'Some of Cloths', '8.00', 'Anwara', '2 no Gate', 'Noman', '01815679542', '48.00', '4.50', '36.00', '52.50', 2, 1, 0, '2023-12-19 21:59:15', '2023-12-20 23:16:55'),
 (5, '520231220', 1, 2, 'Jens', 'Some of Jens', '12.00', 'Mirpur', 'Bohoddarhat', 'Tawhim', '01816654454', '48.00', '4.50', '54.00', '52.50', 3, 2, 0, '2023-12-19 22:37:30', '2023-12-19 23:02:47'),
-(7, '720231220', 1, 3, 'Books', 'Some of Books', '22.00', 'Rajshahi University', 'Bohoddarhat', 'Tawhid', '01819346997', '38.00', '3.80', '83.60', '41.80', 4, 3, 1, '2023-12-19 22:43:13', '2023-12-19 23:03:16'),
-(8, '820231220', 2, 1, 'Panjabi', 'Some of Panjabies', '35.00', 'Andorkilla', 'Malibag', 'Habib', '01817622223', '38.00', '3.80', '133.00', '41.80', NULL, 4, 2, '2023-12-19 22:45:20', '2023-12-19 23:03:52');
+(7, '720231220', 1, 3, 'Books', 'Some of Books', '22.00', 'Rajshahi University', 'Bohoddarhat', 'Tawhid', '01819346997', '38.00', '3.80', '83.60', '41.80', 4, 3, 0, '2023-12-19 22:43:13', '2023-12-21 00:33:41'),
+(8, '820231220', 2, 1, 'Panjabi', 'Some of Panjabies', '35.00', 'Andorkilla', 'Malibag', 'Habib', '01817622223', '38.00', '3.80', '133.00', '41.80', 6, 4, 0, '2023-12-19 22:45:20', '2023-12-20 22:57:22'),
+(9, '920231221', 2, 3, 'Novel Book', 'Some of Novel Books', '18.00', 'Tikatoli', 'Bonani', 'Istiak', '018164544', '48.00', '4.50', '81.00', '52.50', 7, 7, 0, '2023-12-21 00:11:38', '2023-12-21 00:12:29');
 
 -- --------------------------------------------------------
 
@@ -756,7 +758,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `ordertracks`
 --
 ALTER TABLE `ordertracks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -786,7 +788,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `shipments`
 --
 ALTER TABLE `shipments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`

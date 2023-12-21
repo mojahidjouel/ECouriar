@@ -4,25 +4,39 @@
 
 @section('content')
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-
-      <div class="cc p-5">
-        <div class="card w-75 mx-auto text-center">
-          <div class="card-body bg-white">
-            <h6 class="text-danger">Customer: </h6>
-            <h4 class="card-title text-info">{{$ordertrack->user?->name}}</h4>
-
-            <h6 class="text-danger">Delivery Man: </h6>
-            <h4 class="card-subtitle mb-2 text-info">{{$ordertrack->shipment?->deliveryman?->name}}</h4>
-
-            <h6 class="text-danger">Comment: </h6>
-            <h4 class="card-subtitle mb-2 text-info">{{$ordertrack->comment}}</h4>
-
-            <h6 class="text-danger">Status: </h6>
-            <h4 class="card-subtitle mb-2 text-info">
-            @if($ordertrack->status == 0) {{__('Pending') }} @elseif($ordertrack->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif
-            </h4>
+    <div class="row">
+          <div class="col-sm-6 mb-1">
+            <div class="card text-center ">
+              <div class="card-body ">
+                <h5 class="card-title text-danger">Customer Name:</h5>
+                <h4 class="card-text text-info">{{$ordertrack->shipment?->customer?->name}}</h4>      
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-1">
+            <div class="card text-center ">
+              <div class="card-body ">
+                <h5 class="card-title text-danger">Delivery Man:</h5>
+                <h4 class="card-text text-info">{{$ordertrack->shipment?->deliveryman?->name}}</h4>      
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-1">
+            <div class="card text-center ">
+              <div class="card-body ">
+                <h5 class="card-title text-danger">Comment:</h5>
+                <h4 class="card-text text-info">{{$ordertrack->comment}}</h4>      
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-1">
+            <div class="card text-center ">
+              <div class="card-body ">
+                <h5 class="card-title text-danger">Status:</h5>
+                <h4 class="card-text text-info">@if($ordertrack->status == 0) {{__('Pending') }} @elseif($ordertrack->status == 1) {{__('Picked Up') }} @else {{__('Delivered') }} @endif</h4>      
+              </div>
+            </div>
+          </div>
 
          </div>
         </div>

@@ -38,7 +38,7 @@
         <td>{{$p->customer?->name}}</td>
         <td class="white-space-nowrap">
         <a href="{{route('shipment.edit',encryptor('encrypt',$p->id))}}"><i class="fa fa-edit btn btn-info btn-sm"></i></a>
-        <a href="{{route('shipment.show', $p->id)}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
+        <a href="{{route('shipment.show',encryptor('encrypt',$p->id))}}"><i class="bi bi-eye btn btn-success btn-sm"></i></a>
         </form>
         </td>
     </tr>

@@ -60,8 +60,9 @@ class OrdertrackController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ordertrack $ordertrack)
+    public function show($id)
     {
+        $ordertrack=ordertrack::findOrFail(encryptor('decrypt',$id));
         return view('backend.ordertrack.show', compact('ordertrack'));
         
     }
@@ -73,7 +74,7 @@ class OrdertrackController extends Controller
     {
         $user=User::get();
         $shipment=Shipment::get();
-        $ordertrack=Ordertrack::findOrFail(encryptor('decrypt',$id));
+        $ordertrack=ordertrack::findOrFail(encryptor('decrypt',$id));
         return view('backend.ordertrack.edit',compact('ordertrack','user','shipment'));
     }
 
@@ -82,14 +83,12 @@ class OrdertrackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        {
+        
             try{  
                 $data=Ordertrack::findOrFail(encryptor('decrypt',$id));
-                $data->user_id=$request->user_id;
                 $data->shipment_id=$request->shipment_id;
                 $data->comment=$request->comment;
                 $data->status=$request->status;
-               
                 if($data->save()){
                     Toastr::success('Successfully updated');
                     return redirect()->route('ordertrack.index');
@@ -99,7 +98,7 @@ class OrdertrackController extends Controller
                 // dd($e);
                 return redirect()->back()->withInput();
             }
-        }
+        
     }
 
     /**

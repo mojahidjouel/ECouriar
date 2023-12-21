@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title',env('APP_NAME'))</title>
+    <!-- <title>@yield('title','Courier_Service')</title> -->
+    
 
     <!--  ---------------  Favicons----------------->
     

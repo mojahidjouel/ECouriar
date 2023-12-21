@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>@yield('title','Courier_Service')</title>
+    <title>@yield('title','Courier Service')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -53,7 +53,7 @@
                 <div class="navbar-nav w-100">
                     <a href="{{route('dashboard')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i> Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i> Admin User</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i> AdminUser</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('adminuser.index')}}" class="dropdown-item">List </a>
                             <a href="{{route('adminuser.create')}}" class="dropdown-item">Add New </a>
