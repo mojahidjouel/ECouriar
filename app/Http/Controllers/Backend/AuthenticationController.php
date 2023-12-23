@@ -39,7 +39,7 @@ class AuthenticationController extends Controller
     }
 
     public function signInForm(){
-        return view('backend.Authentication.login');
+        return view('backend.authentication.login');
     }
 
     public function signInCheck(SigninRequest $request){
