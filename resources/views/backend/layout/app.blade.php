@@ -33,24 +33,46 @@
     @stack('styles')
 </head>
 
+<style>
+    .saidebarbg{
+        background-color: white;
+    }
+
+    .sidebar .navbar .navbar-nav .nav-link i{
+         background-color:white!important;
+    }
+
+    .sidebar .navbar .navbar-nav .nav-link:hover, .sidebar .navbar .navbar-nav .nav-link.active{
+        color: white!important;
+        background: #073b4c!important;
+
+    }
+
+    .shdo{
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)!important;
+    }
+     
+
+</style>
+
 <body>
     <div class="container-fluid position-relative d-flex p-0">
-        <div class="sidebar pe-4 pb-3">
-            <nav class="navbar bg-secondary navbar-dark">
+        <div class="sidebar saidebarbg pe-4 pb-3">
+            <nav class="navbar saidebarbg shdo">
                 <a href="" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>E-Couriar</h3>
                 </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
+                <div class="d-flex align-items-center ms-4 mb-4 ">
                     <div class="position-relative">
                         <img class="rounded-circle" src="{{asset('public/uploads/adminuser/'.request()->session()->get('image'))}}" alt="" style="width: 50px; height: 50px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
-                    <div class="ms-3">
+                    <div class="ms-3 ">
                         <h6 class="mb-0">{{encryptor('decrypt',request()->session()->get('userName')) }}</h6>
                         <span>{{encryptor('decrypt',request()->session()->get('role')) }}</span>
                     </div>
                 </div>
-                <div class="navbar-nav w-100">
+                <div class="navbar-nav w-100 shdo">
                     <a href="{{route('dashboard')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i> Dashboard</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i> AdminUser</a>
@@ -159,7 +181,7 @@
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+            <nav class="navbar navbar-expand   bg-primary navbar-primary sticky-top px-4 py-0">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
