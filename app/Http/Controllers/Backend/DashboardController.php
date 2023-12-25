@@ -9,9 +9,10 @@ class DashboardController extends Controller
 {
     public function index(){
         $shipment=shipment::count();
-        $todayshipment = shipment::take(5)-> get();
+        $todayshipment = shipment::take(10)-> get();
+        $totalshipment = shipment::take(5)-> get();
         if(fullAccess())
-        return view ('backend.adminDashboard', compact('shipment','todayshipment'));
+        return view ('backend.adminDashboard', compact('shipment','todayshipment','totalshipment'));
         else
         return view('backend.dashboard');
         }

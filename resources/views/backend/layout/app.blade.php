@@ -35,7 +35,7 @@
 
 <style>
     .saidebarbg{
-        background-color: white;
+        background-color: #f5ebe0;
     }
 
     .sidebar .navbar .navbar-nav .nav-link i{
@@ -44,7 +44,7 @@
 
     .sidebar .navbar .navbar-nav .nav-link:hover, .sidebar .navbar .navbar-nav .nav-link.active{
         color: white!important;
-        background: #073b4c!important;
+        background: #bb010b!important;
 
     }
 
@@ -75,7 +75,7 @@
                 <div class="navbar-nav w-100 shdo">
                     <a href="{{route('dashboard')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i> Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i> AdminUser</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-person"></i></i> AdminUser</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('adminuser.index')}}" class="dropdown-item">List </a>
                             <a href="{{route('adminuser.create')}}" class="dropdown-item">Add New </a>
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i>User</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-person"></i>User</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('user.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('user.create')}}" class="dropdown-item"> Add New</a>
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i> Role</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-person"></i> Role</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('role.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('role.create')}}" class="dropdown-item"> Add New</a>
@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i> Asset</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-person"></i> Asset</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('asset.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('asset.create')}}" class="dropdown-item"> Add New</a>
@@ -107,7 +107,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Company</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Company</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('company.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('company.create')}}" class="dropdown-item"> Add New</a>
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> City</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> City</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('city.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('city.create')}}" class="dropdown-item"> Add New</a>
@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Price</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Price</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('price.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('price.create')}}" class="dropdown-item"> Add New</a>
@@ -139,7 +139,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Shipment</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Shipment</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('shipment.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('shipment.create')}}" class="dropdown-item"> Add New</a>
@@ -147,7 +147,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Order Tracking</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> Order Tracking</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('ordertrack.index')}}" class="dropdown-item"> List</a>
                             <a href="{{route('ordertrack.create')}}" class="dropdown-item"> Add New</a>
@@ -155,7 +155,7 @@
                     </div>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> General Setting</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="bi bi-truck"></i> General Setting</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('general_setting.index')}}" class="dropdown-item"> General Setting List</a>
                             <a href="{{route('general_setting.create')}}" class="dropdown-item"> General Setting Add</a>
@@ -167,7 +167,7 @@
                     <a href="" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle fw-bolder" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{route('login')}}" class="dropdown-item">Sign In</a>
                             <a href="{{route('register')}}" class="dropdown-item">Sign Up</a>
@@ -182,10 +182,10 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand   bg-primary navbar-primary sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
+                <a href="" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
                 <div class="navbar-nav align-items-center ms-auto">
@@ -211,15 +211,14 @@
 
             <!-- Footer Start -->
             <div class="container-fluid pt-2">
-                <div class="bg-secondary rounded-top p-2">
+                <div class="bg-primary rounded-top p-2">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start text-white">
-                            &copy; <a href="#">Couriar_Service</a>, All Right Reserved. 
+                            &copy; <a class="text-white" href="#">Couriar_Service</a>, All Right Reserved. 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end text-white">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="">Muhammad Mojahedul Islam</a>
-                            <br>Distributed By: <a href="" target="">WDPF_Round_54</a>
+                            Designed By <a class="text-white" href="">Muhammad Mojahedul Islam</a>
+                            <br>Distributed By: <a class="text-white" href="" target="">WDPF_Round_54</a>
                         </div>
                     </div>
                 </div>
