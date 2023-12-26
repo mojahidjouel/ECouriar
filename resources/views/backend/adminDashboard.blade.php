@@ -9,7 +9,7 @@
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)!important; /* Add a simple shadow */
     }
     .tamy{
-        background-color:#ff758f!important;
+        background-color:#ab3428!important;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)!important; /* Add a simple shadow */
     }
     .tama{
@@ -23,7 +23,7 @@
                         <div class="bg-secondary tamy rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2 fs-4 fw-bolder text-danger">Today Shipment</p>
+                                <p class="mb-2 fs-4 fw-bolder text-white">Today Shipment</p>
                                 <h6 class="mb-0"><span class="fs-1">{{$shipment}} </span><br>is completed</h6>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                         <div class="bg-secondary rounded tamy d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2 fs-4 fw-bolder text-danger">Total Shipment</p>
+                                <p class="mb-2 fs-4 fw-bolder text-white">Total Shipment</p>
                                 <h6 class="mb-0">{{$shipment}}</h6>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                         <div class="bg-secondary rounded tamy d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2 fs-4 fw-bolder text-danger">Today Revenue</p>
+                                <p class="mb-2 fs-4 fw-bolder text-white">Today Revenue</p>
                                 <h6 class="mb-0">{{$shipment}}</h6>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                         <div class="bg-secondary rounded tamy d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2 fs-4 fw-bolder text-danger">Total Revenue</p>
+                                <p class="mb-2 fs-4 fw-bolder text-white">Total Revenue</p>
                                 <h6 class="mb-0">{{$shipment}}</h6>
                             </div>
                         </div>
